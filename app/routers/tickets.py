@@ -117,6 +117,7 @@ def create_new_ticket(
 
     ticket = create_ticket(db, payload, current_user)
     db.refresh(ticket)
+    ticket = _get_ticket_or_404(ticket.id, db)
     return APIResponse(
         success=True,
         message="Ticket created successfully",

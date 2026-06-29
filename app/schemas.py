@@ -88,6 +88,16 @@ class UserSummary(BaseModel):
     email: EmailStr
     role: str
 
+    @field_validator("role", mode="before")
+    @classmethod
+    def coerce_role(cls, v: Any) -> str:
+        # When coming from ORM, v is a Role object
+        if hasattr(v, "name"):
+            name = v.name
+            # name is a RoleNameEnum, get its string value
+            return name.value if hasattr(name, "value") else str(name)
+        return str(v) if v is not None else "employee"
+
     @classmethod
     def from_orm_user(cls, user: Any) -> "UserSummary":
         return cls(

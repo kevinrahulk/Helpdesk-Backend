@@ -11,7 +11,7 @@ from app.auth import hash_password
 from app.models import Role, RoleNameEnum, User
 
 
-DEFAULT_ADMIN_EMAIL = "admin@helpdesk.local"
+DEFAULT_ADMIN_EMAIL = "admin@helpdesk.com"
 DEFAULT_ADMIN_PASSWORD = "Admin1234"  # Change in production!
 
 

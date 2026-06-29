@@ -1,18 +1,20 @@
 """
 Module 1 — Authentication
-Endpoints: POST /auth/login · POST /auth/logout · GET /auth/profile
+Endpoints: POST /auth/login · POST /auth/logout · GET /auth/profile · POST /auth/register
 """
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from pydantic import BaseModel, EmailStr, Field
 
 from app.auth import (
     create_access_token,
     get_current_user,
+    hash_password,
     verify_password,
 )
 from app.database import get_db
-from app.models import User
+from app.models import User, Role, RoleNameEnum
 from app.schemas import (
     APIResponse,
     AuthData,
@@ -23,6 +25,66 @@ from app.schemas import (
 )
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
+
+
+# ── Admin self-registration ───────────────────────────────────────────────────
+
+class AdminRegisterRequest(BaseModel):
+    full_name: str = Field(..., min_length=2, max_length=100)
+    email: EmailStr
+    password: str = Field(..., min_length=8, max_length=100)
+    role: str = "admin"
+
+
+@router.post("/register", response_model=LoginResponse, status_code=status.HTTP_201_CREATED)
+def register_admin(payload: AdminRegisterRequest, db: Session = Depends(get_db)):
+    """
+    Self-registration endpoint for admin accounts.
+    Creates the user and returns a JWT (same as login).
+    """
+    existing = db.query(User).filter(User.email == payload.email).first()
+    if existing:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Email already registered.",
+        )
+
+    role_name = RoleNameEnum.admin
+    role = db.query(Role).filter(Role.name == role_name).first()
+    if not role:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail="Admin role not seeded in database.",
+        )
+
+    user = User(
+        full_name=payload.full_name,
+        email=payload.email,
+        password_hash=hash_password(payload.password),
+        role_id=role.id,
+        is_active=True,
+    )
+    db.add(user)
+    db.commit()
+    db.refresh(user)
+
+    token, expires_in = create_access_token(
+        subject=str(user.id),
+        role=user.role.name.value,
+    )
+
+    user_summary = UserSummary(
+        id=user.id,
+        full_name=user.full_name,
+        email=user.email,
+        role=user.role.name.value,
+    )
+
+    return LoginResponse(
+        success=True,
+        message="Account created successfully",
+        data=AuthData(access_token=token, user=user_summary),
+    )
 
 
 @router.post("/login", response_model=LoginResponse)
