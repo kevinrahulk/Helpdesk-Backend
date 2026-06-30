@@ -9,7 +9,9 @@ DELETE /categories/{id}     soft-delete via is_active=False (admin)
 
 from uuid import UUID
 
+# pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends, HTTPException, Query, status
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_user, require_admin

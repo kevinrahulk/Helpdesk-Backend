@@ -4,7 +4,9 @@ GET  /settings           list all settings (any authenticated user)
 PUT  /settings/{key}     update a setting (admin only)
 """
 
+# pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends, HTTPException
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_user, require_admin

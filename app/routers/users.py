@@ -13,8 +13,11 @@ Endpoints:
 from typing import Optional
 from uuid import UUID
 
+# pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends, HTTPException, Query, status
+# pyrefly: ignore [missing-import]
 from sqlalchemy import func
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_user, hash_password, require_admin

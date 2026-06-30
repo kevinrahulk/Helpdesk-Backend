@@ -2,8 +2,11 @@
 AI Helpdesk Ticket Assistant — FastAPI Application Entry Point
 """
 
+# pyrefly: ignore [missing-import]
 from fastapi import FastAPI, Request, status
+# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
+# pyrefly: ignore [missing-import]
 from fastapi.responses import JSONResponse
 
 from app.config import get_settings

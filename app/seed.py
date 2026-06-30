@@ -5,6 +5,7 @@ Run once after `alembic upgrade head` (or create_all) to populate:
   - default admin user
 """
 
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import hash_password

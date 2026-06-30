@@ -8,8 +8,11 @@ PATCH  /notifications/mark-all-read  mark all as read
 
 from uuid import UUID
 
+# pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends, HTTPException, Query
+# pyrefly: ignore [missing-import]
 from sqlalchemy import func
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_user

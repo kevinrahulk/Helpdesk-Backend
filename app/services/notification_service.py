@@ -7,6 +7,7 @@ from __future__ import annotations
 from typing import Optional, List
 from uuid import UUID
 
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.models import (

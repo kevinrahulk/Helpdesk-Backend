@@ -4,9 +4,13 @@ GET /dashboard  — role-filtered summary statistics
 """
 
 from datetime import datetime, timezone
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import joinedload
+# pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends
+# pyrefly: ignore [missing-import]
 from sqlalchemy import func
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
 from app.auth import get_current_user
