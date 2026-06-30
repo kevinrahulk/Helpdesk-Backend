@@ -150,6 +150,9 @@ class User(TimestampMixin, Base):
     uploads: Mapped[List["TicketAttachment"]] = relationship(
         "TicketAttachment", back_populates="uploader"
     )
+    notifications: Mapped[List["Notification"]] = relationship(
+        "Notification", back_populates="user", cascade="all, delete-orphan"
+    )
 
     def __repr__(self) -> str:
         return f"<User id={self.id} email={self.email}>"
@@ -433,3 +436,70 @@ class TicketAttachment(TimestampMixin, Base):
             f"<TicketAttachment id={self.id} "
             f"ticket_id={self.ticket_id} file={self.file_name}>"
         )
+
+
+# ---------------------------------------------------------------------------
+# 9. notifications
+# ---------------------------------------------------------------------------
+
+class Notification(Base):
+    __tablename__ = "notifications"
+    __table_args__ = (
+        Index("ix_notifications_user_id", "user_id"),
+        Index("ix_notifications_is_read", "is_read"),
+        Index("ix_notifications_created_at", "created_at"),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("users.id", ondelete="CASCADE"),
+        nullable=False,
+    )
+    title: Mapped[str] = mapped_column(String(255), nullable=False)
+    message: Mapped[str] = mapped_column(Text, nullable=False)
+    ticket_id: Mapped[Optional[uuid.UUID]] = mapped_column(
+        UUID(as_uuid=True),
+        ForeignKey("tickets.id", ondelete="CASCADE"),
+        nullable=True,
+    )
+    is_read: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        nullable=False,
+    )
+
+    user: Mapped["User"] = relationship("User", back_populates="notifications")
+    ticket: Mapped[Optional["Ticket"]] = relationship("Ticket")
+
+    def __repr__(self) -> str:
+        return f"<Notification id={self.id} user_id={self.user_id} read={self.is_read}>"
+
+
+# ---------------------------------------------------------------------------
+# 10. system_settings
+# ---------------------------------------------------------------------------
+
+class SystemSetting(Base):
+    __tablename__ = "system_settings"
+    __table_args__ = (
+        UniqueConstraint("key", name="uq_system_settings_key"),
+    )
+
+    id: Mapped[uuid.UUID] = mapped_column(
+        UUID(as_uuid=True), primary_key=True, default=uuid.uuid4
+    )
+    key: Mapped[str] = mapped_column(String(100), nullable=False)
+    value: Mapped[str] = mapped_column(String(500), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True),
+        server_default=func.now(),
+        onupdate=func.now(),
+        nullable=False,
+    )
+
+    def __repr__(self) -> str:
+        return f"<SystemSetting key={self.key} value={self.value}>"

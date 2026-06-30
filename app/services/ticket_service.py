@@ -67,9 +67,21 @@ def compute_sla_due(priority: TicketPriorityEnum) -> datetime:
 # ---------------------------------------------------------------------------
 
 def generate_ticket_no(db: Session) -> str:
-    """Generate sequential ticket number: TKT-0001, TKT-0002, ..."""
-    count = db.query(func.count(Ticket.id)).scalar() or 0
-    return f"TKT-{count + 1:04d}"
+    """Generate sequential ticket number: TX-101, TX-102, ...
+    Uses MAX to ensure uniqueness even if tickets are deleted."""
+    import re
+    last = (
+        db.query(Ticket.ticket_no)
+        .order_by(Ticket.created_at.desc())
+        .limit(100)
+        .all()
+    )
+    max_num = 100  # start at 101
+    for (tno,) in last:
+        m = re.search(r'(\d+)$', tno or '')
+        if m:
+            max_num = max(max_num, int(m.group(1)))
+    return f"TX-{max_num + 1}"
 
 
 # ---------------------------------------------------------------------------

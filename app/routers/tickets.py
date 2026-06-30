@@ -26,6 +26,7 @@ from app.auth import get_current_user, require_admin, require_agent_or_admin
 from app.database import get_db
 from app.models import (
     RoleNameEnum,
+    SystemSetting,
     Ticket,
     TicketAttachment,
     TicketComment,
@@ -55,6 +56,11 @@ from app.services.ticket_service import (
     assign_ticket,
     create_ticket,
     transition_status,
+)
+from app.services.notification_service import (
+    notify_assignment,
+    notify_employee_comment,
+    notify_agent_reply,
 )
 
 router = APIRouter(prefix="/tickets", tags=["Tickets"])
@@ -177,7 +183,11 @@ def list_tickets(
 
     total = q.count()
     tickets = (
-        q.order_by(Ticket.created_at.desc())
+        q.options(
+            joinedload(Ticket.creator).joinedload(User.role),
+            joinedload(Ticket.assignee).joinedload(User.role),
+        )
+        .order_by(Ticket.created_at.desc())
         .offset((page - 1) * page_size)
         .limit(page_size)
         .all()
@@ -306,6 +316,13 @@ def assign_ticket_to_agent(
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
     ticket = assign_ticket(db, ticket, payload.agent_id, current_user)
+
+    # Send notification to the assigned agent
+    agent = db.get(User, payload.agent_id)
+    if agent:
+        notify_assignment(db, ticket, agent)
+        db.commit()
+
     db.refresh(ticket)
     return APIResponse(
         success=True,
@@ -359,18 +376,39 @@ def add_comment(
     ticket_id: UUID,
     payload: TicketCommentCreate,
     db: Session = Depends(get_db),
-    current_user: User = Depends(require_agent_or_admin),
+    current_user: User = Depends(get_current_user),
 ):
     """
-    Add a comment to a ticket. Agent/Admin only.
+    Add a comment to a ticket.
+    Employees can comment if employee_comments_enabled setting is true.
+    Agents/Admins can always comment.
     is_internal=True marks it as an internal note hidden from employees.
     """
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
+    role = current_user.role.name
+
+    # Employee permission check
+    if role == RoleNameEnum.employee:
+        # Verify they own this ticket
+        if ticket.created_by != current_user.id:
+            raise HTTPException(status_code=403, detail="Access denied.")
+        # Check if employee comments are enabled
+        setting = db.query(SystemSetting).filter(
+            SystemSetting.key == "employee_comments_enabled"
+        ).first()
+        if setting and setting.value.lower() != "true":
+            raise HTTPException(
+                status_code=403,
+                detail="Comments have been disabled by the administrator.",
+            )
+        # Employees cannot post internal notes
+        payload.is_internal = False
+
     # Agents can only comment on assigned tickets
-    if current_user.role.name == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
+    if role == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="You can only comment on your assigned tickets.")
 
     comment = TicketComment(
@@ -382,6 +420,13 @@ def add_comment(
     db.add(comment)
     db.commit()
     db.refresh(comment)
+
+    # Send notifications
+    if role == RoleNameEnum.employee:
+        notify_employee_comment(db, ticket)
+    else:
+        notify_agent_reply(db, ticket)
+    db.commit()
 
     # Load author relationship
     db.refresh(comment, ["author"])

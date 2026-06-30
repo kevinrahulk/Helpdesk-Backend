@@ -254,6 +254,8 @@ class TicketSummary(BaseModel):
     sla_due_at: Optional[datetime] = None
     assigned_to: Optional[uuid.UUID] = None
     category_id: Optional[uuid.UUID] = None
+    creator: Optional[UserSummary] = None
+    assignee: Optional[UserSummary] = None
 
 
 class TicketCommentResponse(BaseModel):
@@ -407,9 +409,14 @@ class AgentDashboard(BaseModel):
 class AdminDashboard(BaseModel):
     total_tickets: int = 0
     open_tickets: int = 0
+    in_progress_tickets: int = 0
+    resolved_tickets: int = 0
     closed_tickets: int = 0
     overdue_tickets: int = 0
     unassigned_tickets: int = 0
+    high_priority_tickets: int = 0
+    pending_assignments: int = 0
+    todays_tickets: int = 0
     agent_workload: List[AgentWorkload] = []
     recent_tickets: List[TicketSummary] = []
 
@@ -426,8 +433,13 @@ class TicketVolumePoint(BaseModel):
 class AgentPerformanceRow(BaseModel):
     agent_id: uuid.UUID
     agent_name: str
-    tickets_handled: int
+    agent_email: Optional[str] = None
+    assigned_tickets: int = 0
+    resolved_tickets: int = 0
+    open_tickets: int = 0
+    tickets_handled: int = 0
     avg_resolution_hours: Optional[float] = None
+    sla_compliance_pct: Optional[float] = None
 
 
 class SLAComplianceReport(BaseModel):
@@ -436,11 +448,38 @@ class SLAComplianceReport(BaseModel):
     compliance_rate_pct: float = Field(..., ge=0.0, le=100.0)
 
 
+class CategoryDistribution(BaseModel):
+    category_name: str
+    count: int
+
+
+class PriorityDistribution(BaseModel):
+    priority: str
+    count: int
+
+
+class EmployeeActivityRow(BaseModel):
+    employee_id: uuid.UUID
+    employee_name: str
+    employee_email: Optional[str] = None
+    tickets_created: int = 0
+
+
+class EmployeeActivityReport(BaseModel):
+    total_tickets_created: int = 0
+    active_employees: int = 0
+    most_active: List[EmployeeActivityRow] = []
+
+
 class ReportSummary(BaseModel):
-    total_tickets: int
-    closed_tickets: int
-    overdue_tickets: int
+    total_tickets: int = 0
+    open_tickets: int = 0
+    in_progress_tickets: int = 0
+    resolved_tickets: int = 0
+    closed_tickets: int = 0
+    overdue_tickets: int = 0
     avg_resolution_hours: Optional[float] = None
+    avg_response_hours: Optional[float] = None
     sla_compliance: SLAComplianceReport
     ticket_volume: List[TicketVolumePoint] = []
 
@@ -488,7 +527,48 @@ class AITicketSummaryResponse(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# 11. Generic API envelope
+# 11. Notifications
+# ---------------------------------------------------------------------------
+
+class NotificationResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: uuid.UUID
+    user_id: uuid.UUID
+    title: str
+    message: str
+    ticket_id: Optional[uuid.UUID] = None
+    is_read: bool
+    created_at: datetime
+
+
+class NotificationListResponse(BaseModel):
+    items: List[NotificationResponse]
+    total: int
+    unread_count: int
+
+
+# ---------------------------------------------------------------------------
+# 12. System Settings
+# ---------------------------------------------------------------------------
+
+class SystemSettingResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    key: str
+    value: str
+
+
+class SystemSettingUpdate(BaseModel):
+    value: str = Field(..., max_length=500)
+
+
+class CommentPermissionResponse(BaseModel):
+    employee_comments_enabled: bool = True
+
+
+# ---------------------------------------------------------------------------
+# 13. Generic API envelope
 # ---------------------------------------------------------------------------
 
 DataT = TypeVar("DataT")
@@ -524,3 +604,4 @@ class PaginatedResponse(BaseModel, Generic[DataT]):
 TicketResponse.model_rebuild()
 LoginResponse.model_rebuild()
 AuthData.model_rebuild()
+TicketSummary.model_rebuild()

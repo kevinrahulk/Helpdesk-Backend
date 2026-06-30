@@ -4,7 +4,7 @@ GET /dashboard  — role-filtered summary statistics
 """
 
 from datetime import datetime, timezone
-
+from sqlalchemy.orm import joinedload
 from fastapi import APIRouter, Depends
 from sqlalchemy import func
 from sqlalchemy.orm import Session
@@ -15,6 +15,7 @@ from app.models import (
     Role,
     RoleNameEnum,
     Ticket,
+    TicketPriorityEnum,
     TicketStatusEnum,
     User,
 )
@@ -104,6 +105,16 @@ def get_dashboard(
             .filter(Ticket.status == TicketStatusEnum.open)
             .scalar() or 0
         )
+        in_progress_count = (
+            db.query(func.count(Ticket.id))
+            .filter(Ticket.status == TicketStatusEnum.in_progress)
+            .scalar() or 0
+        )
+        resolved_count = (
+            db.query(func.count(Ticket.id))
+            .filter(Ticket.status == TicketStatusEnum.resolved)
+            .scalar() or 0
+        )
         closed_count = (
             db.query(func.count(Ticket.id))
             .filter(Ticket.status == TicketStatusEnum.closed)
@@ -123,6 +134,22 @@ def get_dashboard(
                 Ticket.assigned_to == None,
                 Ticket.status.notin_([TicketStatusEnum.resolved, TicketStatusEnum.closed]),
             )
+            .scalar() or 0
+        )
+        high_priority = (
+            db.query(func.count(Ticket.id))
+            .filter(
+                Ticket.priority.in_([TicketPriorityEnum.high, TicketPriorityEnum.critical]),
+                Ticket.status.notin_([TicketStatusEnum.resolved, TicketStatusEnum.closed]),
+            )
+            .scalar() or 0
+        )
+
+        from datetime import date
+        today_start = datetime.combine(date.today(), datetime.min.time()).replace(tzinfo=timezone.utc)
+        todays = (
+            db.query(func.count(Ticket.id))
+            .filter(Ticket.created_at >= today_start)
             .scalar() or 0
         )
 
@@ -155,6 +182,10 @@ def get_dashboard(
 
         recent = (
             db.query(Ticket)
+            .options(
+                joinedload(Ticket.creator).joinedload(User.role),
+                joinedload(Ticket.assignee).joinedload(User.role),
+            )
             .order_by(Ticket.created_at.desc())
             .limit(10)
             .all()
@@ -166,9 +197,14 @@ def get_dashboard(
             data=AdminDashboard(
                 total_tickets=total,
                 open_tickets=open_count,
+                in_progress_tickets=in_progress_count,
+                resolved_tickets=resolved_count,
                 closed_tickets=closed_count,
                 overdue_tickets=overdue,
                 unassigned_tickets=unassigned,
+                high_priority_tickets=high_priority,
+                pending_assignments=unassigned,
+                todays_tickets=todays,
                 agent_workload=workload,
                 recent_tickets=[TicketSummary.model_validate(t) for t in recent],
             ),
