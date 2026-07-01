@@ -7,7 +7,6 @@ from __future__ import annotations
 import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Optional
-
 # pyrefly: ignore [missing-import]
 from fastapi import HTTPException, status
 # pyrefly: ignore [missing-import]
@@ -26,12 +25,13 @@ from app.models import (
     TicketStatusLog,
     User,
 )
+import re
 from app.schemas import TicketCreate, TicketStatusUpdate
 
 settings = get_settings()
 
 # ---------------------------------------------------------------------------
-# Status transition matrix (FR-STAT-001 / BR-STAT-001)
+# Status transition matrix
 # ---------------------------------------------------------------------------
 
 VALID_TRANSITIONS: dict[TicketStatusEnum, list[TicketStatusEnum]] = {
@@ -40,7 +40,7 @@ VALID_TRANSITIONS: dict[TicketStatusEnum, list[TicketStatusEnum]] = {
         TicketStatusEnum.waiting_for_user,
         TicketStatusEnum.resolved,
     ],
-    TicketStatusEnum.waiting_for_user: [TicketStatusEnum.in_progress],
+    TicketStatusEnum.waiting_for_user: [TicketStatusEnum.in_progress, TicketStatusEnum.resolved],
     TicketStatusEnum.resolved: [
         TicketStatusEnum.closed,
         TicketStatusEnum.in_progress,  # reopen
@@ -70,9 +70,6 @@ def compute_sla_due(priority: TicketPriorityEnum) -> datetime:
 # ---------------------------------------------------------------------------
 
 def generate_ticket_no(db: Session) -> str:
-    """Generate sequential ticket number: TX-101, TX-102, ...
-    Uses MAX to ensure uniqueness even if tickets are deleted."""
-    import re
     last = (
         db.query(Ticket.ticket_no)
         .order_by(Ticket.created_at.desc())
@@ -90,7 +87,6 @@ def generate_ticket_no(db: Session) -> str:
 # ---------------------------------------------------------------------------
 # Create ticket
 # ---------------------------------------------------------------------------
-
 def create_ticket(db: Session, payload: TicketCreate, creator: User) -> Ticket:
     # Validate category if provided
     if payload.category_id:

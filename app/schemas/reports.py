@@ -18,7 +18,7 @@ class AgentPerformanceRow(BaseModel):
     resolved_tickets: int = 0
     open_tickets: int = 0
     tickets_handled: int = 0
-    avg_resolution_hours: Optional[float] = None
+    avg_resolution_hours: Optional[str] = None
     sla_compliance_pct: Optional[float] = None
 
 
@@ -58,7 +58,7 @@ class ReportSummary(BaseModel):
     resolved_tickets: int = 0
     closed_tickets: int = 0
     overdue_tickets: int = 0
-    avg_resolution_hours: Optional[float] = None
-    avg_response_hours: Optional[float] = None
+    avg_resolution_hours: Optional[str] = None
+    avg_response_hours: Optional[str] = None
     sla_compliance: SLAComplianceReport
     ticket_volume: List[TicketVolumePoint] = []

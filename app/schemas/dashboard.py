@@ -18,6 +18,7 @@ class AgentDashboard(BaseModel):
     assigned_open: int = 0
     assigned_in_progress: int = 0
     assigned_waiting: int = 0
+    assigned_resolved: int = 0
     sla_breached: int = 0
     recently_assigned: List[TicketSummary] = []
 

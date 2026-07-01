@@ -1,5 +1,5 @@
 """
-Module 1 — Authentication
+Authentication
 Endpoints: POST /auth/login · POST /auth/logout · GET /auth/profile · POST /auth/register
 """
 
@@ -9,26 +9,12 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 # pyrefly: ignore [missing-import]
 from pydantic import BaseModel, EmailStr, Field
-
-from app.auth import (
-    create_access_token,
-    get_current_user,
-    hash_password,
-    verify_password,
-)
+from app.auth import (create_access_token, get_current_user, hash_password, verify_password,)
 from app.database import get_db
 from app.models import User, Role, RoleNameEnum
-from app.schemas import (
-    APIResponse,
-    AuthData,
-    LoginRequest,
-    LoginResponse,
-    UserResponse,
-    UserSummary,
-)
+from app.schemas import (APIResponse, AuthData, LoginRequest, LoginResponse, UserResponse, UserSummary)
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
-
 
 # ── Admin self-registration ───────────────────────────────────────────────────
 
@@ -41,10 +27,6 @@ class AdminRegisterRequest(BaseModel):
 
 @router.post("/register", response_model=LoginResponse, status_code=status.HTTP_201_CREATED)
 def register_admin(payload: AdminRegisterRequest, db: Session = Depends(get_db)):
-    """
-    Self-registration endpoint for admin accounts.
-    Creates the user and returns a JWT (same as login).
-    """
     existing = db.query(User).filter(User.email == payload.email).first()
     if existing:
         raise HTTPException(
@@ -92,35 +74,21 @@ def register_admin(payload: AdminRegisterRequest, db: Session = Depends(get_db))
 
 @router.post("/login", response_model=LoginResponse)
 def login(payload: LoginRequest, db: Session = Depends(get_db)):
-    """
-    Authenticate user and return a JWT access token.
 
-    - Validates email existence and password hash
-    - Rejects deactivated accounts
-    - Returns token + user profile (id, name, role)
-    """
-    # 1. Look up user by email
-    user: User | None = (
-        db.query(User)
-        .filter(User.email == payload.email)
-        .first()
-    )
+    user: User | None = (db.query(User).filter(User.email == payload.email).first())
 
-    # 2. Validate credentials (same error message for security)
     if not user or not verify_password(payload.password, user.password_hash):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid email or password",
         )
 
-    # 3. Check active status
     if not user.is_active:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Account is disabled. Please contact admin.",
         )
 
-    # 4. Issue JWT
     token, expires_in = create_access_token(
         subject=str(user.id),
         role=user.role.name.value,

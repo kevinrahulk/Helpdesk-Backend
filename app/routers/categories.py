@@ -33,7 +33,6 @@ def list_categories(
     db: Session = Depends(get_db),
     _: User = Depends(get_current_user),
 ):
-    """Return ticket categories. Defaults to active only."""
     q = db.query(TicketCategory)
     if active_only:
         q = q.filter(TicketCategory.is_active == True)
@@ -51,7 +50,6 @@ def create_category(
     db: Session = Depends(get_db),
     _: User = Depends(require_admin),
 ):
-    """Create a new ticket category. Admin only."""
     existing = db.query(TicketCategory).filter(TicketCategory.name == payload.name).first()
     if existing:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Category name already exists.")
@@ -62,7 +60,7 @@ def create_category(
     db.refresh(cat)
     return APIResponse(success=True, message="Category created", data=TicketCategoryResponse.model_validate(cat))
 
-
+""" Fetch single category """
 @router.get("/{category_id}", response_model=APIResponse[TicketCategoryResponse])
 def get_category(
     category_id: UUID,
@@ -74,7 +72,7 @@ def get_category(
         raise HTTPException(status_code=404, detail="Category not found.")
     return APIResponse(success=True, message="Category fetched", data=TicketCategoryResponse.model_validate(cat))
 
-
+""" Update single category """
 @router.put("/{category_id}", response_model=APIResponse[TicketCategoryResponse])
 def update_category(
     category_id: UUID,
@@ -101,7 +99,7 @@ def update_category(
     db.refresh(cat)
     return APIResponse(success=True, message="Category updated", data=TicketCategoryResponse.model_validate(cat))
 
-
+""" Delete single category """
 @router.delete("/{category_id}", response_model=APIResponse)
 def deactivate_category(
     category_id: UUID,

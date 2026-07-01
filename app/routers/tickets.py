@@ -1,5 +1,5 @@
 """
-Modules 4, 5, 6, 7, 8 — Ticket lifecycle endpoints
+Ticket lifecycle endpoints
 
 POST   /tickets                    create ticket (employee)
 GET    /tickets                    list tickets (role-filtered)
@@ -106,19 +106,18 @@ def _user_summary(user: Optional[User]) -> Optional[UserSummary]:
 # ---------------------------------------------------------------------------
 # Create Ticket
 # ---------------------------------------------------------------------------
-
+"""
+    Employee creates a new support ticket.
+    - AI suggestion ID is stored if provided (linked after ticket creation)
+    - SLA due date is auto-computed from priority
+    - Status auto-set to 'open'
+"""
 @router.post("", response_model=APIResponse[TicketResponse], status_code=status.HTTP_201_CREATED)
 def create_new_ticket(
     payload: TicketCreate,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """
-    Employee creates a new support ticket.
-    - AI suggestion ID is stored if provided (linked after ticket creation)
-    - SLA due date is auto-computed from priority
-    - Status auto-set to 'open'
-    """
     # Only employee (and optionally admin) can create tickets
     if current_user.role.name == RoleNameEnum.agent:
         raise HTTPException(status_code=403, detail="Agents cannot create tickets.")
@@ -145,6 +144,7 @@ def list_tickets(
     priority: Optional[str] = Query(None),
     category_id: Optional[UUID] = Query(None),
     search: Optional[str] = Query(None, description="Search in title"),
+    assigned: Optional[str] = Query(None, description="Filter by assignment: 'unassigned' for tickets with no assignee"),
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
@@ -183,6 +183,9 @@ def list_tickets(
     if search:
         q = q.filter(Ticket.title.ilike(f"%{search}%"))
 
+    if assigned and assigned.lower() == "unassigned":
+        q = q.filter(Ticket.assigned_to.is_(None))
+
     total = q.count()
     tickets = (
         q.options(
@@ -210,20 +213,18 @@ def list_tickets(
 # ---------------------------------------------------------------------------
 # Get Ticket Detail
 # ---------------------------------------------------------------------------
-
-@router.get("/{ticket_id}", response_model=APIResponse[TicketResponse])
-def get_ticket(
-    ticket_id: UUID,
-    db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user),
-):
-    """
+"""
     Full ticket detail with nested comments, logs, attachments.
     - Employee: only their own ticket
     - Agent: only assigned ticket
     - Admin: any ticket
     Internal comments are hidden from employees.
-    """
+"""
+@router.get("/{ticket_id}", response_model=APIResponse[TicketResponse])
+def get_ticket(
+    ticket_id: UUID,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user),):
     ticket = _get_ticket_or_404(ticket_id, db)
 
     role = current_user.role.name
@@ -243,7 +244,6 @@ def get_ticket(
 # ---------------------------------------------------------------------------
 # Update Ticket Fields
 # ---------------------------------------------------------------------------
-
 @router.patch("/{ticket_id}", response_model=APIResponse[TicketResponse])
 def update_ticket(
     ticket_id: UUID,
@@ -251,12 +251,10 @@ def update_ticket(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_agent_or_admin),
 ):
-    """Update ticket fields (title, description, category, priority, SLA). Agent/Admin only."""
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
-    # Agents can only update their assigned tickets
     if current_user.role.name == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="You can only update your assigned tickets.")
 
@@ -272,7 +270,6 @@ def update_ticket(
 # ---------------------------------------------------------------------------
 # Status Transition
 # ---------------------------------------------------------------------------
-
 @router.patch("/{ticket_id}/status", response_model=APIResponse[TicketResponse])
 def update_ticket_status(
     ticket_id: UUID,
@@ -280,11 +277,6 @@ def update_ticket_status(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_agent_or_admin),
 ):
-    """
-    Transition ticket status.
-    Enforces forward-only lifecycle: Open → In Progress → Waiting → Resolved → Closed.
-    Agents can only update their assigned tickets.
-    """
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
@@ -304,7 +296,6 @@ def update_ticket_status(
 # ---------------------------------------------------------------------------
 # Assign Ticket
 # ---------------------------------------------------------------------------
-
 @router.patch("/{ticket_id}/assign", response_model=APIResponse[TicketResponse])
 def assign_ticket_to_agent(
     ticket_id: UUID,
@@ -312,7 +303,6 @@ def assign_ticket_to_agent(
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin),
 ):
-    """Assign or reassign a ticket to an agent. Admin only."""
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
@@ -336,14 +326,12 @@ def assign_ticket_to_agent(
 # ---------------------------------------------------------------------------
 # Status Logs
 # ---------------------------------------------------------------------------
-
 @router.get("/{ticket_id}/logs", response_model=APIResponse[list[TicketStatusLogResponse]])
 def get_status_logs(
     ticket_id: UUID,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """Return the full status change audit trail for a ticket."""
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
@@ -372,7 +360,6 @@ def get_status_logs(
 # ---------------------------------------------------------------------------
 # Comments
 # ---------------------------------------------------------------------------
-
 @router.post("/{ticket_id}/comments", response_model=APIResponse[TicketCommentResponse], status_code=201)
 def add_comment(
     ticket_id: UUID,
@@ -380,24 +367,14 @@ def add_comment(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """
-    Add a comment to a ticket.
-    Employees can comment if employee_comments_enabled setting is true.
-    Agents/Admins can always comment.
-    is_internal=True marks it as an internal note hidden from employees.
-    """
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
     role = current_user.role.name
-
-    # Employee permission check
     if role == RoleNameEnum.employee:
-        # Verify they own this ticket
         if ticket.created_by != current_user.id:
             raise HTTPException(status_code=403, detail="Access denied.")
-        # Check if employee comments are enabled
         setting = db.query(SystemSetting).filter(
             SystemSetting.key == "employee_comments_enabled"
         ).first()
@@ -409,7 +386,6 @@ def add_comment(
         # Employees cannot post internal notes
         payload.is_internal = False
 
-    # Agents can only comment on assigned tickets
     if role == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="You can only comment on your assigned tickets.")
 
@@ -438,17 +414,13 @@ def add_comment(
         data=TicketCommentResponse.model_validate(comment),
     )
 
-
+# Get all the comments
 @router.get("/{ticket_id}/comments", response_model=APIResponse[list[TicketCommentResponse]])
 def list_comments(
     ticket_id: UUID,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """
-    List comments on a ticket.
-    Employees can only read public (non-internal) comments.
-    """
     ticket = db.get(Ticket, ticket_id)
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
@@ -474,7 +446,7 @@ def list_comments(
         data=[TicketCommentResponse.model_validate(c) for c in comments],
     )
 
-
+# Update the comments
 @router.patch("/{ticket_id}/comments/{comment_id}", response_model=APIResponse[TicketCommentResponse])
 def update_comment(
     ticket_id: UUID,
@@ -504,7 +476,6 @@ def update_comment(
 # ---------------------------------------------------------------------------
 # Attachments
 # ---------------------------------------------------------------------------
-
 @router.post("/{ticket_id}/attachments", response_model=APIResponse[TicketAttachmentResponse], status_code=201)
 def add_attachment_metadata(
     ticket_id: UUID,

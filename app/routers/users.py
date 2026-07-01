@@ -1,5 +1,5 @@
 """
-Module 3 — User Management (Admin only)
+User Management (Admin only)
 Endpoints:
   GET    /users                 list with filters
   POST   /users                 create employee
@@ -19,7 +19,6 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy import func
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
 from app.auth import get_current_user, hash_password, require_admin
 from app.database import get_db
 from app.models import RoleNameEnum, Ticket, TicketStatusEnum, User, Role
@@ -39,7 +38,6 @@ router = APIRouter(tags=["Users"])
 # ---------------------------------------------------------------------------
 # Helper
 # ---------------------------------------------------------------------------
-
 def _get_role_by_name(db: Session, name: RoleNameEnum) -> Role:
     role = db.query(Role).filter(Role.name == name).first()
     if not role:
@@ -58,7 +56,6 @@ def _build_user(db: Session, payload: UserCreate, role_override: Optional[RoleNa
             status_code=status.HTTP_409_CONFLICT,
             detail="Email already registered.",
         )
-
     # role_id from payload unless overridden
     if role_override:
         role = _get_role_by_name(db, role_override)
@@ -130,7 +127,6 @@ def create_employee(
     db: Session = Depends(get_db),
     _: User = Depends(require_admin),
 ):
-    """Create an Employee account. Admin only."""
     user = _build_user(db, payload, role_override=RoleNameEnum.employee)
     db.add(user)
     db.commit()
@@ -144,7 +140,6 @@ def create_agent(
     db: Session = Depends(get_db),
     _: User = Depends(require_admin),
 ):
-    """Create a Support Agent account. Admin only."""
     user = _build_user(db, payload, role_override=RoleNameEnum.agent)
     db.add(user)
     db.commit()
@@ -152,18 +147,14 @@ def create_agent(
     return APIResponse(success=True, message="Agent created", data=UserResponse.model_validate(user))
 
 
+"""Return all active agents with their current open ticket count. Admin only."""
 @router.get("/agents", response_model=APIResponse[list[AgentWorkload]])
 def list_agents(
     db: Session = Depends(get_db),
     _: User = Depends(require_admin),
 ):
-    """Return all active agents with their current open ticket count. Admin only."""
     agent_role = _get_role_by_name(db, RoleNameEnum.agent)
-    agents = (
-        db.query(User)
-        .filter(User.role_id == agent_role.id, User.is_active == True)
-        .all()
-    )
+    agents = (db.query(User).filter(User.role_id == agent_role.id, User.is_active == True).all())
 
     workload = []
     for agent in agents:

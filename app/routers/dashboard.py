@@ -1,5 +1,5 @@
 """
-Module 2 — Dashboard
+Dashboard
 GET /dashboard  — role-filtered summary statistics
 """
 
@@ -12,7 +12,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import func
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
+from datetime import date
+# pyrefly: ignore [missing-import]
 from app.auth import get_current_user
 from app.database import get_db
 from app.models import (
@@ -34,18 +35,17 @@ from app.schemas import (
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
 
-
+"""
+    Returns role-specific dashboard data:
+    - Employee  → own ticket counts + recent
+    - Agent     → assigned ticket counts + SLA breach count
+    - Admin     → system-wide counts + agent workload
+"""
 @router.get("", response_model=APIResponse)
 def get_dashboard(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """
-    Returns role-specific dashboard data:
-    - Employee  → own ticket counts + recent
-    - Agent     → assigned ticket counts + SLA breach count
-    - Admin     → system-wide counts + agent workload
-    """
     role = current_user.role.name
     now = datetime.now(timezone.utc)
 
@@ -80,7 +80,7 @@ def get_dashboard(
         open_count = base.filter(Ticket.status == TicketStatusEnum.open).count()
         in_progress = base.filter(Ticket.status == TicketStatusEnum.in_progress).count()
         waiting = base.filter(Ticket.status == TicketStatusEnum.waiting_for_user).count()
-
+        resolved_count = base.filter(Ticket.status == TicketStatusEnum.resolved).count()
         # SLA breached = sla_due_at passed and not resolved/closed
         sla_breached = base.filter(
             Ticket.sla_due_at < now,
@@ -96,6 +96,7 @@ def get_dashboard(
                 assigned_open=open_count,
                 assigned_in_progress=in_progress,
                 assigned_waiting=waiting,
+                assigned_resolved=resolved_count,
                 sla_breached=sla_breached,
                 recently_assigned=[TicketSummary.model_validate(t) for t in recent],
             ),
@@ -149,7 +150,6 @@ def get_dashboard(
             .scalar() or 0
         )
 
-        from datetime import date
         today_start = datetime.combine(date.today(), datetime.min.time()).replace(tzinfo=timezone.utc)
         todays = (
             db.query(func.count(Ticket.id))

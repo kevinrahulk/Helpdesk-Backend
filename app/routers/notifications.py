@@ -84,7 +84,6 @@ def mark_as_read(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """Mark a single notification as read."""
     notif = db.get(Notification, notification_id)
     if not notif or notif.user_id != current_user.id:
         raise HTTPException(status_code=404, detail="Notification not found.")
@@ -104,7 +103,6 @@ def mark_all_read(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    """Mark all notifications as read for the current user."""
     db.query(Notification).filter(
         Notification.user_id == current_user.id,
         Notification.is_read == False,

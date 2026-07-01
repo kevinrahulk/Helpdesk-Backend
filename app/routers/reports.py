@@ -1,5 +1,4 @@
 """
-Module 9 — Reports (Admin only)
 GET /reports/summary            high-level metrics
 GET /reports/agent-performance  per-agent performance
 GET /reports/sla                SLA compliance
@@ -24,7 +23,6 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy import func, case, cast, Float
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session, joinedload
-
 from app.auth import require_admin
 from app.database import get_db
 from app.models import (
@@ -102,17 +100,21 @@ def report_summary(
 
     # Average resolution hours (resolved_at - created_at for resolved/closed)
     resolved_tickets = q.filter(Ticket.resolved_at.isnot(None)).all()
-    avg_hours: Optional[float] = None
+    avg_hours: Optional[str] = None
     if resolved_tickets:
         total_secs = sum(
             (t.resolved_at - t.created_at).total_seconds()
             for t in resolved_tickets
             if t.resolved_at and t.created_at
         )
-        avg_hours = round(total_secs / len(resolved_tickets) / 3600, 2)
+        # avg_hours = round(total_secs / len(resolved_tickets) / 3600, 2)
+        avg_seconds = total_secs / len(resolved_tickets)
+        hours = int(avg_seconds // 3600)
+        minutes = int((avg_seconds % 3600) // 60)
+        avg_hours = f"{hours}.{minutes}"
 
     # Average response time (first comment - created_at)
-    avg_response: Optional[float] = None
+    avg_response: Optional[str] = None
     tickets_with_comments = q.filter(Ticket.resolved_at.isnot(None)).all()
     response_times = []
     for t in tickets_with_comments:
@@ -127,7 +129,11 @@ def report_summary(
             if diff > 0:
                 response_times.append(diff)
     if response_times:
-        avg_response = round(sum(response_times) / len(response_times) / 3600, 2)
+        avg_res_seconds = sum(response_times) / len(response_times)
+        res_hours = int(avg_res_seconds // 3600)
+        res_minutes = int((avg_res_seconds % 3600) // 60)
+        avg_response = f"{res_hours}.{res_minutes}"
+        
 
     # SLA compliance
     closed_or_resolved = q.filter(
@@ -206,24 +212,25 @@ def agent_performance(
             q = q.filter(Ticket.created_at <= date_to)
 
         assigned_count = q.count()
-
         resolved_count = q.filter(
             Ticket.status.in_([TicketStatusEnum.resolved, TicketStatusEnum.closed])
         ).count()
-
         open_count = q.filter(
             Ticket.status.notin_([TicketStatusEnum.resolved, TicketStatusEnum.closed])
         ).count()
-
         resolved_tickets = q.filter(Ticket.resolved_at.isnot(None)).all()
-        avg_h: Optional[float] = None
+        avg_h: Optional[str] = None
         if resolved_tickets:
             total_secs = sum(
                 (t.resolved_at - t.created_at).total_seconds()
                 for t in resolved_tickets
                 if t.resolved_at and t.created_at
             )
-            avg_h = round(total_secs / len(resolved_tickets) / 3600, 2)
+            # avg_h = round(total_secs / len(resolved_tickets) / 3600, 2)       
+            avg_seconds_agent = total_secs / len(resolved_tickets)
+            hours_agent = int(avg_seconds_agent // 3600)
+            minutes_agent = int((avg_seconds_agent % 3600) // 60)
+            avg_h = f"{hours_agent}.{minutes_agent}"    
 
         # SLA compliance
         sla_tickets = q.filter(

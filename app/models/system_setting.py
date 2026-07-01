@@ -1,16 +1,12 @@
-"""
-10. system_settings
-"""
-
 from __future__ import annotations
-
 import uuid
 from datetime import datetime
-
+# pyrefly: ignore [missing-import]
 from sqlalchemy import DateTime, String, UniqueConstraint, func
+# pyrefly: ignore [missing-import]
 from sqlalchemy.dialects.postgresql import UUID
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Mapped, mapped_column
-
 from app.models.base import Base
 
 

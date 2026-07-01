@@ -1,7 +1,3 @@
-"""
-Authentication utilities: JWT creation/verification + FastAPI dependency helpers.
-"""
-
 from __future__ import annotations
 
 from datetime import datetime, timedelta, timezone
@@ -30,21 +26,16 @@ settings = get_settings()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-
 def hash_password(plain: str) -> str:
     return pwd_context.hash(plain)
-
 
 def verify_password(plain: str, hashed: str) -> bool:
     return pwd_context.verify(plain, hashed)
 
-
 # ---------------------------------------------------------------------------
 # JWT
 # ---------------------------------------------------------------------------
-
 bearer_scheme = HTTPBearer()
-
 
 def create_access_token(subject: str, role: str) -> tuple[str, int]:
     """Return (encoded_jwt, expires_in_seconds)."""
@@ -63,11 +54,7 @@ def create_access_token(subject: str, role: str) -> tuple[str, int]:
 def decode_access_token(token: str) -> dict:
     """Decode and validate JWT. Raises HTTPException on failure."""
     try:
-        payload = jwt.decode(
-            token,
-            settings.SECRET_KEY,
-            algorithms=[settings.ALGORITHM],
-        )
+        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
         return payload
     except JWTError as exc:
         raise HTTPException(
@@ -80,7 +67,6 @@ def decode_access_token(token: str) -> dict:
 # ---------------------------------------------------------------------------
 # FastAPI Dependencies
 # ---------------------------------------------------------------------------
-
 def _get_current_user(
     credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
     db: Session = Depends(get_db),
