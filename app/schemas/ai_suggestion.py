@@ -12,6 +12,7 @@ from app.schemas.enums import SuggestionTypeEnum, TicketPriorityEnum
 
 
 class SimilarTicketRef(BaseModel):
+    ticket_id: Optional[uuid.UUID] = None
     ticket_no: str
     title: str
 

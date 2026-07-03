@@ -25,6 +25,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, 
 from sqlalchemy.orm import Session, joinedload
 from app.ai.services.ai_orchestration_service import (
     trigger_initial_ai_generation_if_missing,
+    trigger_similar_tickets_generation_if_missing,
     trigger_ai_assignment_update,
     trigger_ai_resolution_update,
 )
@@ -132,11 +133,22 @@ def create_new_ticket(
     db.refresh(ticket)
     ticket = _get_ticket_or_404(ticket.id, db)
     if not ticket.ai_summary or not ticket.ai_first_fix:
+        # Full pipeline missing (e.g. ticket submitted without using the
+        # "Analyze Issue" preview) — this run also generates and stores
+        # similar tickets, exactly once, as part of the same graph.
         background_tasks.add_task(trigger_initial_ai_generation_if_missing, ticket.id)
+    elif not ticket.ai_similar_tickets:
+        # Summary/first-fix already came from the pre-submission preview
+        # (which intentionally skips similar tickets — see
+        # generate_ticket_creation_suggestion). Now that the ticket has
+        # actually been submitted, generate similar tickets once here and
+        # cache them; every later view reads this column instead of
+        # re-invoking the LLM.
+        background_tasks.add_task(trigger_similar_tickets_generation_if_missing, ticket.id)
     return APIResponse(
         success=True,
         message="Ticket created successfully",
-        data=TicketResponse.model_validate(ticket),
+        data=_to_ticket_response(ticket, db, current_user),
     )
 
 
@@ -233,7 +245,8 @@ def get_ticket(
     ticket_id: UUID,
     background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
-    current_user: User = Depends(get_current_user),):
+    current_user: User = Depends(get_current_user),
+):
     ticket = _get_ticket_or_404(ticket_id, db)
 
     role = current_user.role.name
@@ -248,9 +261,7 @@ def get_ticket(
     # actually needed. Runs in the background so this request isn't
     # blocked on an LLM call.
     # Filter internal comments for employees
-    ticket_data = TicketResponse.model_validate(ticket)
-    if role == RoleNameEnum.employee:
-        ticket_data.comments = [c for c in ticket_data.comments if not c.is_internal]
+    ticket_data = _to_ticket_response(ticket, db, current_user)
 
     return APIResponse(success=True, message="Ticket fetched", data=ticket_data)
 
@@ -279,7 +290,7 @@ def update_ticket(
 
     db.commit()
     db.refresh(ticket)
-    return APIResponse(success=True, message="Ticket updated", data=TicketResponse.model_validate(ticket))
+    return APIResponse(success=True, message="Ticket updated", data=_to_ticket_response(ticket, db, current_user))
 
 
 # ---------------------------------------------------------------------------
@@ -307,7 +318,7 @@ def update_ticket_status(
     return APIResponse(
         success=True,
         message=f"Status updated to '{payload.status.value}'",
-        data=TicketResponse.model_validate(ticket),
+        data=_to_ticket_response(ticket, db, current_user),
     )
 
 
@@ -341,7 +352,7 @@ def assign_ticket_to_agent(
     return APIResponse(
         success=True,
         message="Ticket assigned successfully",
-        data=TicketResponse.model_validate(ticket),
+        data=_to_ticket_response(ticket, db, current_user),
     )
 
 
@@ -609,3 +620,62 @@ def list_attachments(
         message="Attachments fetched",
         data=[TicketAttachmentResponse.model_validate(a) for a in attachments],
     )
+
+
+# ---------------------------------------------------------------------------
+# Helper functions for Similar Ticket resolution
+# ---------------------------------------------------------------------------
+def resolve_similar_tickets(db: Session, raw_similar: list | str | None) -> list:
+    if not raw_similar:
+        return []
+
+    if isinstance(raw_similar, str):
+        try:
+            import json
+            items = json.loads(raw_similar)
+        except Exception:
+            return []
+    else:
+        items = raw_similar
+
+    if not isinstance(items, list):
+        return []
+
+    resolved = []
+    missing_nos = []
+    for item in items:
+        if isinstance(item, dict):
+            if not item.get("ticket_id") and item.get("ticket_no"):
+                missing_nos.append(item["ticket_no"])
+
+    id_map = {}
+    if missing_nos:
+        rows = db.query(Ticket.ticket_no, Ticket.id).filter(Ticket.ticket_no.in_(missing_nos)).all()
+        id_map = {row.ticket_no: str(row.id) for row in rows}
+
+    for item in items:
+        if isinstance(item, dict):
+            new_item = dict(item)
+            if not new_item.get("ticket_id") and new_item.get("ticket_no"):
+                new_item["ticket_id"] = id_map.get(new_item["ticket_no"])
+            resolved.append(new_item)
+        else:
+            resolved.append(item)
+
+    return resolved
+
+
+def _to_ticket_response(ticket: Ticket, db: Session, current_user: User) -> TicketResponse:
+    resolved_similar = None
+    if ticket.ai_similar_tickets:
+        resolved_similar = resolve_similar_tickets(db, ticket.ai_similar_tickets)
+
+    ticket_data = TicketResponse.model_validate(ticket)
+    if current_user.role.name == RoleNameEnum.employee:
+        ticket_data.comments = [c for c in ticket_data.comments if not c.is_internal]
+
+    if resolved_similar is not None:
+        from app.schemas.ai_suggestion import SimilarTicketRef
+        ticket_data.ai_similar_tickets = [SimilarTicketRef.model_validate(item) for item in resolved_similar]
+
+    return ticket_data

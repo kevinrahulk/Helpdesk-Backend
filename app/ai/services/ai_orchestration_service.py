@@ -41,14 +41,25 @@ async def generate_ticket_creation_suggestion(
     description: str,
     requester_id: uuid.UUID | None = None,
 ) -> TicketSuggestion:
-    """Feature 1 entry point — run the creation-assistant graph."""
+    """Feature 1 entry point — run the creation-assistant graph.
+
+    This is the *pre-submission preview* ("Analyze Issue" button): no
+    ticket exists yet, and the employee can click Analyze repeatedly
+    while editing the description. We build the graph with
+    `include_similar_tickets=False` so this preview never runs the
+    similar-ticket LLM/embedding search — that step only runs once,
+    after the ticket has actually been submitted (see
+    `trigger_initial_ai_generation_if_missing` /
+    `trigger_similar_tickets_generation_if_missing` below), and its
+    result is cached on the ticket for every later read.
+    """
     get_rate_limiter().acquire()
 
     trace_id = str(uuid.uuid4())
     started_at = time.monotonic()
     logger.info("ai.creation.start trace_id=%s title=%r", trace_id, title[:80])
 
-    graph = build_creation_graph(db)
+    graph = build_creation_graph(db, include_similar_tickets=False)
     initial_state: TicketCreationState = {
         "title": title,
         "description": description,
@@ -95,7 +106,14 @@ async def generate_ticket_creation_suggestion(
 
 
 async def trigger_initial_ai_generation_if_missing(ticket_id: uuid.UUID) -> None:
-    """Generate and store initial summary and first fix if they are missing at creation time."""
+    """Generate and store initial summary, first fix, and similar tickets
+    if they are missing at creation time.
+
+    This runs the full creation graph (`include_similar_tickets=True`),
+    so similar tickets are generated exactly once here and persisted to
+    `ticket.ai_similar_tickets` by the graph's `store_similar_tickets`
+    node — no separate similar-ticket step is needed afterward.
+    """
     from app.database import SessionLocal
     from app.models import Ticket
     
@@ -116,6 +134,53 @@ async def trigger_initial_ai_generation_if_missing(ticket_id: uuid.UUID) -> None
             logger.info("ai.creation.initial_generation_backfilled ticket_id=%s", ticket_id)
     except Exception as e:
         logger.error("Background initial AI generation failed: %s", e)
+    finally:
+        db.close()
+
+
+async def trigger_similar_tickets_generation_if_missing(ticket_id: uuid.UUID) -> None:
+    """Generate and store similar tickets for a ticket that already has
+    its summary/first-fix (i.e. the employee used the "Analyze Issue"
+    preview, which never generates similar tickets) but has no
+    `ai_similar_tickets` yet.
+
+    Runs only the similar-ticket search (no LLM calls for
+    category/priority/summary/first-fix — those are already saved),
+    exactly once, right after ticket submission, and persists the
+    result so no later view ever needs to regenerate it.
+    """
+    from app.database import SessionLocal
+    from app.models import Ticket
+    from app.ai.nodes.similar_tickets import search_similar_tickets_for_text
+    from app.ai.nodes.store_ai_data import (
+        build_store_similar_tickets_node,
+        build_store_embedding_node,
+    )
+
+    db = SessionLocal()
+    try:
+        ticket = db.get(Ticket, ticket_id)
+        if ticket and not ticket.ai_similar_tickets:
+            # 1. Store embedding so this ticket is searchable in the vector DB in the future
+            store_emb = build_store_embedding_node(db)
+            store_emb({
+                "ticket_id": ticket_id,
+                "title": ticket.title,
+                "description": ticket.description,
+            })
+            
+            # 2. Search similar tickets
+            query_text = f"{ticket.title}\n\n{ticket.description}"
+            similar = await search_similar_tickets_for_text(
+                db, query_text, exclude_ticket_id=ticket_id
+            )
+            
+            # 3. Store similar tickets list (even if empty)
+            store_sim = build_store_similar_tickets_node(db)
+            store_sim({"ticket_id": ticket_id, "similar_tickets": similar})
+            logger.info("ai.creation.similar_tickets_backfilled ticket_id=%s", ticket_id)
+    except Exception as e:
+        logger.error("Background similar-tickets generation failed: %s", e)
     finally:
         db.close()
 

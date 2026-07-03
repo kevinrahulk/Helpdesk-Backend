@@ -85,7 +85,13 @@ async def get_ticket_suggestion(
             summary=suggestion.summary,
             first_fix=suggestion.first_fix.steps if suggestion.first_fix else [],
             similar_tickets=[
-                SimilarTicketRef(ticket_no=t.ticket_no, title=t.title) for t in suggestion.similar_tickets
+                SimilarTicketRef(
+                    ticket_id=t.ticket_id,
+                    ticket_no=t.ticket_no,
+                    title=t.title,
+                    similarity=Decimal(str(t.similarity_score)),
+                )
+                for t in suggestion.similar_tickets
             ],
             confidence_score=confidence_score,
             category_confidence=(
@@ -136,7 +142,7 @@ async def get_ticket_summary(
         return APIResponse(
             success=True,
             message="Existing AI summary returned",
-            data=_to_summary_response(existing, ticket),
+            data=_to_summary_response(db, existing, ticket),
         )
 
     # Fallback: if no suggestion record exists, but we have ai_summary on the ticket:
@@ -162,7 +168,7 @@ async def get_ticket_summary(
         return APIResponse(
             success=True,
             message="AI summary returned from ticket",
-            data=_to_summary_response(new_suggestion, ticket),
+            data=_to_summary_response(db, new_suggestion, ticket),
         )
 
     # If absolutely no summary is found, return a default mock summary response.
@@ -171,15 +177,7 @@ async def get_ticket_summary(
     similar_refs = None
     if ticket.ai_similar_tickets:
         try:
-            items = ticket.ai_similar_tickets
-            if isinstance(items, str):
-                import json
-                items = json.loads(items)
-            if isinstance(items, list):
-                similar_refs = [
-                    SimilarTicketRef(ticket_no=item.get("ticket_no"), title=item.get("title"))
-                    for item in items if isinstance(item, dict)
-                ]
+            similar_refs = _resolve_similar_ticket_refs(db, ticket.ai_similar_tickets)
         except Exception:
             pass
 
@@ -204,21 +202,33 @@ async def get_ticket_summary(
     )
 
 
-def _to_summary_response(existing: TicketAISuggestion, ticket: Ticket | None = None) -> AITicketSummaryResponse:
+def _resolve_similar_ticket_refs(db: Session, raw_similar: list | str | None) -> list[SimilarTicketRef]:
+    from app.routers.tickets import resolve_similar_tickets
+    resolved_items = resolve_similar_tickets(db, raw_similar)
+
+    similar_refs = []
+    for item in resolved_items:
+        if isinstance(item, dict):
+            similar_refs.append(
+                SimilarTicketRef(
+                    ticket_id=uuid.UUID(item["ticket_id"]) if item.get("ticket_id") else None,
+                    ticket_no=item.get("ticket_no"),
+                    title=item.get("title"),
+                    similarity=(
+                        Decimal(str(item["similarity_score"])) if item.get("similarity_score") is not None else None
+                    ),
+                )
+            )
+    return similar_refs
+
+
+def _to_summary_response(db: Session, existing: TicketAISuggestion, ticket: Ticket | None = None) -> AITicketSummaryResponse:
     ctx = existing.detail_context or {}
-    
+
     similar_refs = None
     if ticket and ticket.ai_similar_tickets:
         try:
-            items = ticket.ai_similar_tickets
-            if isinstance(items, str):
-                import json
-                items = json.loads(items)
-            if isinstance(items, list):
-                similar_refs = [
-                    SimilarTicketRef(ticket_no=item.get("ticket_no"), title=item.get("title"))
-                    for item in items if isinstance(item, dict)
-                ]
+            similar_refs = _resolve_similar_ticket_refs(db, ticket.ai_similar_tickets)
         except Exception:
             pass
 

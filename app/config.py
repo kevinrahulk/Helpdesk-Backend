@@ -25,7 +25,7 @@ class Settings(BaseSettings):
 
     # App
     APP_NAME: str = "AI Helpdesk Ticket Assistant"
-    DEBUG: bool = True
+    DEBUG: bool = False
 
     # SLA hours by priority (hours from creation to breach)
     SLA_HOURS_CRITICAL: int = 4

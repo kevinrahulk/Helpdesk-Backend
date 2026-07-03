@@ -33,7 +33,7 @@ class SimilarTicketMatch:
     ticket_no: str
     title: str
     similarity_score: float
-    resolution_summary: str | None
+    resolution_summary: str | None = None
 
 
 def _cosine_similarity(a: list[float], b: list[float]) -> float:

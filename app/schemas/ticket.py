@@ -12,7 +12,7 @@ from app.schemas.ticket_category import TicketCategoryResponse
 from app.schemas.ticket_comment import TicketCommentResponse
 from app.schemas.ticket_status_log import TicketStatusLogResponse
 from app.schemas.ticket_attachment import TicketAttachmentResponse
-from app.schemas.ai_suggestion import TicketAISuggestionResponse
+from app.schemas.ai_suggestion import TicketAISuggestionResponse, SimilarTicketRef
 
 
 class TicketBase(BaseModel):
@@ -83,7 +83,7 @@ class TicketResponse(TicketBase):
 
     ai_summary: Optional[str] = None
     ai_first_fix: Optional[dict] = None
-    ai_similar_tickets: Optional[list] = None
+    ai_similar_tickets: Optional[List[SimilarTicketRef]] = None
     last_ai_updated_at: Optional[datetime] = None
 
     ai_suggestions: List[TicketAISuggestionResponse] = []
