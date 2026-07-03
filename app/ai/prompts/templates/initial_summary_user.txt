@@ -1,0 +1,6 @@
+Ticket Title: {title}
+Description: {description}
+Predicted Category: {category}
+Predicted Priority: {priority}
+Recommended First Fix: {first_fix}
+Current State: Awaiting assignment

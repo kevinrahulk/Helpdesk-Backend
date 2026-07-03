@@ -48,7 +48,7 @@ def list_categories(
 def create_category(
     payload: TicketCategoryCreate,
     db: Session = Depends(get_db),
-    _: User = Depends(require_admin),
+    _: User = Depends(get_current_user),
 ):
     existing = db.query(TicketCategory).filter(TicketCategory.name == payload.name).first()
     if existing:

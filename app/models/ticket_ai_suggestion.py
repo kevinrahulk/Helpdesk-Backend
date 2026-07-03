@@ -44,6 +44,11 @@ class TicketAISuggestion(TimestampMixin, Base):
     summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     root_cause: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     suggested_reply: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    # Feature 2 (agent detail view) structured fields that don't have a
+    # dedicated column: important_customer_info, actions_already_attempted,
+    # pending_items, risk_level, errors. Kept as JSON rather than adding four
+    # more columns since these are always read/written together.
+    detail_context: Mapped[Optional[dict]] = mapped_column(JSON, nullable=True)
 
     ticket: Mapped["Ticket"] = relationship(
         "Ticket", back_populates="ai_suggestions"

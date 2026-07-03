@@ -6,7 +6,7 @@ from typing import List, Optional
 # pyrefly: ignore [missing-import]
 from sqlalchemy import DateTime, Enum, ForeignKey, Index, String, Text, UniqueConstraint
 # pyrefly: ignore [missing-import]
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy.dialects.postgresql import UUID, JSON
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -67,6 +67,13 @@ class Ticket(TimestampMixin, Base):
         DateTime(timezone=True), nullable=True
     )
     closed_at: Mapped[Optional[datetime]] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    ai_summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    ai_first_fix: Mapped[Optional[dict]] = mapped_column(JSON, nullable=True)
+    ai_similar_tickets: Mapped[Optional[dict]] = mapped_column(JSON, nullable=True)
+    last_ai_updated_at: Mapped[Optional[datetime]] = mapped_column(
         DateTime(timezone=True), nullable=True
     )
 

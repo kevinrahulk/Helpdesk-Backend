@@ -31,6 +31,7 @@ from app.schemas import (
     APIResponse,
     EmployeeDashboard,
     TicketSummary,
+    StatusCounts,
 )
 
 router = APIRouter(prefix="/dashboard", tags=["Dashboard"])
@@ -48,7 +49,7 @@ def get_dashboard(
 ):
     role = current_user.role.name
     now = datetime.now(timezone.utc)
-
+    # Employee role
     if role == RoleNameEnum.employee:
         base = db.query(Ticket).filter(Ticket.created_by == current_user.id)
 
@@ -56,12 +57,30 @@ def get_dashboard(
             Ticket.status.notin_([TicketStatusEnum.resolved, TicketStatusEnum.closed])
         ).count()
 
-        closed_count = base.filter(
-            Ticket.status == TicketStatusEnum.closed
+        resolved_count = base.filter(
+            Ticket.status == TicketStatusEnum.resolved
+        ).count()
+
+        in_progress_count = base.filter(
+            Ticket.status == TicketStatusEnum.in_progress
+        ).count()
+
+        waiting_count = base.filter(
+            Ticket.status == TicketStatusEnum.waiting_for_user
         ).count()
 
         recent = (
             base.order_by(Ticket.created_at.desc()).limit(5).all()
+        )
+
+        counts_query = db.query(Ticket.status, func.count(Ticket.id)).filter(Ticket.created_by == current_user.id).group_by(Ticket.status).all()
+        counts_map = {status.value if status else "": count for status, count in counts_query}
+        status_counts = StatusCounts(
+            open=counts_map.get(TicketStatusEnum.open.value, 0),
+            in_progress=counts_map.get(TicketStatusEnum.in_progress.value, 0),
+            waiting_for_user=counts_map.get(TicketStatusEnum.waiting_for_user.value, 0),
+            resolved=counts_map.get(TicketStatusEnum.resolved.value, 0),
+            closed=counts_map.get(TicketStatusEnum.closed.value, 0),
         )
 
         return APIResponse(
@@ -69,7 +88,10 @@ def get_dashboard(
             message="Employee dashboard",
             data=EmployeeDashboard(
                 open_tickets=open_count,
-                closed_tickets=closed_count,
+                resolved_tickets=resolved_count,
+                in_progress_tickets=in_progress_count,
+                waiting_for_user_tickets=waiting_count,
+                status_counts=status_counts,
                 recent_tickets=[TicketSummary.model_validate(t) for t in recent],
             ),
         )
@@ -86,8 +108,21 @@ def get_dashboard(
             Ticket.sla_due_at < now,
             Ticket.status.notin_([TicketStatusEnum.resolved, TicketStatusEnum.closed]),
         ).count()
+        waiting_count = base.filter(
+            Ticket.status == TicketStatusEnum.waiting_for_user
+        ).count()
 
         recent = base.order_by(Ticket.created_at.desc()).limit(5).all()
+
+        counts_query = db.query(Ticket.status, func.count(Ticket.id)).filter(Ticket.assigned_to == current_user.id).group_by(Ticket.status).all()
+        counts_map = {status.value if status else "": count for status, count in counts_query}
+        status_counts = StatusCounts(
+            open=counts_map.get(TicketStatusEnum.open.value, 0),
+            in_progress=counts_map.get(TicketStatusEnum.in_progress.value, 0),
+            waiting_for_user=counts_map.get(TicketStatusEnum.waiting_for_user.value, 0),
+            resolved=counts_map.get(TicketStatusEnum.resolved.value, 0),
+            closed=counts_map.get(TicketStatusEnum.closed.value, 0),
+        )
 
         return APIResponse(
             success=True,
@@ -98,6 +133,8 @@ def get_dashboard(
                 assigned_waiting=waiting,
                 assigned_resolved=resolved_count,
                 sla_breached=sla_breached,
+                waiting_for_user_tickets=waiting_count,
+                status_counts=status_counts,
                 recently_assigned=[TicketSummary.model_validate(t) for t in recent],
             ),
         )
@@ -195,6 +232,16 @@ def get_dashboard(
             .all()
         )
 
+        counts_query = db.query(Ticket.status, func.count(Ticket.id)).group_by(Ticket.status).all()
+        counts_map = {status.value if status else "": count for status, count in counts_query}
+        status_counts = StatusCounts(
+            open=counts_map.get(TicketStatusEnum.open.value, 0),
+            in_progress=counts_map.get(TicketStatusEnum.in_progress.value, 0),
+            waiting_for_user=counts_map.get(TicketStatusEnum.waiting_for_user.value, 0),
+            resolved=counts_map.get(TicketStatusEnum.resolved.value, 0),
+            closed=counts_map.get(TicketStatusEnum.closed.value, 0),
+        )
+
         return APIResponse(
             success=True,
             message="Admin dashboard",
@@ -209,6 +256,7 @@ def get_dashboard(
                 high_priority_tickets=high_priority,
                 pending_assignments=unassigned,
                 todays_tickets=todays,
+                status_counts=status_counts,
                 agent_workload=workload,
                 recent_tickets=[TicketSummary.model_validate(t) for t in recent],
             ),

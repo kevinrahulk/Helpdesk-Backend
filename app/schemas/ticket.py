@@ -24,6 +24,9 @@ class TicketCreate(TicketBase):
     category_id: Optional[uuid.UUID] = None
     priority: TicketPriorityEnum = TicketPriorityEnum.medium
     ai_suggestion_id: Optional[uuid.UUID] = None
+    ai_summary: Optional[str] = None
+    ai_first_fix: Optional[dict] = None
+    ai_similar_tickets: Optional[list] = None
 
 
 class TicketUpdate(BaseModel):
@@ -77,6 +80,11 @@ class TicketResponse(TicketBase):
     closed_at: Optional[datetime] = None
     created_at: datetime
     updated_at: datetime
+
+    ai_summary: Optional[str] = None
+    ai_first_fix: Optional[dict] = None
+    ai_similar_tickets: Optional[list] = None
+    last_ai_updated_at: Optional[datetime] = None
 
     ai_suggestions: List[TicketAISuggestionResponse] = []
     comments: List[TicketCommentResponse] = []

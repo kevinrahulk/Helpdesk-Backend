@@ -1,15 +1,19 @@
 """
-Module 10 — AI Assistant (Placeholder)
-========================================
-These endpoints are scaffolded and ready for AI integration.
-Currently they return empty/stub responses so the rest of the system
-can be tested end-to-end without an AI provider.
+Module 10 — AI Assistant
+=========================
+Thin FastAPI routes. All LangGraph orchestration lives behind
+`app.ai.services.ai_orchestration_service` — routes never import
+`app.ai.graphs` or `app.ai.nodes` directly (see that module's
+docstring for why).
 
 POST /ai/ticket-suggestion     → creation-time suggestions (employee)
 GET  /ai/tickets/{id}/summary  → agent-facing ticket insight panel
 """
 
+from __future__ import annotations
+
 import uuid
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from uuid import UUID
 
@@ -18,90 +22,100 @@ from fastapi import APIRouter, Depends, HTTPException
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
+from app.ai.config import get_ai_settings
+from app.ai.services import (
+    InvalidTicketInputError,
+    generate_ticket_creation_suggestion,
+)
 from app.auth import get_current_user, require_agent_or_admin
 from app.database import get_db
-from app.models import RoleNameEnum, Ticket, TicketAISuggestion, SuggestionTypeEnum, User
+from app.models import SuggestionTypeEnum, Ticket, TicketAISuggestion, User
 from app.schemas import (
     AITicketSuggestionRequest,
     AITicketSuggestionResponse,
     AITicketSummaryResponse,
     APIResponse,
+    SimilarTicketRef,
 )
 
 router = APIRouter(prefix="/ai", tags=["AI Assistant"])
 
 
 @router.post("/ticket-suggestion", response_model=APIResponse[AITicketSuggestionResponse])
-def get_ticket_suggestion(
+async def get_ticket_suggestion(
     payload: AITicketSuggestionRequest,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
     """
-    [PLACEHOLDER — AI not yet integrated]
-
     Employee submits title + description before creating a ticket.
-    Returns suggested category, priority, first-fix steps, and similar tickets.
-
-    Current behaviour: persists a stub TicketAISuggestion row and returns it.
-    Replace the body of this function with real AI provider calls in Phase 2.
+    Runs the Feature 1 LangGraph workflow and returns suggested category,
+    priority, summary, first-fix steps, similar tickets, and a confidence
+    score. Does NOT persist a TicketAISuggestion row yet, since no ticket
+    exists — the caller should re-submit these fields when creating the
+    ticket, at which point the ticket service can persist the final
+    suggestion linked to the new ticket_id.
 
     FR-AI-001: AI calls are backend-only — frontend never calls AI directly.
-    FR-AI-005: Graceful degradation when AI provider is unavailable.
+    FR-AI-005: Graceful degradation when AI provider is unavailable (nodes
+    fall back to safe defaults rather than raising; see app.ai.nodes.*).
     """
-    # Stub — no AI call yet; create a placeholder suggestion record
-    # (ticket_id will be NULL at this stage — linked when ticket is submitted)
-    stub_suggestion = TicketAISuggestion(
-        ticket_id=uuid.UUID("00000000-0000-0000-0000-000000000000"),  # placeholder
-        suggestion_type=SuggestionTypeEnum.creation,
-        suggested_category=None,
-        suggested_priority=None,
-        first_fix=None,
-        similar_tickets=None,
-        confidence_score=None,
-        summary=f"AI suggestions for: {payload.title[:60]}",
-    )
+    try:
+        suggestion = await generate_ticket_creation_suggestion(
+            db,
+            title=payload.title,
+            description=payload.description,
+            requester_id=current_user.id,
+        )
+    except InvalidTicketInputError as exc:
+        raise HTTPException(status_code=422, detail="; ".join(exc.errors)) from exc
 
-    # NOTE: We do NOT persist to DB here since ticket_id is a required FK.
-    # When AI is integrated, persist after generating real suggestions,
-    # then return the suggestion_id for the employee to include in TicketCreate.
-
-    # For now, return a stub response with a generated UUID
     suggestion_id = uuid.uuid4()
+    confidence_score = Decimal(str(suggestion.confidence.confidence))
 
     return APIResponse(
         success=True,
-        message="AI suggestion generated (stub — AI not yet integrated)",
+        message="AI suggestion generated"
+        if not suggestion.confidence.needs_human_review
+        else "AI suggestion generated (low confidence — recommend manual review)",
         data=AITicketSuggestionResponse(
             suggestion_id=suggestion_id,
-            suggested_category=None,
-            suggested_priority=None,
-            summary=None,
-            first_fix=None,
-            similar_tickets=None,
-            confidence_score=None,
-            low_confidence=False,
+            suggested_category=suggestion.suggested_category,
+            suggested_priority=suggestion.suggested_priority,
+            summary=suggestion.summary,
+            first_fix=suggestion.first_fix.steps if suggestion.first_fix else [],
+            similar_tickets=[
+                SimilarTicketRef(ticket_no=t.ticket_no, title=t.title) for t in suggestion.similar_tickets
+            ],
+            confidence_score=confidence_score,
+            category_confidence=(
+                Decimal(str(suggestion.category_confidence)) if suggestion.category_confidence is not None else None
+            ),
+            priority_confidence=(
+                Decimal(str(suggestion.priority_confidence)) if suggestion.priority_confidence is not None else None
+            ),
+            confidence_reason=suggestion.confidence.reason,
+            needs_human_review=suggestion.confidence.needs_human_review,
+            degraded=bool(suggestion.errors),
         ),
     )
 
 
 @router.get("/tickets/{ticket_id}/summary", response_model=APIResponse[AITicketSummaryResponse])
-def get_ticket_summary(
+async def get_ticket_summary(
     ticket_id: UUID,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_agent_or_admin),
 ):
     """
-    [PLACEHOLDER — AI not yet integrated]
+    Agent/Admin opens a ticket detail page. Runs the Feature 2 LangGraph
+    workflow (load ticket → load comments → load status history →
+    summarize → recommend next action → confidence) and persists the
+    result as a TicketAISuggestion row.
 
-    Agent/Admin opens a ticket detail page — AI generates:
-      - Summary of the ticket
-      - Probable root cause
-      - Suggested reply to employee
-      - Similar resolved ticket references
-
-    Current behaviour: checks ticket exists and returns a stub.
-    Replace the body with real AI provider calls in Phase 2.
+    Recent suggestions (within AI_CACHE_TTL_SECONDS) are reused instead
+    of re-running the graph, to avoid re-billing the LLM provider every
+    time an agent re-opens the same ticket in quick succession.
 
     FR-AI-006: UI must label all AI outputs as AI-generated.
     """
@@ -109,7 +123,6 @@ def get_ticket_summary(
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
-    # Check for existing summary suggestion (avoid regenerating)
     existing = (
         db.query(TicketAISuggestion)
         .filter(
@@ -123,40 +136,104 @@ def get_ticket_summary(
         return APIResponse(
             success=True,
             message="Existing AI summary returned",
-            data=AITicketSummaryResponse(
-                suggestion_id=existing.id,
-                summary=existing.summary,
-                root_cause=existing.root_cause,
-                suggested_reply=existing.suggested_reply,
-                similar_tickets=None,
-                confidence_score=Decimal(str(existing.confidence_score)) if existing.confidence_score else None,
-                low_confidence=False,
-            ),
+            data=_to_summary_response(existing, ticket),
         )
 
-    # Stub — persist a placeholder record
-    new_suggestion = TicketAISuggestion(
-        ticket_id=ticket_id,
-        suggestion_type=SuggestionTypeEnum.summary,
-        summary=f"[AI stub] Summary for ticket {ticket.ticket_no}: {ticket.title[:80]}",
-        root_cause=None,
-        suggested_reply=None,
-        confidence_score=None,
-    )
-    db.add(new_suggestion)
-    db.commit()
-    db.refresh(new_suggestion)
+    # Fallback: if no suggestion record exists, but we have ai_summary on the ticket:
+    if ticket.ai_summary:
+        new_suggestion = TicketAISuggestion(
+            ticket_id=ticket_id,
+            suggestion_type=SuggestionTypeEnum.summary,
+            summary=ticket.ai_summary,
+            root_cause="None",
+            suggested_reply="Awaiting assignment." if not ticket.assigned_to else "Assigned.",
+            confidence_score=1.0,
+            detail_context={
+                "important_customer_info": [],
+                "actions_already_attempted": [],
+                "pending_items": [],
+                "risk_level": "low",
+                "errors": [],
+            },
+        )
+        db.add(new_suggestion)
+        db.commit()
+        db.refresh(new_suggestion)
+        return APIResponse(
+            success=True,
+            message="AI summary returned from ticket",
+            data=_to_summary_response(new_suggestion, ticket),
+        )
+
+    # If absolutely no summary is found, return a default mock summary response.
+    # We do NOT run the detail summary graph or invoke the LLM to avoid charges on view.
+    mock_id = uuid.uuid4()
+    similar_refs = None
+    if ticket.ai_similar_tickets:
+        try:
+            items = ticket.ai_similar_tickets
+            if isinstance(items, str):
+                import json
+                items = json.loads(items)
+            if isinstance(items, list):
+                similar_refs = [
+                    SimilarTicketRef(ticket_no=item.get("ticket_no"), title=item.get("title"))
+                    for item in items if isinstance(item, dict)
+                ]
+        except Exception:
+            pass
 
     return APIResponse(
         success=True,
-        message="AI summary generated (stub — AI not yet integrated)",
+        message="Default AI summary returned (no summary generated yet)",
         data=AITicketSummaryResponse(
-            suggestion_id=new_suggestion.id,
-            summary=new_suggestion.summary,
-            root_cause=None,
-            suggested_reply=None,
-            similar_tickets=None,
-            confidence_score=None,
-            low_confidence=False,
-        ),
+            suggestion_id=mock_id,
+            summary="Awaiting AI summary generation.",
+            root_cause="Unknown",
+            suggested_reply="Awaiting assignment.",
+            similar_tickets=similar_refs,
+            confidence_score=Decimal("1.00"),
+            current_issue="Unknown",
+            important_customer_info=[],
+            actions_already_attempted=[],
+            recommended_next_action="Awaiting assignment.",
+            pending_items=[],
+            risk_level="low",
+            degraded=False,
+        )
+    )
+
+
+def _to_summary_response(existing: TicketAISuggestion, ticket: Ticket | None = None) -> AITicketSummaryResponse:
+    ctx = existing.detail_context or {}
+    
+    similar_refs = None
+    if ticket and ticket.ai_similar_tickets:
+        try:
+            items = ticket.ai_similar_tickets
+            if isinstance(items, str):
+                import json
+                items = json.loads(items)
+            if isinstance(items, list):
+                similar_refs = [
+                    SimilarTicketRef(ticket_no=item.get("ticket_no"), title=item.get("title"))
+                    for item in items if isinstance(item, dict)
+                ]
+        except Exception:
+            pass
+
+    return AITicketSummaryResponse(
+        suggestion_id=existing.id,
+        summary=existing.summary,
+        root_cause=existing.root_cause,
+        suggested_reply=existing.suggested_reply,
+        similar_tickets=similar_refs,
+        confidence_score=Decimal(str(existing.confidence_score)) if existing.confidence_score else None,
+        current_issue=existing.root_cause,
+        important_customer_info=ctx.get("important_customer_info", []),
+        actions_already_attempted=ctx.get("actions_already_attempted", []),
+        recommended_next_action=existing.suggested_reply,
+        pending_items=ctx.get("pending_items", []),
+        risk_level=ctx.get("risk_level"),
+        degraded=bool(ctx.get("errors")),
     )

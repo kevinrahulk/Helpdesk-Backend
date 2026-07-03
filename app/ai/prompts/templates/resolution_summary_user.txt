@@ -1,0 +1,10 @@
+Ticket Title: {title}
+Original Description: {description}
+Assigned Agent: {agent_name}
+Current Status: {status}
+Resolution Details: {resolution_details}
+Original Summary:
+{original_summary}
+
+Comments History (Chronological):
+{comments_history}

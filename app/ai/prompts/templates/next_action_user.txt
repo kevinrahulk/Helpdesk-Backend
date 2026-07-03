@@ -1,0 +1,7 @@
+Conversation summary: {conversation_summary}
+Current issue: {current_issue}
+Actions already attempted: {actions_already_attempted}
+Pending items: {pending_items}
+Ticket priority: {priority}
+Ticket status: {status}
+SLA due at: {sla_due_at}

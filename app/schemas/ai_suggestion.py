@@ -55,6 +55,13 @@ class AITicketSuggestionResponse(BaseModel):
     similar_tickets: Optional[List[SimilarTicketRef]] = None
     confidence_score: Optional[Decimal] = Field(None, ge=Decimal("0.00"), le=Decimal("1.00"))
     low_confidence: bool = False
+    category_confidence: Optional[Decimal] = None
+    priority_confidence: Optional[Decimal] = None
+    confidence_reason: Optional[str] = None
+    needs_human_review: bool = False
+    degraded: bool = Field(
+        False, description="True if one or more AI steps fell back to a default (e.g. provider outage)."
+    )
 
     @model_validator(mode="after")
     def set_low_confidence_flag(self) -> "AITicketSuggestionResponse":
@@ -71,6 +78,17 @@ class AITicketSummaryResponse(BaseModel):
     similar_tickets: Optional[List[SimilarTicketRef]] = None
     confidence_score: Optional[Decimal] = Field(None, ge=Decimal("0.00"), le=Decimal("1.00"))
     low_confidence: bool = False
+
+    # Feature 2 — AI Ticket Detail Summary fields
+    current_issue: Optional[str] = None
+    important_customer_info: Optional[List[str]] = None
+    actions_already_attempted: Optional[List[str]] = None
+    recommended_next_action: Optional[str] = None
+    pending_items: Optional[List[str]] = None
+    risk_level: Optional[str] = None
+    degraded: bool = Field(
+        False, description="True if one or more AI steps fell back to a default (e.g. provider outage)."
+    )
 
     @model_validator(mode="after")
     def set_low_confidence_flag(self) -> "AITicketSummaryResponse":

@@ -10,12 +10,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.config import get_settings
+from app.ai.config import get_ai_settings
 from app.database import SessionLocal, engine
 from app.models import Base
 from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications
 from app.routers import settings as settings_router
 
 app_settings = get_settings()
+
+# Loaded (and validated) at import time, deliberately *outside* the
+# try/except in on_startup() below — a missing/misconfigured AI provider
+# key must crash the process on boot, not be swallowed as a warning.
+get_ai_settings()
 
 # ---------------------------------------------------------------------------
 # App instantiation

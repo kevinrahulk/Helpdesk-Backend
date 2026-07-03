@@ -1,0 +1,4 @@
+Ticket title: {title}
+
+Ticket description:
+{description}

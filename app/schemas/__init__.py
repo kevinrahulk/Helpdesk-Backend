@@ -83,6 +83,7 @@ from app.schemas.dashboard import (
     EmployeeDashboard,
     AgentDashboard,
     AdminDashboard,
+    StatusCounts,
 )
 
 # ── Reports ──────────────────────────────────────────────────────────────────
@@ -170,6 +171,7 @@ __all__ = [
     "EmployeeDashboard",
     "AgentDashboard",
     "AdminDashboard",
+    "StatusCounts",
     # reports
     "TicketVolumePoint",
     "AgentPerformanceRow",

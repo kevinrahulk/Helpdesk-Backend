@@ -1,0 +1,7 @@
+Ticket title: {title}
+
+Ticket description:
+{description}
+
+Detected urgency signal: {urgency_signal}
+Detected intent: {intent_summary}

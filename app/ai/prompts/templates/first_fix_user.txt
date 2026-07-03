@@ -1,0 +1,8 @@
+Ticket title: {title}
+
+Ticket description:
+{description}
+
+Predicted category: {category}
+Predicted priority: {priority}
+Detected intent: {intent_summary}

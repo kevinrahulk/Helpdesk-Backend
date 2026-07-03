@@ -106,6 +106,10 @@ def create_ticket(db: Session, payload: TicketCreate, creator: User) -> Ticket:
         status=TicketStatusEnum.open,
         created_by=creator.id,
         sla_due_at=sla_due,
+        ai_summary=payload.ai_summary,
+        ai_first_fix=payload.ai_first_fix,
+        ai_similar_tickets=payload.ai_similar_tickets,
+        last_ai_updated_at=datetime.utcnow() if payload.ai_summary or payload.ai_first_fix else None,
     )
     db.add(ticket)
     db.flush()  # get ticket.id before log
@@ -155,6 +159,13 @@ def transition_status(
     # BR-STAT-004: Employee cannot change status (enforced at route level too)
     if actor.role.name == RoleNameEnum.employee:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Employees cannot change ticket status.")
+
+    # BR-STAT-005: Only Admin can close tickets
+    if target == TicketStatusEnum.closed and actor.role.name != RoleNameEnum.admin:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Only Admin can close tickets.",
+        )
 
     old_status = ticket.status
     ticket.status = target

@@ -17,6 +17,7 @@ from app.models.ticket_status_log import TicketStatusLog
 from app.models.ticket_attachment import TicketAttachment
 from app.models.notification import Notification
 from app.models.system_setting import SystemSetting
+from app.models.ticket_embedding import TicketEmbedding
 
 __all__ = [
     "Base",
@@ -37,4 +38,5 @@ __all__ = [
     "TicketAttachment",
     "Notification",
     "SystemSetting",
+    "TicketEmbedding",
 ]

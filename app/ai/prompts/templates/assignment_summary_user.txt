@@ -1,0 +1,5 @@
+Original Title: {title}
+Original Description: {description}
+Assigned Agent: {agent_name}
+Existing Summary:
+{existing_summary}

@@ -20,9 +20,14 @@ from typing import Optional
 from uuid import UUID
 
 # pyrefly: ignore [missing-import]
-from fastapi import APIRouter, Depends, HTTPException, Query, status
+from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form, BackgroundTasks,status
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session, joinedload
+from app.ai.services.ai_orchestration_service import (
+    trigger_initial_ai_generation_if_missing,
+    trigger_ai_assignment_update,
+    trigger_ai_resolution_update,
+)
 
 from app.auth import get_current_user, require_admin, require_agent_or_admin
 from app.database import get_db
@@ -115,6 +120,7 @@ def _user_summary(user: Optional[User]) -> Optional[UserSummary]:
 @router.post("", response_model=APIResponse[TicketResponse], status_code=status.HTTP_201_CREATED)
 def create_new_ticket(
     payload: TicketCreate,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
@@ -125,6 +131,8 @@ def create_new_ticket(
     ticket = create_ticket(db, payload, current_user)
     db.refresh(ticket)
     ticket = _get_ticket_or_404(ticket.id, db)
+    if not ticket.ai_summary or not ticket.ai_first_fix:
+        background_tasks.add_task(trigger_initial_ai_generation_if_missing, ticket.id)
     return APIResponse(
         success=True,
         message="Ticket created successfully",
@@ -181,7 +189,7 @@ def list_tickets(
         q = q.filter(Ticket.category_id == category_id)
 
     if search:
-        q = q.filter(Ticket.title.ilike(f"%{search}%"))
+        q = q.filter(Ticket.title.ilike(f"%{search}%") | Ticket.ticket_no.ilike(f"%{search}%"))
 
     if assigned and assigned.lower() == "unassigned":
         q = q.filter(Ticket.assigned_to.is_(None))
@@ -223,6 +231,7 @@ def list_tickets(
 @router.get("/{ticket_id}", response_model=APIResponse[TicketResponse])
 def get_ticket(
     ticket_id: UUID,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),):
     ticket = _get_ticket_or_404(ticket_id, db)
@@ -233,6 +242,11 @@ def get_ticket(
     if role == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied.")
 
+    # Backfill ai_first_fix for tickets that never got one (pre-dates the
+    # AI feature, or the creation-time AI call failed) — an agent/admin
+    # opening the ticket is the natural trigger, since that's when it's
+    # actually needed. Runs in the background so this request isn't
+    # blocked on an LLM call.
     # Filter internal comments for employees
     ticket_data = TicketResponse.model_validate(ticket)
     if role == RoleNameEnum.employee:
@@ -248,6 +262,7 @@ def get_ticket(
 def update_ticket(
     ticket_id: UUID,
     payload: TicketUpdate,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_agent_or_admin),
 ):
@@ -274,6 +289,7 @@ def update_ticket(
 def update_ticket_status(
     ticket_id: UUID,
     payload: TicketStatusUpdate,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_agent_or_admin),
 ):
@@ -286,6 +302,8 @@ def update_ticket_status(
 
     ticket = transition_status(db, ticket, payload, current_user)
     db.refresh(ticket)
+    if payload.status == TicketStatusEnum.resolved:
+        background_tasks.add_task(trigger_ai_resolution_update, ticket.id)
     return APIResponse(
         success=True,
         message=f"Status updated to '{payload.status.value}'",
@@ -300,6 +318,7 @@ def update_ticket_status(
 def assign_ticket_to_agent(
     ticket_id: UUID,
     payload: TicketAssignRequest,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(require_admin),
 ):
@@ -307,6 +326,7 @@ def assign_ticket_to_agent(
     if not ticket:
         raise HTTPException(status_code=404, detail="Ticket not found.")
 
+    old_agent_id = ticket.assigned_to
     ticket = assign_ticket(db, ticket, payload.agent_id, current_user)
 
     # Send notification to the assigned agent
@@ -316,6 +336,8 @@ def assign_ticket_to_agent(
         db.commit()
 
     db.refresh(ticket)
+    if old_agent_id != payload.agent_id:
+        background_tasks.add_task(trigger_ai_assignment_update, ticket.id)
     return APIResponse(
         success=True,
         message="Ticket assigned successfully",
@@ -364,6 +386,7 @@ def get_status_logs(
 def add_comment(
     ticket_id: UUID,
     payload: TicketCommentCreate,
+    background_tasks: BackgroundTasks,
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
@@ -398,6 +421,40 @@ def add_comment(
     db.add(comment)
     db.commit()
     db.refresh(comment)
+
+    # Automated status transition on comment
+    old_status = ticket.status
+    new_status = None
+    
+    if role == RoleNameEnum.employee:
+        # Employee commented
+        if ticket.status in (TicketStatusEnum.open, TicketStatusEnum.waiting_for_user, TicketStatusEnum.resolved):
+            new_status = TicketStatusEnum.in_progress
+    else:
+        # Agent or Admin commented
+        if not payload.is_internal:
+            # It's a public reply to the employee (message to employee)
+            if ticket.status in (TicketStatusEnum.open, TicketStatusEnum.in_progress):
+                new_status = TicketStatusEnum.waiting_for_user
+                
+    if new_status and new_status != old_status:
+        ticket.status = new_status
+        now = datetime.now(timezone.utc)
+        if new_status == TicketStatusEnum.resolved:
+            ticket.resolved_at = now
+        elif new_status == TicketStatusEnum.closed:
+            ticket.closed_at = now
+            
+        log = TicketStatusLog(
+            ticket_id=ticket.id,
+            changed_by=current_user.id,
+            from_status=old_status.value,
+            to_status=new_status.value,
+            reason="Automated transition on comment",
+        )
+        db.add(log)
+        db.commit()
+        db.refresh(ticket)
 
     # Send notifications
     if role == RoleNameEnum.employee:

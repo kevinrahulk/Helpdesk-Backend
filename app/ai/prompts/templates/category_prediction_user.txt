@@ -1,0 +1,9 @@
+Ticket title: {title}
+
+Ticket description:
+{description}
+
+Detected intent: {intent_summary}
+
+Existing categories available in the system:
+{existing_categories}

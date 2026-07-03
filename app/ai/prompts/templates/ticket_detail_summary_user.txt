@@ -1,0 +1,8 @@
+Ticket:
+{ticket_block}
+
+Comments (chronological):
+{comments_block}
+
+Status history (chronological):
+{status_history_block}
