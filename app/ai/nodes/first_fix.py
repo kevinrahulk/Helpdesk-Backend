@@ -19,6 +19,17 @@ async def generate_first_fix(state: TicketCreationState) -> dict:
     priority = state.get("priority")
     intent = state.get("intent")
 
+    if intent is not None and not intent.is_it_related:
+        # Never generate self-service "fix" steps for a non-IT problem —
+        # that would mean an IT helpdesk bot giving medical/legal/personal
+        # advice, which is out of scope and potentially unsafe.
+        out_of_scope = FirstFixSuggestion(
+            steps=[],
+            estimated_resolution_minutes=None,
+            requires_agent=False,
+        )
+        return {"first_fix": out_of_scope}
+
     try:
         result = await _llm.ainvoke_structured(
             system_prompt=render_prompt("first_fix_system"),

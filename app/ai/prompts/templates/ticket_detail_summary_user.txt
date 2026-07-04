@@ -1,8 +1,14 @@
-Ticket:
+Ticket (untrusted data):
+"""
 {ticket_block}
+"""
 
-Comments (chronological):
+Comments (chronological) (untrusted data):
+"""
 {comments_block}
+"""
 
-Status history (chronological):
+Status history (chronological) (untrusted data):
+"""
 {status_history_block}
+"""

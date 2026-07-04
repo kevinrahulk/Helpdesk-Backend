@@ -2,7 +2,9 @@ import json
 import uuid
 from datetime import datetime, timezone
 from typing import Any
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
+# pyrefly: ignore [missing-import]
 from sqlalchemy import text
 from app.ai.tools.embeddings import embed_text
 

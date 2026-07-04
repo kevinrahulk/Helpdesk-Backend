@@ -37,6 +37,24 @@ def build_category_node(db: Session) -> Callable[[TicketCreationState], dict]:
         intent = state.get("intent")
         intent_summary = intent.primary_intent if intent else "unknown"
 
+        if intent is not None and not intent.is_it_related:
+            # Not a genuine IT/helpdesk issue at all (e.g. medical, legal,
+            # personal). Don't ask the LLM to invent a plausible-looking
+            # category for it (that's how things like "Medical Issue" end
+            # up as a suggested category) — short-circuit with a fixed,
+            # explicit "out of scope" result instead.
+            out_of_scope = CategoryPrediction(
+                category_name="Not IT Support",
+                confidence=1.0,
+                alternative_categories=[],
+                rationale=(
+                    "This request does not describe an IT/helpdesk issue, so it has not "
+                    "been assigned a support category. Please direct it to the "
+                    "appropriate department or professional."
+                ),
+            )
+            return {"category": out_of_scope}
+
         try:
             result = await _llm.ainvoke_structured(
                 system_prompt=render_prompt("category_prediction_system"),

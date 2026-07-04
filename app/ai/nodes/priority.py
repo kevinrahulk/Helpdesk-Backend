@@ -19,6 +19,14 @@ async def predict_priority(state: TicketCreationState) -> dict:
     urgency_signal = intent.urgency_signal if intent else "none"
     intent_summary = intent.primary_intent if intent else "unknown"
 
+    if intent is not None and not intent.is_it_related:
+        out_of_scope = PriorityPrediction(
+            priority="low",
+            confidence=1.0,
+            rationale="Not an IT/helpdesk issue, so no support priority applies.",
+        )
+        return {"priority": out_of_scope}
+
     try:
         result = await _llm.ainvoke_structured(
             system_prompt=render_prompt("priority_prediction_system"),

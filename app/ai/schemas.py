@@ -29,6 +29,10 @@ class IntentAnalysis(BaseModel):
     affected_system: Optional[str] = Field(None, description="Product/system/module the issue relates to")
     urgency_signal: Literal["none", "low", "medium", "high"] = "none"
     is_actionable: bool = Field(True, description="False if the ticket text is too vague to analyze")
+    is_it_related: bool = Field(
+        True,
+        description="False if the ticket describes a real, coherent problem that is nonetheless not an IT/helpdesk issue (e.g. medical, legal, personal, physical). Independent of is_actionable.",
+    )
 
 
 class CategoryPrediction(BaseModel):
