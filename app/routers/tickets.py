@@ -18,6 +18,7 @@ GET    /tickets/{id}/attachments   list attachments
 from datetime import datetime, timezone
 from typing import Optional
 from uuid import UUID
+from app.websocket import manager
 
 # pyrefly: ignore [missing-import]
 from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile, File, Form, BackgroundTasks,status
@@ -138,13 +139,15 @@ def create_new_ticket(
         # similar tickets, exactly once, as part of the same graph.
         background_tasks.add_task(trigger_initial_ai_generation_if_missing, ticket.id)
     elif not ticket.ai_similar_tickets:
-        # Summary/first-fix already came from the pre-submission preview
-        # (which intentionally skips similar tickets — see
-        # generate_ticket_creation_suggestion). Now that the ticket has
-        # actually been submitted, generate similar tickets once here and
-        # cache them; every later view reads this column instead of
-        # re-invoking the LLM.
         background_tasks.add_task(trigger_similar_tickets_generation_if_missing, ticket.id)
+
+    background_tasks.add_task(
+        manager.broadcast,
+        {
+            "type": "TICKET_CREATED",
+            "ticket_id": str(ticket.id),
+        }
+    )
     return APIResponse(
         success=True,
         message="Ticket created successfully",
@@ -315,6 +318,15 @@ def update_ticket_status(
     db.refresh(ticket)
     if payload.status == TicketStatusEnum.resolved:
         background_tasks.add_task(trigger_ai_resolution_update, ticket.id)
+
+    background_tasks.add_task(
+        manager.broadcast,
+        {
+            "type": "TICKET_UPDATED",
+            "ticket_id": str(ticket.id),
+            "reason": "status_change",
+        }
+    )
     return APIResponse(
         success=True,
         message=f"Status updated to '{payload.status.value}'",
@@ -349,6 +361,15 @@ def assign_ticket_to_agent(
     db.refresh(ticket)
     if old_agent_id != payload.agent_id:
         background_tasks.add_task(trigger_ai_assignment_update, ticket.id)
+
+    background_tasks.add_task(
+        manager.broadcast,
+        {
+            "type": "TICKET_UPDATED",
+            "ticket_id": str(ticket.id),
+            "reason": "assignment_change",
+        }
+    )
     return APIResponse(
         success=True,
         message="Ticket assigned successfully",
@@ -476,6 +497,15 @@ def add_comment(
 
     # Load author relationship
     db.refresh(comment, ["author"])
+
+    background_tasks.add_task(
+        manager.broadcast,
+        {
+            "type": "TICKET_UPDATED",
+            "ticket_id": str(ticket_id),
+            "reason": "new_comment",
+        }
+    )
     return APIResponse(
         success=True,
         message="Comment added",

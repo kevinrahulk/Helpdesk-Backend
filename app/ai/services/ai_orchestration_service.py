@@ -132,6 +132,11 @@ async def trigger_initial_ai_generation_if_missing(ticket_id: uuid.UUID) -> None
             }
             await graph.ainvoke(initial_state)
             logger.info("ai.creation.initial_generation_backfilled ticket_id=%s", ticket_id)
+            from app.websocket import manager
+            await manager.broadcast({
+                "type": "AI_SUMMARY_UPDATED",
+                "ticket_id": str(ticket_id),
+            })
     except Exception as e:
         logger.error("Background initial AI generation failed: %s", e)
     finally:
@@ -184,6 +189,11 @@ async def trigger_similar_tickets_generation_if_missing(ticket_id: uuid.UUID) ->
             store_sim = build_store_similar_tickets_node(db)
             store_sim({"ticket_id": ticket_id, "similar_tickets": similar})
             logger.info("ai.creation.similar_tickets_backfilled ticket_id=%s", ticket_id)
+            from app.websocket import manager
+            await manager.broadcast({
+                "type": "AI_SUMMARY_UPDATED",
+                "ticket_id": str(ticket_id),
+            })
     except Exception as e:
         logger.error("Background similar-tickets generation failed: %s", e)
     finally:
@@ -205,6 +215,11 @@ async def trigger_ai_assignment_update(ticket_id: uuid.UUID) -> None:
         }
         await graph.ainvoke(initial_state)
         logger.info("ai.assignment.summary_updated ticket_id=%s", ticket_id)
+        from app.websocket import manager
+        await manager.broadcast({
+            "type": "AI_SUMMARY_UPDATED",
+            "ticket_id": str(ticket_id),
+        })
     except Exception as e:
         logger.error("Background AI assignment summary update failed: %s", e)
     finally:
@@ -226,6 +241,11 @@ async def trigger_ai_resolution_update(ticket_id: uuid.UUID) -> None:
         }
         await graph.ainvoke(initial_state)
         logger.info("ai.resolution.summary_updated ticket_id=%s", ticket_id)
+        from app.websocket import manager
+        await manager.broadcast({
+            "type": "AI_SUMMARY_UPDATED",
+            "ticket_id": str(ticket_id),
+        })
     except Exception as e:
         logger.error("Background AI resolution summary update failed: %s", e)
     finally:

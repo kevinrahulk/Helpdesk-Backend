@@ -13,8 +13,7 @@ from app.config import get_settings
 from app.ai.config import get_ai_settings
 from app.database import SessionLocal, engine
 from app.models import Base
-from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications
-from app.routers import settings as settings_router
+from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket
 
 app_settings = get_settings()
 
@@ -67,7 +66,7 @@ async def generic_exception_handler(request: Request, exc: Exception):
 # ---------------------------------------------------------------------------
 
 @app.on_event("startup")
-def on_startup():
+async def on_startup():
     """Create all tables and seed reference data on first run."""
     try:
         Base.metadata.create_all(bind=engine)
@@ -82,6 +81,11 @@ def on_startup():
             if not existing:
                 db.add(SystemSetting(key="employee_comments_enabled", value="true"))
                 db.commit()
+
+        # Capture the running event loop for ConnectionManager
+        import asyncio
+        from app.websocket import manager
+        manager.loop = asyncio.get_running_loop()
     except Exception as exc:
         print(f"⚠️  Startup warning: {exc}")
 
@@ -98,6 +102,7 @@ app.include_router(reports.router)
 app.include_router(ai.router)
 app.include_router(notifications.router)
 app.include_router(settings_router.router)
+app.include_router(websocket.router)
 
 # ---------------------------------------------------------------------------
 # Health check

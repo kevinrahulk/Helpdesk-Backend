@@ -34,6 +34,18 @@ def create_notification(
         ticket_id=ticket_id,
     )
     db.add(notif)
+
+    # Broadcast notification in real-time via WebSocket
+    import asyncio
+    from app.websocket import manager
+    if manager.loop and manager.loop.is_running():
+        asyncio.run_coroutine_threadsafe(
+            manager.send_personal_message(
+                {"type": "NOTIFICATION_RECEIVED", "unread_count_increment": 1},
+                str(user_id)
+            ),
+            manager.loop
+        )
     return notif
 
 
