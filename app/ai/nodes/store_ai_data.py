@@ -25,11 +25,6 @@ def _serialize_similar_tickets(similar_tickets: list) -> str:
         for t in similar_tickets
     ])
 
-def build_generate_embedding_node():
-    def generate_embedding(state: Any) -> dict:
-        return {}
-    return generate_embedding
-
 def build_store_summary_node(db: Session):
     def store_summary(state: Any) -> dict:
         ticket_id = state.get("ticket_id")

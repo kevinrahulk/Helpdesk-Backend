@@ -81,6 +81,9 @@ class AISettings(BaseSettings):
     AI_MAX_RETRIES: int = 2
     AI_RETRY_BASE_DELAY_SECONDS: float = 0.5
     AI_TEMPERATURE: float = 0.2
+    # Explicit output token cap so providers (e.g. OpenRouter) don't have to
+    # assume worst-case max_tokens when estimating whether we can afford the call.
+    AI_MAX_TOKENS: int = 1536
 
     # Confidence threshold below which a ticket is flagged for human review
     AI_LOW_CONFIDENCE_THRESHOLD: float = 0.55
@@ -88,7 +91,6 @@ class AISettings(BaseSettings):
     # Feature flags — allow disabling pieces without touching graph code
     AI_ENABLE_SIMILAR_TICKETS: bool = True
     AI_ENABLE_VECTOR_SEARCH: bool = True
-    AI_ENABLE_STREAMING: bool = False
     AI_ENABLE_CACHE: bool = True
     AI_CACHE_TTL_SECONDS: int = 300
 
@@ -98,11 +100,6 @@ class AISettings(BaseSettings):
 
     # Rate limiting (token-bucket per-process; swap for Redis in a multi-worker deploy)
     AI_RATE_LIMIT_PER_MINUTE: int = 60
-
-    # Observability
-    AI_ENABLE_LANGSMITH: bool = False
-    LANGCHAIN_API_KEY: str = ""
-    LANGCHAIN_PROJECT: str = "helpdesk-ai"
 
 
 

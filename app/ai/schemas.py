@@ -54,6 +54,32 @@ class TicketSummary(BaseModel):
     summary: str
 
 
+class TicketAnalysisBundle(BaseModel):
+    """Merged output of category + priority + first_fix + summary.
+
+    Used only once analyze_intent has confirmed a ticket is genuinely
+    IT-related — collapses what used to be 3 separate LLM calls into 1.
+    Field order matches the dependency chain (category/priority decided
+    before first_fix and summary are written) so that the model's own
+    earlier field values ground its later ones during generation.
+    """
+
+    category_name: str
+    category_confidence: float = Field(..., ge=0.0, le=1.0)
+    category_alternatives: list[str] = Field(default_factory=list)
+    category_rationale: str = ""
+
+    priority: Literal["low", "medium", "high", "critical"]
+    priority_confidence: float = Field(..., ge=0.0, le=1.0)
+    priority_rationale: str = ""
+
+    first_fix_steps: list[str] = Field(default_factory=list)
+    first_fix_estimated_resolution_minutes: Optional[int] = None
+    first_fix_requires_agent: bool = False
+
+    summary: str
+
+
 class FirstFixSuggestion(BaseModel):
     steps: list[str] = Field(default_factory=list)
     estimated_resolution_minutes: Optional[int] = None

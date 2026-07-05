@@ -22,6 +22,7 @@ def build_chat_model(settings: AISettings):
         base_url=settings.OPENAI_BASE_URL,
         temperature=settings.AI_TEMPERATURE,
         timeout=settings.AI_REQUEST_TIMEOUT_SECONDS,
+        max_tokens=settings.AI_MAX_TOKENS,  # explicit cap so OpenRouter/OpenAI don't assume worst-case
         max_retries=0,  # retries are handled by app.ai.llm.base.StructuredLLM
     )
 

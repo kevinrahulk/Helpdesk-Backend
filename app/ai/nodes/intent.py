@@ -42,3 +42,13 @@ async def analyze_intent(state: TicketCreationState) -> dict:
             is_actionable=True,
         )
         return {"intent": fallback, "errors": [f"analyze_intent: {exc}"]}
+
+
+def route_after_intent(state: TicketCreationState) -> str:
+    """Conditional edge: send genuinely IT-related tickets to the full
+    analysis bundle, and everything else (medical/legal/personal/etc.)
+    straight to the fixed out-of-scope result — no further LLM calls."""
+    intent = state.get("intent")
+    if intent is not None and not intent.is_it_related:
+        return "out_of_scope"
+    return "it_related"
