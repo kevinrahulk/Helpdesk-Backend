@@ -87,6 +87,7 @@ def build_store_similar_tickets_node(db: Session):
 def build_store_embedding_node(db: Session):
     def store_embedding(state: Any) -> dict:
         ticket_id = state.get("ticket_id")
+        embedding = state.get("embedding")
         
         # In Creation State, it's title/description
         title = state.get("title")
@@ -98,9 +99,10 @@ def build_store_embedding_node(db: Session):
             description = state["ticket"].get("description", "")
             
         if ticket_id and title:
-            # Generate the embedding
+            # Generate the embedding only if not already in state
             source_text = f"Title: {title}\nDescription: {description}"
-            embedding = embed_text(source_text)
+            if not embedding:
+                embedding = embed_text(source_text)
             
             stmt = text("""
                 INSERT INTO ticket_embeddings (id, ticket_id, source_text, embedding, created_at, updated_at)

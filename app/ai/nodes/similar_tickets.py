@@ -34,6 +34,7 @@ async def search_similar_tickets_for_text(
     query_text: str,
     *,
     exclude_ticket_id: uuid.UUID | None = None,
+    query_embedding: list[float] | None = None,
 ) -> list[SimilarTicket]:
     """Reusable entry point — callable from any graph or service, not just
     the creation graph."""
@@ -42,7 +43,8 @@ async def search_similar_tickets_for_text(
         return []
 
     try:
-        query_embedding = await aembed_text(query_text)
+        if query_embedding is None:
+            query_embedding = await aembed_text(query_text)
     except Exception as exc:  # noqa: BLE001
         logger.error("Embedding generation failed for similar-ticket search: %s", exc)
         return []
@@ -62,10 +64,18 @@ async def search_similar_tickets_for_text(
 
 def build_similar_tickets_node(db: Session) -> Callable[[TicketCreationState], dict]:
     async def find_similar(state: TicketCreationState) -> dict:
-        query_text = f"{state['title']}\n\n{state['description']}"
+        query_text = f"Title: {state['title']}\nDescription: {state['description']}"
         try:
-            similar = await search_similar_tickets_for_text(db, query_text)
-            return {"similar_tickets": similar}
+            # 1. Generate query embedding once
+            query_embedding = await aembed_text(query_text)
+            # 2. Search using this embedding
+            similar = await search_similar_tickets_for_text(
+                db,
+                query_text,
+                exclude_ticket_id=state.get("ticket_id"),
+                query_embedding=query_embedding,
+            )
+            return {"similar_tickets": similar, "embedding": query_embedding}
         except Exception as exc:  # noqa: BLE001
             logger.error("find_similar_tickets node failed: %s", exc)
             return {"similar_tickets": [], "errors": [f"find_similar_tickets: {exc}"]}

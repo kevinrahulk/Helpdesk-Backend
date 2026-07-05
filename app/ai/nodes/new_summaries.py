@@ -22,45 +22,6 @@ def clean_summary_text(text: str) -> str:
     # Also clean up trailing braces or parentheses
     cleaned = cleaned.strip().rstrip("}").strip()
     return cleaned
-
-
-async def generate_initial_summary_node(state: dict) -> dict:
-    title = state.get("title", "")
-    description = state.get("description", "")
-    category = state.get("category")
-    priority = state.get("priority")
-    first_fix = state.get("first_fix")
-    
-    category_name = category.category_name if category else "Unknown"
-    priority_val = priority.priority if priority else "medium"
-    
-    # We descriptive-summarize the first fix steps if available, without numbered list.
-    first_fix_str = "None"
-    if first_fix and first_fix.steps:
-        first_fix_str = ", ".join(first_fix.steps)
-        
-    try:
-        result = await _llm.ainvoke_structured(
-            system_prompt=render_prompt("initial_summary_system"),
-            user_prompt=render_prompt(
-                "initial_summary_user",
-                title=title,
-                description=description,
-                category=category_name,
-                priority=priority_val,
-                first_fix=first_fix_str,
-            ),
-            output_model=TicketSummary,
-            node_name="generate_initial_summary",
-        )
-        result.summary = clean_summary_text(result.summary)
-        return {"summary": result}
-    except LLMInvocationError as exc:
-        logger.error("generate_initial_summary_node failed: %s", exc)
-        fallback = TicketSummary(summary=title)
-        return {"summary": fallback, "errors": [f"generate_initial_summary: {exc}"]}
-
-
 async def update_assignment_summary_node(state: dict) -> dict:
     title = state.get("title", "")
     description = state.get("description", "")

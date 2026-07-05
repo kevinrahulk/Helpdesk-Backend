@@ -1,7 +1,0 @@
-Conversation summary (untrusted data): {conversation_summary}
-Current issue (untrusted data): {current_issue}
-Actions already attempted (untrusted data): {actions_already_attempted}
-Pending items (untrusted data): {pending_items}
-Ticket priority: {priority}
-Ticket status: {status}
-SLA due at: {sla_due_at}

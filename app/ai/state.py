@@ -58,6 +58,7 @@ class TicketCreationState(TypedDict, total=False):
     first_fix: FirstFixSuggestion
     similar_tickets: list[SimilarTicket]
     confidence: ConfidenceResult
+    embedding: list[float]
 
     # ---- bookkeeping ----
     errors: Annotated[list[str], _append_errors]

@@ -161,18 +161,23 @@ async def trigger_similar_tickets_generation_if_missing(ticket_id: uuid.UUID) ->
     try:
         ticket = db.get(Ticket, ticket_id)
         if ticket and not ticket.ai_similar_tickets:
+            # Generate embedding once using standardized formatting
+            source_text = f"Title: {ticket.title}\nDescription: {ticket.description}"
+            from app.ai.tools.embeddings import aembed_text
+            embedding = await aembed_text(source_text)
+
             # 1. Store embedding so this ticket is searchable in the vector DB in the future
             store_emb = build_store_embedding_node(db)
             store_emb({
                 "ticket_id": ticket_id,
                 "title": ticket.title,
                 "description": ticket.description,
+                "embedding": embedding,
             })
             
             # 2. Search similar tickets
-            query_text = f"{ticket.title}\n\n{ticket.description}"
             similar = await search_similar_tickets_for_text(
-                db, query_text, exclude_ticket_id=ticket_id
+                db, source_text, exclude_ticket_id=ticket_id, query_embedding=embedding
             )
             
             # 3. Store similar tickets list (even if empty)
