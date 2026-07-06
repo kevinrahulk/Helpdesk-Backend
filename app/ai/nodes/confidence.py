@@ -1,18 +1,7 @@
-"""Node 8 — Feature 4: confidence evaluation.
-
-Deterministic (no LLM call — keeps this fast, cheap, and reproducible)
-aggregation of:
-  * category prediction confidence
-  * priority prediction confidence
-  * similarity match quality (best similar-ticket score, if any)
-  * a small penalty for every non-fatal node error encountered upstream
-
-Below `AI_LOW_CONFIDENCE_THRESHOLD`, `needs_human_review` is set so the
-UI can flag the ticket for manual triage.
-"""
+"""Below `AI_LOW_CONFIDENCE_THRESHOLD`, `needs_human_review` is set so the
+UI can flag the ticket for manual triage."""
 
 from __future__ import annotations
-
 from app.ai.config import get_ai_settings
 from app.ai.schemas import ConfidenceResult
 from app.ai.state import TicketCreationState

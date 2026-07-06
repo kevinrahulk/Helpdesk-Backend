@@ -22,6 +22,8 @@ def clean_summary_text(text: str) -> str:
     # Also clean up trailing braces or parentheses
     cleaned = cleaned.strip().rstrip("}").strip()
     return cleaned
+
+    
 async def update_assignment_summary_node(state: dict) -> dict:
     title = state.get("title", "")
     description = state.get("description", "")

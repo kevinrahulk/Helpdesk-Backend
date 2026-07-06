@@ -1,25 +1,12 @@
-"""Node 7 — search similar historical tickets.
 
-This is the reusable node referenced by "Feature 3 — Similar Ticket
-Search" in the spec: it's used inside the creation graph, but it's a
-standalone function that could equally be dropped into any other graph
-(e.g. an agent-facing "find related tickets" tool) because it only
-depends on (db session, query text, ticket id to exclude).
-
-If `pgvector` is available it's used automatically (see
-app.ai.tools.vector_search); otherwise an in-process cosine-similarity
-fallback runs so the feature degrades gracefully instead of breaking.
-"""
 
 from __future__ import annotations
 
 import logging
 import uuid
 from typing import Callable
-
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
 from app.ai.config import get_ai_settings
 from app.ai.schemas import SimilarTicket
 from app.ai.state import TicketCreationState
@@ -27,7 +14,6 @@ from app.ai.tools.embeddings import aembed_text
 from app.ai.tools.vector_search import find_similar_tickets
 
 logger = logging.getLogger("app.ai.nodes.similar_tickets")
-
 
 async def search_similar_tickets_for_text(
     db: Session,

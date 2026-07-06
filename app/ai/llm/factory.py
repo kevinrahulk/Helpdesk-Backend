@@ -1,21 +1,11 @@
 """
 Provider factory.
-
-This is the single place that knows how to turn a provider *name*
-(a plain string coming from config/env) into a concrete LangChain chat
-or embeddings model. Everything above this layer (nodes, graphs,
-services) only ever talks to the `BaseChatModel` / `Embeddings`
-interfaces — never to a provider-specific class — so switching
-providers is a one-line config change, not a code change.
 """
 
 from __future__ import annotations
-
 from functools import lru_cache
 from typing import Any, Callable
-
 from app.ai.config import AISettings, LLMProviderName, get_ai_settings
-
 # pyrefly: ignore [missing-import]
 from langchain_core.language_models.chat_models import BaseChatModel
 # pyrefly: ignore [missing-import]

@@ -2,6 +2,19 @@
 AI Helpdesk Ticket Assistant — FastAPI Application Entry Point
 """
 
+import logging
+import sys
+
+# Configure application-wide logging to console and app.log
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler("app.log", encoding="utf-8"),
+    ],
+)
+
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI, Request, status
 # pyrefly: ignore [missing-import]

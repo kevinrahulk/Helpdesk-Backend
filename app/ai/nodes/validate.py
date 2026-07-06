@@ -1,10 +1,3 @@
-"""Node 1 — validate the incoming ticket input.
-
-Pure Python, no LLM call. Fails fast on obviously bad input so we don't
-spend LLM budget on garbage, and gives the rest of the graph a clean
-`is_valid` flag to branch on via a conditional edge.
-"""
-
 from __future__ import annotations
 
 from app.ai.state import TicketCreationState

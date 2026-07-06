@@ -1,63 +1,8 @@
-"""
-Graph construction — Feature 1: AI Ticket Creation Assistant.
-
-    START
-      │
-      ▼
-  validate_ticket_input ──(invalid)──▶ END
-      │ (valid)
-      ▼
-  analyze_intent
-      │
-      ├──(is_it_related)────▶ analyze_ticket_bundle   (single merged LLM call:
-      │                          │                      category+priority+first_fix+summary)
-      │                          │
-      └──(not is_it_related)──▶ handle_out_of_scope_ticket   (no LLM call — fixed result)
-                                 │
-                                 ▼
-                      find_similar_tickets   (needs DB + embeddings — skipped when the graph is
-                                 │             built with include_similar_tickets=False, i.e.
-                                 │             for the pre-submission preview; see
-                                 │             build_creation_graph)
-                                 ▼
-                       evaluate_confidence
-                                 │
-                                 ▼
-      ... store_summary / store_first_fix / store_similar_tickets / store_embedding
-                                 │              (store_embedding computes and persists
-                                 ▼               the ticket's embedding — this is the
-                                END              only place an embedding is generated)
-
-Each step is an independently-testable node (see app.ai.nodes). Nodes
-that need a DB session are built as factories and closed over a
-request-scoped `Session`, so the compiled graph itself holds no global
-state and is safe to build fresh per request.
-
-`analyze_ticket_bundle` only ever runs for tickets `analyze_intent` has
-confirmed are genuinely IT-related. Tickets about something else
-entirely (medical, legal, personal, etc.) are routed to
-`handle_out_of_scope_ticket` instead, which returns a fixed category
-("Not IT Support"), priority, first-fix, and summary with zero further
-LLM calls — deliberately kept as a code-level branch rather than a
-prompt instruction inside the merged call, so the model can't
-improvise a plausible-looking category for a problem this system
-doesn't handle.
-
-Similar tickets are only ever generated (via LLM embedding + vector
-search) once the ticket has actually been submitted, and the result is
-persisted to `tickets.ai_similar_tickets` by `store_similar_tickets`.
-Every later read of similar tickets (ticket detail page, `GET
-/ai/tickets/{id}/summary`) comes straight from that column — nothing
-re-invokes the LLM just to display them again.
-"""
-
 from __future__ import annotations
-
 # pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
 # pyrefly: ignore [missing-import]
 from app.ai.nodes.bundle import build_ticket_analysis_node, handle_out_of_scope_ticket
 from app.ai.nodes.confidence import evaluate_confidence

@@ -1,16 +1,6 @@
-"""
-AI subsystem configuration.
-
-Kept separate from `app.config.Settings` so the AI layer can be reasoned
-about (and reconfigured) independently of the rest of the application.
-All values are overridable via environment variables / `.env`.
-"""
-
 from __future__ import annotations
-
 from functools import lru_cache
 from typing import Literal
-
 # pyrefly: ignore [missing-import]
 from pydantic_settings import BaseSettings,SettingsConfigDict
 # pyrefly: ignore [missing-import]
@@ -21,18 +11,7 @@ LLMProviderName = Literal["openai", "gemini", "groq"]
 # Providers that don't need an API key to build a chat model (local/self-hosted).
 _NO_KEY_REQUIRED: set[str] = set()
 
-
 class AISettings(BaseSettings):
-    """Configuration for the LangGraph AI orchestration layer.
-
-    SECURITY: no API keys have defaults here. Every provider key MUST be
-    supplied via the environment (`.env` locally, a secrets manager in
-    prod) or `AISettings()` raises `ValueError` at instantiation time —
-    see `_validate_required_keys` below. This is intentional: silently
-    falling back to an empty/dead key means every AI call fails at
-    request time with a confusing provider error instead of failing
-    loudly at startup.
-    """
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -40,15 +19,10 @@ class AISettings(BaseSettings):
         extra="ignore",
     )
 
-    # ------------------------------------------------------------------
-    # Provider selection — switching providers requires changing ONLY
-    # these values (see app.ai.llm.factory.get_chat_model).
-    # ------------------------------------------------------------------
-    AI_PRIMARY_PROVIDER: LLMProviderName = "groq"
-    # A real fallback is configured by default so a single provider
-    # outage doesn't zero out every AI feature. Set equal to
-    # AI_PRIMARY_PROVIDER (or override via env) to disable fallback.
-    AI_FALLBACK_PROVIDER: LLMProviderName | None = "openai"
+    # Primary Provider
+    AI_PRIMARY_PROVIDER: LLMProviderName = "openai"
+    # Fallback Provider
+    AI_FALLBACK_PROVIDER: LLMProviderName | None = "groq"
 
     # Per-provider model names
     OPENAI_MODEL: str = "gpt-oss-20b"

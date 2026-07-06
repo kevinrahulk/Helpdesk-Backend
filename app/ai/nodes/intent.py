@@ -1,14 +1,6 @@
-"""Node 2 — analyze ticket intent.
-
-Runs once and feeds its output into category/priority/first-fix nodes,
-so those nodes don't each have to re-derive "what is this ticket even
-about" from scratch.
-"""
-
 from __future__ import annotations
 
 import logging
-
 from app.ai.llm.base import LLMInvocationError, StructuredLLM
 from app.ai.prompts import render_prompt
 from app.ai.schemas import IntentAnalysis
@@ -45,9 +37,6 @@ async def analyze_intent(state: TicketCreationState) -> dict:
 
 
 def route_after_intent(state: TicketCreationState) -> str:
-    """Conditional edge: send genuinely IT-related tickets to the full
-    analysis bundle, and everything else (medical/legal/personal/etc.)
-    straight to the fixed out-of-scope result — no further LLM calls."""
     intent = state.get("intent")
     if intent is not None and not intent.is_it_related:
         return "out_of_scope"

@@ -1,4 +1,6 @@
+# pyrefly: ignore [missing-import]
 from langgraph.graph import END, START, StateGraph
+# pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 from app.ai.state import TicketResolutionState
 from app.ai.nodes.new_summaries import generate_resolution_summary_node
@@ -8,7 +10,6 @@ from datetime import datetime, timezone
 
 def build_resolution_graph(db: Session):
     graph = StateGraph(TicketResolutionState)
-    
     async def load_resolution_data(state: TicketResolutionState) -> dict:
         ticket = db.get(Ticket, state["ticket_id"])
         if not ticket:

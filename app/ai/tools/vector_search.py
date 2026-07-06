@@ -1,16 +1,3 @@
-"""
-Similar-ticket vector search.
-
-Primary path: Postgres + `pgvector` extension, using the `<=>` cosine
-distance operator for an index-accelerated nearest-neighbor query.
-
-Fallback path (used automatically when `pgvector` is not installed):
-load candidate embeddings and rank them with an in-process cosine
-similarity calculation. This is O(n) and intended for small/medium
-ticket volumes or local development — for large deployments, install
-`pgvector` (`pip install pgvector` + `CREATE EXTENSION vector;`).
-"""
-
 from __future__ import annotations
 
 import math

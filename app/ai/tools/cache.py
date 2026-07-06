@@ -1,14 +1,3 @@
-"""
-Lightweight TTL cache used to avoid re-calling the LLM for identical
-inputs (e.g. re-opening the same ticket detail page repeatedly, or a
-duplicate creation-assistant request).
-
-This is an in-process cache, which is fine for a single-worker
-deployment. For multi-worker / multi-instance deployments, swap
-`InMemoryTTLCache` for a Redis-backed implementation that satisfies the
-same `AICache` protocol — nothing else needs to change.
-"""
-
 from __future__ import annotations
 
 import hashlib
@@ -49,7 +38,4 @@ def make_cache_key(*parts: str) -> str:
     joined = "||".join(parts)
     return hashlib.sha256(joined.encode("utf-8")).hexdigest()
 
-
-# Process-wide singleton. Swap this import for a Redis-backed cache in
-# production multi-worker deployments (see docstring above).
 ai_cache: AICache = InMemoryTTLCache()

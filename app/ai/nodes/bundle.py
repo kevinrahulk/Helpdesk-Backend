@@ -1,28 +1,10 @@
-"""Node 3 (merged) — category + priority + first_fix + summary in one call.
 
-Replaces the previous predict_category / predict_priority /
-generate_first_fix / generate_initial_summary chain for tickets that
-analyze_intent has already confirmed are genuinely IT-related. Collapses
-what used to be up to 3 sequential LLM round-trips (category+priority
-concurrently, then first_fix, then summary) into a single call.
-
-Tickets that are NOT IT-related (medical, legal, personal, etc.) never
-reach this node at all — see `route_after_intent` in app.ai.nodes.intent
-and `handle_out_of_scope_ticket` below, which short-circuits with a
-fixed result and zero LLM calls. That split is deliberate: it keeps the
-"never let the model invent a category for a non-IT problem" guarantee
-enforced in code rather than resting on prompt instructions the model
-could ignore inside a bigger merged call.
-"""
 
 from __future__ import annotations
-
 import logging
 from typing import Callable
-
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
 from app.ai.llm.base import LLMInvocationError, StructuredLLM
 from app.ai.nodes.new_summaries import clean_summary_text
 from app.ai.prompts import render_prompt
@@ -39,7 +21,6 @@ from app.models import TicketCategory
 logger = logging.getLogger("app.ai.nodes.bundle")
 
 _llm = StructuredLLM()
-
 
 def build_ticket_analysis_node(db: Session) -> Callable[[TicketCreationState], dict]:
     """Factory (needs `db` for the active-category lookup, same as the old category node)."""
@@ -124,13 +105,7 @@ def build_ticket_analysis_node(db: Session) -> Callable[[TicketCreationState], d
 
 
 async def handle_out_of_scope_ticket(state: TicketCreationState) -> dict:
-    """No-LLM-call path for tickets analyze_intent flagged as not IT-related.
-
-    Fixed, deterministic result — never asks a model to improvise a
-    category, priority, troubleshooting steps, or "awaiting assignment"
-    framing for a problem (medical, legal, personal, etc.) this helpdesk
-    doesn't handle.
-    """
+    """No-LLM-call path for tickets analyze_intent flagged as not IT-related."""
     category = CategoryPrediction(
         category_name="Not IT Support",
         confidence=1.0,
