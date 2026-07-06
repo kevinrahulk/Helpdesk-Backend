@@ -93,7 +93,6 @@ class SimilarTicket(BaseModel):
     ticket_no: str
     title: str
     similarity_score: float = Field(..., ge=0.0, le=1.0)
-    resolution_summary: Optional[str] = None
 
 
 class ConfidenceResult(BaseModel):

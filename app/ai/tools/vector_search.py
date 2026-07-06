@@ -33,7 +33,6 @@ class SimilarTicketMatch:
     ticket_no: str
     title: str
     similarity_score: float
-    resolution_summary: str | None = None
 
 
 def _cosine_similarity(a: list[float], b: list[float]) -> float:
@@ -76,7 +75,6 @@ def _search_pgvector(
             te.ticket_id,
             t.ticket_no,
             t.title,
-            te.resolution_summary,
             1 - (te.embedding <=> CAST(:query_embedding AS vector)) AS similarity
         FROM ticket_embeddings te
         JOIN tickets t ON t.id = te.ticket_id
@@ -100,7 +98,6 @@ def _search_pgvector(
             ticket_no=row.ticket_no,
             title=row.title,
             similarity_score=round(float(row.similarity), 4),
-            resolution_summary=row.resolution_summary,
         )
         for row in rows
         if row.similarity >= min_score
@@ -132,7 +129,6 @@ def _search_fallback(
                     ticket_no=ticket.ticket_no,
                     title=ticket.title,
                     similarity_score=round(score, 4),
-                    resolution_summary=embedding_row.resolution_summary,
                 )
             )
 
@@ -145,7 +141,6 @@ def upsert_ticket_embedding(
     ticket_id: uuid.UUID,
     source_text: str,
     embedding: list[float],
-    resolution_summary: str | None = None,
 ) -> TicketEmbedding:
     """Create or update the embedding row for a ticket (call after create/resolve)."""
     existing = (
@@ -154,8 +149,6 @@ def upsert_ticket_embedding(
     if existing:
         existing.source_text = source_text
         existing.embedding = embedding
-        if resolution_summary is not None:
-            existing.resolution_summary = resolution_summary
         db.commit()
         db.refresh(existing)
         return existing
@@ -164,7 +157,6 @@ def upsert_ticket_embedding(
         ticket_id=ticket_id,
         source_text=source_text,
         embedding=embedding,
-        resolution_summary=resolution_summary,
     )
     db.add(row)
     db.commit()

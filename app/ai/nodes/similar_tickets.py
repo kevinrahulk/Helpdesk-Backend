@@ -56,7 +56,6 @@ async def search_similar_tickets_for_text(
             ticket_no=m.ticket_no,
             title=m.title,
             similarity_score=m.similarity_score,
-            resolution_summary=m.resolution_summary,
         )
         for m in matches
     ]

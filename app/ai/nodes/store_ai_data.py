@@ -12,7 +12,7 @@ from app.ai.tools.embeddings import embed_text
 def _serialize_similar_tickets(similar_tickets: list) -> str:
     """Turn a list of `SimilarTicket` pydantic models into the plain
     JSON shape the frontend/`SimilarTicketRef` parsing expects:
-    [{"ticket_no": ..., "title": ..., "similarity_score": ..., "resolution_summary": ...}, ...]
+    [{"ticket_no": ..., "title": ..., "similarity_score": ...}, ...]
     """
     return json.dumps([
         {
@@ -20,7 +20,6 @@ def _serialize_similar_tickets(similar_tickets: list) -> str:
             "ticket_no": t.ticket_no,
             "title": t.title,
             "similarity_score": t.similarity_score,
-            "resolution_summary": t.resolution_summary,
         }
         for t in similar_tickets
     ])

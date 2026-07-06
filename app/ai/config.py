@@ -44,14 +44,14 @@ class AISettings(BaseSettings):
     # Provider selection — switching providers requires changing ONLY
     # these values (see app.ai.llm.factory.get_chat_model).
     # ------------------------------------------------------------------
-    AI_PRIMARY_PROVIDER: LLMProviderName = "openai"
+    AI_PRIMARY_PROVIDER: LLMProviderName = "groq"
     # A real fallback is configured by default so a single provider
     # outage doesn't zero out every AI feature. Set equal to
     # AI_PRIMARY_PROVIDER (or override via env) to disable fallback.
-    AI_FALLBACK_PROVIDER: LLMProviderName | None = "gemini"
+    AI_FALLBACK_PROVIDER: LLMProviderName | None = "openai"
 
     # Per-provider model names
-    OPENAI_MODEL: str = "gpt-oss-120b"
+    OPENAI_MODEL: str = "gpt-oss-20b"
     OPENAI_API_KEY: str = Field(default="")
     OPENAI_BASE_URL: str = "https://openrouter.ai/api/v1"
 
@@ -75,7 +75,7 @@ class AISettings(BaseSettings):
     AI_TEMPERATURE: float = 0.2
     # Explicit output token cap so providers (e.g. OpenRouter) don't have to
     # assume worst-case max_tokens when estimating whether we can afford the call.
-    AI_MAX_TOKENS: int = 640
+    AI_MAX_TOKENS: int = 1536
 
     # Confidence threshold below which a ticket is flagged for human review
     AI_LOW_CONFIDENCE_THRESHOLD: float = 0.55

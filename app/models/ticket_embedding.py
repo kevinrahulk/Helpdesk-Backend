@@ -69,7 +69,6 @@ class TicketEmbedding(TimestampMixin, Base):
     )
     embedding = mapped_column(Vector(_settings.EMBEDDING_DIMENSIONS), nullable=False)
     source_text: Mapped[str] = mapped_column(Text, nullable=False)
-    resolution_summary: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
 
     ticket: Mapped["Ticket"] = relationship("Ticket")
 
