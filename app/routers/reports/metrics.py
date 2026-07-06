@@ -1,28 +1,11 @@
-"""
-GET /reports/summary            high-level metrics
-GET /reports/agent-performance  per-agent performance
-GET /reports/sla                SLA compliance
-GET /reports/ticket-volume      volume by period
-GET /reports/category-distribution  tickets per category
-GET /reports/priority-distribution  tickets per priority
-GET /reports/employee-activity     employee activity stats
-GET /reports/export                CSV/Excel export
-"""
-
-import csv
-import io
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from typing import Optional
 from uuid import UUID
 
-# pyrefly: ignore [missing-import]
-from fastapi import APIRouter, Depends, Query
-# pyrefly: ignore [missing-import]
-from fastapi.responses import StreamingResponse
-# pyrefly: ignore [missing-import]
-from sqlalchemy import func, case, cast, Float
-# pyrefly: ignore [missing-import]
-from sqlalchemy.orm import Session, joinedload
+from fastapi import APIRouter, Depends, Query, HTTPException
+from sqlalchemy import func
+from sqlalchemy.orm import Session
+
 from app.auth import require_admin
 from app.database import get_db
 from app.models import (
@@ -35,9 +18,10 @@ from app.models import (
     User,
     Role,
 )
+from app.routers.reports.helpers import _apply_filters, _base_query
 from app.schemas import (
-    AgentPerformanceRow,
     APIResponse,
+    AgentPerformanceRow,
     CategoryDistribution,
     EmployeeActivityReport,
     EmployeeActivityRow,
@@ -47,29 +31,7 @@ from app.schemas import (
     TicketVolumePoint,
 )
 
-router = APIRouter(prefix="/reports", tags=["Reports"])
-
-
-def _base_query(db: Session, date_from: Optional[datetime], date_to: Optional[datetime]):
-    q = db.query(Ticket)
-    if date_from:
-        q = q.filter(Ticket.created_at >= date_from)
-    if date_to:
-        q = q.filter(Ticket.created_at <= date_to)
-    return q
-
-
-def _apply_filters(q, status: Optional[str], priority: Optional[str],
-                   category_id: Optional[UUID], agent_id: Optional[UUID]):
-    if status:
-        q = q.filter(Ticket.status == status)
-    if priority:
-        q = q.filter(Ticket.priority == priority)
-    if category_id:
-        q = q.filter(Ticket.category_id == category_id)
-    if agent_id:
-        q = q.filter(Ticket.assigned_to == agent_id)
-    return q
+router = APIRouter()
 
 
 @router.get("/summary", response_model=APIResponse[ReportSummary])
@@ -107,7 +69,6 @@ def report_summary(
             for t in resolved_tickets
             if t.resolved_at and t.created_at
         )
-        # avg_hours = round(total_secs / len(resolved_tickets) / 3600, 2)
         avg_seconds = total_secs / len(resolved_tickets)
         hours = int(avg_seconds // 3600)
         minutes = int((avg_seconds % 3600) // 60)
@@ -133,7 +94,6 @@ def report_summary(
         res_hours = int(avg_res_seconds // 3600)
         res_minutes = int((avg_res_seconds % 3600) // 60)
         avg_response = f"{res_hours}.{res_minutes}"
-        
 
     # SLA compliance
     closed_or_resolved = q.filter(
@@ -226,11 +186,10 @@ def agent_performance(
                 for t in resolved_tickets
                 if t.resolved_at and t.created_at
             )
-            # avg_h = round(total_secs / len(resolved_tickets) / 3600, 2)       
             avg_seconds_agent = total_secs / len(resolved_tickets)
             hours_agent = int(avg_seconds_agent // 3600)
             minutes_agent = int((avg_seconds_agent % 3600) // 60)
-            avg_h = f"{hours_agent}.{minutes_agent}"    
+            avg_h = f"{hours_agent}.{minutes_agent}"
 
         # SLA compliance
         sla_tickets = q.filter(
@@ -307,10 +266,12 @@ def ticket_volume(
 ):
     """Ticket volume grouped by day, week, or month. Admin only."""
     fmt_map = {
-        "day":   "YYYY-MM-DD",
-        "week":  "IYYY-IW",
+        "day": "YYYY-MM-DD",
+        "week": "IYYY-IW",
         "month": "YYYY-MM",
     }
+    if groupby not in fmt_map:
+        raise HTTPException(status_code=400, detail="Invalid groupby period")
     fmt = fmt_map[groupby]
 
     q = db.query(
@@ -473,65 +434,4 @@ def employee_activity(
             active_employees=active_count,
             most_active=most_active,
         ),
-    )
-
-
-@router.get("/export")
-def export_report(
-    format: str = Query("csv", pattern="^(csv|excel)$"),
-    date_from: Optional[datetime] = Query(None),
-    date_to: Optional[datetime] = Query(None),
-    status: Optional[str] = Query(None, alias="status_filter"),
-    priority: Optional[str] = Query(None),
-    category_id: Optional[UUID] = Query(None),
-    agent_id: Optional[UUID] = Query(None),
-    db: Session = Depends(get_db),
-    _: User = Depends(require_admin),
-):
-    """Export ticket data as CSV or Excel. Admin only."""
-    q = _base_query(db, date_from, date_to)
-    q = _apply_filters(q, status, priority, category_id, agent_id)
-    q = q.options(
-        joinedload(Ticket.creator),
-        joinedload(Ticket.assignee),
-        joinedload(Ticket.category),
-    )
-    tickets = q.order_by(Ticket.created_at.desc()).all()
-
-    headers = [
-        "Ticket No", "Title", "Status", "Priority", "Category",
-        "Requester", "Assignee", "Created At", "SLA Due", "Resolved At",
-    ]
-
-    rows = []
-    for t in tickets:
-        rows.append([
-            t.ticket_no,
-            t.title,
-            t.status.value if hasattr(t.status, 'value') else str(t.status),
-            t.priority.value if hasattr(t.priority, 'value') else str(t.priority),
-            t.category.name if t.category else "—",
-            t.creator.full_name if t.creator else "—",
-            t.assignee.full_name if t.assignee else "Unassigned",
-            t.created_at.isoformat() if t.created_at else "—",
-            t.sla_due_at.isoformat() if t.sla_due_at else "—",
-            t.resolved_at.isoformat() if t.resolved_at else "—",
-        ])
-
-    output = io.StringIO()
-    writer = csv.writer(output)
-    writer.writerow(headers)
-    writer.writerows(rows)
-
-    content_type = "text/csv"
-    filename = "tickets_report.csv"
-    if format == "excel":
-        content_type = "application/vnd.ms-excel"
-        filename = "tickets_report.xls"
-
-    output.seek(0)
-    return StreamingResponse(
-        iter([output.getvalue()]),
-        media_type=content_type,
-        headers={"Content-Disposition": f"attachment; filename={filename}"},
     )

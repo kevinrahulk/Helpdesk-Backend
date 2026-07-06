@@ -1,7 +1,7 @@
 """
 `StructuredLLM` is the ONE interface every AI node talks to. It hides:
 
-  * which provider is being used (OpenAI, Gemini, Claude, Ollama, Azure)
+  * which provider is being used (OpenAI, Gemini, Groq)
   * retries with exponential backoff
   * automatic fallback to a secondary provider on failure
   * response caching (optional, keyed by prompt content)
@@ -66,7 +66,10 @@ class StructuredLLM:
                 return cached
 
         def _call_provider(provider: LLMProviderName) -> TOutput:
-            model = get_chat_model(provider).with_structured_output(output_model)
+            kwargs = {}
+            if provider == "groq":
+                kwargs["method"] = "function_calling"
+            model = get_chat_model(provider).with_structured_output(output_model, **kwargs)
             return model.invoke(
                 [
                     {"role": "system", "content": system_prompt},
@@ -98,7 +101,10 @@ class StructuredLLM:
                 return cached
 
         async def _call_provider(provider: LLMProviderName) -> TOutput:
-            model = get_chat_model(provider).with_structured_output(output_model)
+            kwargs = {}
+            if provider == "groq":
+                kwargs["method"] = "function_calling"
+            model = get_chat_model(provider).with_structured_output(output_model, **kwargs)
             return await model.ainvoke(
                 [
                     {"role": "system", "content": system_prompt},

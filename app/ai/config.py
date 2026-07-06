@@ -16,10 +16,10 @@ from pydantic_settings import BaseSettings,SettingsConfigDict
 # pyrefly: ignore [missing-import]
 from pydantic import Field, model_validator
 
-LLMProviderName = Literal["openai", "gemini", "anthropic", "ollama", "azure_openai"]
+LLMProviderName = Literal["openai", "gemini", "groq"]
 
 # Providers that don't need an API key to build a chat model (local/self-hosted).
-_NO_KEY_REQUIRED: set[str] = {"ollama"}
+_NO_KEY_REQUIRED: set[str] = set()
 
 
 class AISettings(BaseSettings):
@@ -51,23 +51,15 @@ class AISettings(BaseSettings):
     AI_FALLBACK_PROVIDER: LLMProviderName | None = "gemini"
 
     # Per-provider model names
-    OPENAI_MODEL: str = "gpt-oss-20b"
+    OPENAI_MODEL: str = "gpt-oss-120b"
     OPENAI_API_KEY: str = Field(default="")
     OPENAI_BASE_URL: str = "https://openrouter.ai/api/v1"
 
     GEMINI_MODEL: str = "gemini-2.5-flash"
     GOOGLE_API_KEY: str =  Field(default="")
 
-    ANTHROPIC_MODEL: str = "claude-sonnet-4-6"
-    ANTHROPIC_API_KEY: str = ""
-
-    OLLAMA_MODEL: str = "llama3.1"
-    OLLAMA_BASE_URL: str = "http://localhost:11434"
-
-    AZURE_OPENAI_DEPLOYMENT: str = "gpt-4o-mini"
-    AZURE_OPENAI_ENDPOINT: str = ""
-    AZURE_OPENAI_API_KEY: str = ""
-    AZURE_OPENAI_API_VERSION: str = "2024-10-21"
+    GROQ_MODEL: str = "llama-3.3-70b-versatile"
+    GROQ_API_KEY: str = Field(default="")
 
     # Embeddings (used for similar-ticket vector search)
     EMBEDDING_PROVIDER: LLMProviderName = "openai"
@@ -83,7 +75,7 @@ class AISettings(BaseSettings):
     AI_TEMPERATURE: float = 0.2
     # Explicit output token cap so providers (e.g. OpenRouter) don't have to
     # assume worst-case max_tokens when estimating whether we can afford the call.
-    AI_MAX_TOKENS: int = 1536
+    AI_MAX_TOKENS: int = 640
 
     # Confidence threshold below which a ticket is flagged for human review
     AI_LOW_CONFIDENCE_THRESHOLD: float = 0.55
@@ -114,8 +106,7 @@ class AISettings(BaseSettings):
         mapping = {
             "openai": ("OPENAI_API_KEY", self.OPENAI_API_KEY),
             "gemini": ("GOOGLE_API_KEY", self.GOOGLE_API_KEY),
-            "anthropic": ("ANTHROPIC_API_KEY", self.ANTHROPIC_API_KEY),
-            "azure_openai": ("AZURE_OPENAI_API_KEY", self.AZURE_OPENAI_API_KEY),
+            "groq": ("GROQ_API_KEY", self.GROQ_API_KEY),
         }
         return mapping.get(provider)
 
@@ -133,9 +124,7 @@ class AISettings(BaseSettings):
             if key and not key[1]:
                 missing.append(f"{key[0]} (required for fallback provider {self.AI_FALLBACK_PROVIDER!r})")
 
-        if self.AI_PRIMARY_PROVIDER == "azure_openai" or self.EMBEDDING_PROVIDER == "azure_openai":
-            if not self.AZURE_OPENAI_ENDPOINT:
-                missing.append("AZURE_OPENAI_ENDPOINT (required for provider 'azure_openai')")
+
 
         if missing:
             raise ValueError(

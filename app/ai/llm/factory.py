@@ -25,9 +25,7 @@ from langchain_core.embeddings import Embeddings
 _CHAT_BUILDERS: dict[LLMProviderName, str] = {
     "openai": "app.ai.llm.providers.openai_provider",
     "gemini": "app.ai.llm.providers.gemini_provider",
-    "anthropic": "app.ai.llm.providers.anthropic_provider",
-    "ollama": "app.ai.llm.providers.ollama_provider",
-    "azure_openai": "app.ai.llm.providers.azure_openai_provider",
+    "groq": "app.ai.llm.providers.groq_provider",
 }
 
 
