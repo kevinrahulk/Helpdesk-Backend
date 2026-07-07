@@ -1,9 +1,7 @@
 from __future__ import annotations
-
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 from uuid import UUID
-
 # pyrefly: ignore [missing-import]
 from fastapi import Depends, HTTPException, status
 # pyrefly: ignore [missing-import]
@@ -13,7 +11,6 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
-
 from app.config import get_settings
 from app.database import get_db
 from app.models import User, RoleNameEnum
@@ -23,7 +20,6 @@ settings = get_settings()
 # ---------------------------------------------------------------------------
 # Password hashing
 # ---------------------------------------------------------------------------
-
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 def hash_password(plain: str) -> str:

@@ -32,6 +32,5 @@ Produce the fields in this order, since each later field should be grounded in y
    - Explains the reported issue.
    - Mentions the category and priority you chose above and why the priority is appropriate.
    - Describes the recommended first-fix guidance descriptively (never as a numbered list).
-   - States the current lifecycle state, "Awaiting assignment".
    - Highlights context useful to a support engineer.
    - Contains no unrelated content carried over from the raw ticket text, no word counts, meta-comments, JSON delimiters, or structural notes.

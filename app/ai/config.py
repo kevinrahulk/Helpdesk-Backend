@@ -20,9 +20,9 @@ class AISettings(BaseSettings):
     )
 
     # Primary Provider
-    AI_PRIMARY_PROVIDER: LLMProviderName = "groq"
+    AI_PRIMARY_PROVIDER: LLMProviderName = "openai"
     # Fallback Provider
-    AI_FALLBACK_PROVIDER: LLMProviderName | None = "openai"
+    AI_FALLBACK_PROVIDER: LLMProviderName | None = "groq"
 
     # Per-provider model names
     OPENAI_MODEL: str = "gpt-oss-20b"

@@ -16,13 +16,13 @@ from app.ai.state import TicketCreationState
 from app.ai.tools.rate_limiter import get_rate_limiter
 from app.database import SessionLocal
 from app.websocket import manager
-from app.models import Ticket
+from app.models import Ticket, User, TicketAISuggestion, SuggestionTypeEnum
+from datetime import datetime, timezone
 from app.ai.nodes.similar_tickets import search_similar_tickets_for_text
 from app.ai.nodes.store_ai_data import (
     build_store_similar_tickets_node,
     build_store_embedding_node,
 )
-from app.ai.graphs.assignment_graph import build_assignment_graph
 from app.ai.tools.embeddings import aembed_text
 from app.ai.graphs.resolution_graph import build_resolution_graph
 
@@ -167,19 +167,58 @@ async def trigger_similar_tickets_generation_if_missing(ticket_id: uuid.UUID) ->
         db.close()
 
 
-# assign to agent
 async def trigger_ai_assignment_update(ticket_id: uuid.UUID) -> None:
-    """Run the assignment-summary update graph in the background."""
+    """Update assignment details in database and broadcast without LLM call."""
     db = SessionLocal()
     try:
-        graph = build_assignment_graph(db)
-        initial_state = {
-            "ticket_id": ticket_id,
-            "errors": [],
-            "trace_id": str(uuid.uuid4()),
-        }
-        await graph.ainvoke(initial_state)
-        logger.info("ai.assignment.summary_updated ticket_id=%s", ticket_id)
+        ticket = db.get(Ticket, ticket_id)
+        if not ticket:
+            logger.warning("ai.assignment.update ticket not found ticket_id=%s", ticket_id)
+            return
+
+        agent_name = "Unassigned"
+        if ticket.assigned_to:
+            agent = db.get(User, ticket.assigned_to)
+            if agent:
+                agent_name = agent.full_name or agent.email
+
+        # Update summary text to replace "awaiting assignment" if present
+        import re
+        summary_text = ticket.ai_summary or ""
+        if summary_text:
+            summary_text = re.sub(
+                r"\b[Aa]waiting assignment\b",
+                f"assigned to {agent_name}",
+                summary_text
+            )
+            ticket.ai_summary = summary_text
+            ticket.last_ai_updated_at = datetime.now(timezone.utc)
+
+        # Update/Insert in ticket_ai_suggestions table
+        existing_suggestion = (
+            db.query(TicketAISuggestion)
+            .filter(
+                TicketAISuggestion.ticket_id == ticket_id,
+                TicketAISuggestion.suggestion_type == SuggestionTypeEnum.summary,
+            )
+            .first()
+        )
+        suggested_reply = f"Assigned to {agent_name}."
+        if existing_suggestion:
+            existing_suggestion.summary = summary_text
+            existing_suggestion.suggested_reply = suggested_reply
+            existing_suggestion.updated_at = datetime.now(timezone.utc)
+        else:
+            new_sug = TicketAISuggestion(
+                ticket_id=ticket_id,
+                suggestion_type=SuggestionTypeEnum.summary,
+                summary=summary_text or "No summary generated.",
+                suggested_reply=suggested_reply,
+            )
+            db.add(new_sug)
+        db.commit()
+
+        logger.info("ai.assignment.summary_updated ticket_id=%s (local update without LLM)", ticket_id)
         await manager.broadcast({
             "type": "AI_SUMMARY_UPDATED",
             "ticket_id": str(ticket_id),

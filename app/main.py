@@ -4,6 +4,17 @@ AI Helpdesk Ticket Assistant — FastAPI Application Entry Point
 
 import logging
 import sys
+# pyrefly: ignore [missing-import]
+from fastapi import FastAPI, Request, status
+# pyrefly: ignore [missing-import]
+from fastapi.middleware.cors import CORSMiddleware
+# pyrefly: ignore [missing-import]
+from fastapi.responses import JSONResponse
+from app.config import get_settings
+from app.ai.config import get_ai_settings
+from app.database import SessionLocal, engine
+from app.models import Base
+from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket
 
 # Configure application-wide logging to console and app.log
 logging.basicConfig(
@@ -15,18 +26,6 @@ logging.basicConfig(
     ],
 )
 
-# pyrefly: ignore [missing-import]
-from fastapi import FastAPI, Request, status
-# pyrefly: ignore [missing-import]
-from fastapi.middleware.cors import CORSMiddleware
-# pyrefly: ignore [missing-import]
-from fastapi.responses import JSONResponse
-
-from app.config import get_settings
-from app.ai.config import get_ai_settings
-from app.database import SessionLocal, engine
-from app.models import Base
-from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket
 
 app_settings = get_settings()
 
@@ -38,7 +37,6 @@ get_ai_settings()
 # ---------------------------------------------------------------------------
 # App instantiation
 # ---------------------------------------------------------------------------
-
 app = FastAPI(
     title=app_settings.APP_NAME,
     description=(
@@ -54,7 +52,6 @@ app = FastAPI(
 # ---------------------------------------------------------------------------
 # CORS — allow all origins in dev; restrict in production
 # ---------------------------------------------------------------------------
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -66,7 +63,6 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 # Global exception handlers
 # ---------------------------------------------------------------------------
-
 @app.exception_handler(Exception)
 async def generic_exception_handler(request: Request, exc: Exception):
     return JSONResponse(
@@ -77,7 +73,6 @@ async def generic_exception_handler(request: Request, exc: Exception):
 # ---------------------------------------------------------------------------
 # Startup — create tables + seed
 # ---------------------------------------------------------------------------
-
 @app.on_event("startup")
 async def on_startup():
     """Create all tables and seed reference data on first run."""
@@ -105,7 +100,6 @@ async def on_startup():
 # ---------------------------------------------------------------------------
 # Routers
 # ---------------------------------------------------------------------------
-
 app.include_router(auth.router)
 app.include_router(users.router)
 app.include_router(categories.router)
@@ -120,7 +114,6 @@ app.include_router(websocket.router)
 # ---------------------------------------------------------------------------
 # Health check
 # ---------------------------------------------------------------------------
-
 @app.get("/health", tags=["System"])
 def health_check():
     return {"status": "ok", "app": app_settings.APP_NAME}

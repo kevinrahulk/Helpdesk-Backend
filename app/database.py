@@ -3,7 +3,6 @@ from sqlalchemy import create_engine, event
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import sessionmaker, Session
 from typing import Generator
-
 from app.config import get_settings
 
 settings = get_settings()
@@ -21,7 +20,6 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine,
 )
-
 
 def get_db() -> Generator[Session, None, None]:
     """FastAPI dependency: yields a DB session and ensures it's closed after use."""

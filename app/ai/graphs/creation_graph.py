@@ -20,7 +20,6 @@ from app.ai.state import TicketCreationState
 
 def build_creation_graph(db: Session, *, include_similar_tickets: bool = True):
     """Construct and compile the Feature 1 graph, bound to `db` for this request.
-
     `include_similar_tickets` controls whether the `find_similar_tickets`
     (LLM embedding + vector search) step runs at all.
 
