@@ -85,3 +85,180 @@
 2026-07-07 00:29:25,622 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
 2026-07-07 00:29:26,382 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
 2026-07-07 00:29:26,384 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:37:46,530 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:37:46,641 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:37:46,690 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:37:48,321 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:37:48,506 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:37:48,517 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:37:48,581 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:37:48,608 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:38:07,444 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:38:07,515 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:38:07,534 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:38:08,531 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:38:08,543 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:38:08,551 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:38:08,584 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:38:08,603 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:38:08,610 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:38:08,627 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:00,525 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:00,638 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:39:00,638 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:02,212 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:02,214 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:02,260 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:02,312 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:02,356 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:02,358 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:02,398 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:39:32,401 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:32,465 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:39:32,474 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:33,260 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:33,311 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:33,389 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:33,431 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:39:33,737 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:33,815 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:33,815 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:49,408 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:49,428 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:39:49,429 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:50,894 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:50,975 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:51,019 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:39:51,101 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:39:51,122 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:40:43,799 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 00:40:43,938 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:40:43,945 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:40:47,458 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:40:47,460 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:40:47,491 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 00:40:47,626 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 00:40:47,640 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:48:38,345 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:48:38,877 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:48:38,968 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:48:46,330 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:48:46,342 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:48:46,365 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:48:53,165 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:48:53,169 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:49:24,296 [INFO] app.ai.orchestration: ai.creation.start trace_id=ae17c189-aa8e-42f7-bfb6-9e0abfe2b1a3 title='Submit Button Not Responding on Leave Request Form'
+2026-07-07 09:49:25,528 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 09:49:31,259 [WARNING] app.ai.retry: Retrying _call_provider after error (attempt 1/2): Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1536, prompt_tokens=544, total_tokens=2080, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=0, reasoning_tokens=145, rejected_prediction_tokens=None, image_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=64, cache_write_tokens=0, video_tokens=0), cost=0.000216, is_byok=False, cost_details={'upstream_inference_cost': 0.000216, 'upstream_inference_prompt_cost': 1.632e-05, 'upstream_inference_completions_cost': 0.00019968})
+2026-07-07 09:49:32,610 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 09:49:34,314 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 09:49:39,317 [INFO] app.ai.orchestration: ai.creation.done trace_id=ae17c189-aa8e-42f7-bfb6-9e0abfe2b1a3 duration_ms=15020.8 confidence=0.5845 needs_review=False errors=0
+2026-07-07 09:52:44,231 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:44,734 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:44,734 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:44,739 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:45,142 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:45,144 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:52:47,537 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:52:48,078 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:52:48,103 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:53:13,900 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:13,909 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:13,922 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:17,040 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:17,042 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:18,064 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:18,066 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:18,975 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:18,978 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:53:21,999 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:53:22,555 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:53:22,569 [WARNING] app.websocket_router: WebSocket auth failed: 401: Could not validate credentials
+2026-07-07 09:53:34,839 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:53:34,855 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:53:34,857 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:58:08,395 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:58:08,453 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:58:08,458 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:58:11,749 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:58:11,761 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:58:11,786 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 09:58:12,694 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 09:58:14,170 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 09:59:03,212 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:12:44,503 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:12:44,526 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:12:44,611 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:12:55,074 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:12:55,076 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:01,515 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:01,518 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:09,297 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:09,298 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:12,827 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:12,827 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:27,218 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:27,221 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:32,439 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:13:32,440 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:14:16,870 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:14:16,871 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:14:38,761 [INFO] app.ai.orchestration: ai.creation.start trace_id=e0a7d5ee-bcea-4af0-a1b3-10b285da7ca7 title='VPN Connection Failed After Windows Update'
+2026-07-07 10:14:41,626 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:14:44,369 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:16:03,777 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:16:03,781 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:16:03,782 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:17:37,874 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:17:37,891 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:17:37,905 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:17:45,628 [INFO] app.ai.orchestration: ai.creation.start trace_id=441c01f1-cf38-4e1e-bcc6-307920fc2713 title='VPN Connection Failed After Windows Update'
+2026-07-07 10:17:46,795 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:17:47,803 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:17:47,815 [INFO] app.ai.orchestration: ai.creation.done trace_id=441c01f1-cf38-4e1e-bcc6-307920fc2713 duration_ms=2187.3 confidence=0.595 needs_review=False errors=0
+2026-07-07 10:19:57,782 [INFO] app.ai.orchestration: ai.creation.start trace_id=3eaae619-e70a-4e3d-ad75-6d2ddd8910b3 title='VPN Connection Failed After Windows Update'
+2026-07-07 10:19:57,814 [INFO] app.ai.orchestration: ai.creation.done trace_id=3eaae619-e70a-4e3d-ad75-6d2ddd8910b3 duration_ms=31.6 confidence=0.595 needs_review=False errors=0
+2026-07-07 10:20:20,904 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:20,916 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:21,300 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/embeddings "HTTP/1.1 200 OK"
+2026-07-07 10:20:21,768 [INFO] app.ai.orchestration: ai.creation.similar_tickets_backfilled ticket_id=01ee108a-c1f1-4744-86fc-fed50bddf622
+2026-07-07 10:20:24,790 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:24,804 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:38,368 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:38,369 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:58,109 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:58,113 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:59,275 [INFO] app.websocket: WebSocket disconnected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:20:59,278 [INFO] app.websocket: WebSocket connected: user_id=b401eba2-3586-4aa4-ac25-3f24a552dbe4
+2026-07-07 10:21:38,008 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:21:38,040 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:21:47,578 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:21:47,588 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:23:59,848 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:23:59,869 [INFO] app.ai.orchestration: ai.assignment.summary_updated ticket_id=01ee108a-c1f1-4744-86fc-fed50bddf622
+2026-07-07 10:25:30,602 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:25:30,621 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:25:32,570 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:25:32,573 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-07 10:28:47,614 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:28:47,618 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:31:28,548 [INFO] httpx: HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-07-07 10:31:28,549 [WARNING] app.ai.llm: Primary provider groq failed for node=generate_resolution_summary: Error code: 400 - {'error': {'message': "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details.", 'type': 'invalid_request_error', 'code': 'tool_use_failed', 'failed_generation': '<function=TicketSummary>{"summary": "The original customer issue reported was a VPN connection failure after installing the latest Windows updates. The VPN client would start normally but time out after entering credentials, despite the user restarting their laptop and switching between Wi-Fi and mobile hotspot. The issue was isolated to the VPN connection, with other internet functions working as expected. \nThe ticket was assigned to **rahul**, who investigated the issue by checking the status and settings of the VPN client. The suspected root cause was related to the Windows updates, and specific actions were taken to resolve the issue, although the exact steps are not detailed in the provided information. \nThe outcome was successful, with the user regaining access to the company VPN and internal applications. The user confirmed that the functionality was restored, and the ticket was marked as Resolved. The final status of the ticket is Resolved, indicating that the issue has been fully addressed and the user is no longer experiencing any problems with their VPN connection."}</function>'}}
+2026-07-07 10:31:29,691 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:31:49,267 [WARNING] app.ai.retry: Retrying _call_provider after error (attempt 1/2): Could not parse response content as the length limit was reached - CompletionUsage(completion_tokens=1536, prompt_tokens=851, total_tokens=2387, completion_tokens_details=CompletionTokensDetails(accepted_prediction_tokens=None, audio_tokens=0, reasoning_tokens=1967, rejected_prediction_tokens=None, image_tokens=0), prompt_tokens_details=PromptTokensDetails(audio_tokens=0, cached_tokens=6, cache_write_tokens=0, video_tokens=0), cost=0.00052016, is_byok=False, cost_details={'upstream_inference_cost': 0.00052016, 'upstream_inference_prompt_cost': 5.936e-05, 'upstream_inference_completions_cost': 0.0004608})
+2026-07-07 10:31:50,960 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:32:00,817 [WARNING] app.ai.retry: Retrying _call_provider after error (attempt 2/2): 1 validation error for TicketSummary
+  Invalid JSON: expected value at line 1 column 1 [type=json_invalid, input_value='The user reported that a...mary":"Ticket Summary"}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/json_invalid
+2026-07-07 10:32:02,832 [INFO] httpx: HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-07-07 10:32:28,242 [ERROR] app.ai.nodes.new_summaries: generate_resolution_summary_node failed: Node 'generate_resolution_summary' failed on both 'groq' and fallback 'openai'.
+2026-07-07 10:32:28,338 [INFO] app.ai.orchestration: ai.resolution.summary_updated ticket_id=01ee108a-c1f1-4744-86fc-fed50bddf622
+2026-07-07 10:43:02,957 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:43:02,960 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:43:06,220 [INFO] app.websocket: WebSocket connected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:43:06,232 [INFO] app.websocket: WebSocket disconnected: user_id=4e94c28a-3c52-4079-a956-afb7520e6b4b
+2026-07-07 10:44:37,116 [INFO] watchfiles.main: 1 change detected
+2026-07-07 10:55:39,362 [INFO] watchfiles.main: 3 changes detected
+2026-07-07 11:06:18,708 [INFO] watchfiles.main: 1 change detected
+2026-07-07 11:06:41,653 [INFO] watchfiles.main: 1 change detected
+2026-07-07 11:06:42,066 [INFO] watchfiles.main: 1 change detected
