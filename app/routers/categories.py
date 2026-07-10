@@ -113,3 +113,9 @@ def deactivate_category(
     cat.is_active = False
     db.commit()
     return APIResponse(success=True, message="Category deactivated")
+
+@router.get("/test/trigger-500", response_model=APIResponse)
+def trigger_500_error():
+    """Intentionally raise a division by zero to trigger a 500 error."""
+    result = 1 / 0
+    return APIResponse(success=True, message="This will never be reached")

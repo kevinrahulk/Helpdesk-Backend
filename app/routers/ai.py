@@ -22,7 +22,6 @@ from fastapi import APIRouter, Depends, HTTPException
 # pyrefly: ignore [missing-import]
 from sqlalchemy.orm import Session
 
-from app.ai.config import get_ai_settings
 from app.ai.services import (
     InvalidTicketInputError,
     generate_ticket_creation_suggestion,

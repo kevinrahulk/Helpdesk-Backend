@@ -15,6 +15,13 @@ from app.ai.config import get_ai_settings
 from app.database import SessionLocal, engine
 from app.models import Base
 from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket
+# pyrefly: ignore [missing-import]
+from prometheus_fastapi_instrumentator import Instrumentator
+
+# Add this right after instantiating app = FastAPI(...) on line 40:
+
+
+
 
 # Configure application-wide logging to console and app.log
 logging.basicConfig(
@@ -25,6 +32,12 @@ logging.basicConfig(
         logging.FileHandler("app.log", encoding="utf-8"),
     ],
 )
+
+# Propagate uvicorn loggers to root logger so access logs are recorded in app.log
+logging.getLogger("uvicorn").handlers = []
+logging.getLogger("uvicorn.access").handlers = []
+logging.getLogger("uvicorn").propagate = True
+logging.getLogger("uvicorn.access").propagate = True
 
 
 app_settings = get_settings()
@@ -48,7 +61,7 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
 )
-
+Instrumentator().instrument(app).expose(app)
 # ---------------------------------------------------------------------------
 # CORS — allow all origins in dev; restrict in production
 # ---------------------------------------------------------------------------
@@ -65,6 +78,7 @@ app.add_middleware(
 # ---------------------------------------------------------------------------
 @app.exception_handler(Exception)
 async def generic_exception_handler(request: Request, exc: Exception):
+    logging.error("Unhandled exception during request to %s: %s", request.url.path, str(exc), exc_info=True)
     return JSONResponse(
         status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         content={"success": False, "message": "An unexpected error occurred. Please try again later."},
