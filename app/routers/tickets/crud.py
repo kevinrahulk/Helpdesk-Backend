@@ -145,7 +145,7 @@ def get_ticket(
 ):
     ticket = _get_ticket_or_404(ticket_id, db)
 
-    role = current_user.role.name
+    role = current_user.roles.name
     if role == RoleNameEnum.employee and ticket.created_by != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied.")
     if role == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
