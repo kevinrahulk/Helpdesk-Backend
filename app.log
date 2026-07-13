@@ -5599,3 +5599,1160 @@ AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
 2026-07-13 18:19:45,229 [INFO] uvicorn.access: 127.0.0.1:51162 - "GET /metrics HTTP/1.1" 200
 2026-07-13 18:20:00,220 [INFO] uvicorn.access: 127.0.0.1:51167 - "GET /metrics HTTP/1.1" 200
 2026-07-13 18:20:15,226 [INFO] uvicorn.access: 127.0.0.1:51171 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:20:19,566 [INFO] watchfiles.main: 19 changes detected
+2026-07-13 18:20:30,234 [INFO] uvicorn.access: 127.0.0.1:51177 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:20:45,206 [INFO] uvicorn.access: 127.0.0.1:51182 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:21:00,236 [INFO] uvicorn.access: 127.0.0.1:51209 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:21:09,336 [INFO] watchfiles.main: 41 changes detected
+2026-07-13 18:21:15,216 [INFO] uvicorn.access: 127.0.0.1:51216 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:21:16,676 [INFO] watchfiles.main: 4 changes detected
+2026-07-13 18:21:30,227 [INFO] uvicorn.access: 127.0.0.1:51219 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:21:45,222 [INFO] uvicorn.access: 127.0.0.1:51229 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:22:00,222 [INFO] uvicorn.access: 127.0.0.1:51235 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:22:15,234 [INFO] uvicorn.access: 127.0.0.1:51249 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:22:30,224 [INFO] uvicorn.access: 127.0.0.1:51261 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:22:44,195 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:44,197 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:44,223 [INFO] uvicorn.error: 127.0.0.1:51263 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:44,223 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:44,225 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:44,279 [INFO] uvicorn.access: 127.0.0.1:51265 - "GET /tickets HTTP/1.1" 200
+2026-07-13 18:22:44,299 [INFO] uvicorn.access: 127.0.0.1:51265 - "GET /tickets HTTP/1.1" 200
+2026-07-13 18:22:45,223 [INFO] uvicorn.access: 127.0.0.1:51268 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:22:45,248 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:45,248 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:45,250 [INFO] uvicorn.error: 127.0.0.1:51270 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:45,251 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:45,251 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:45,254 [INFO] uvicorn.access: 127.0.0.1:51265 - "OPTIONS /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 200
+2026-07-13 18:22:45,254 [INFO] uvicorn.access: 127.0.0.1:51267 - "OPTIONS /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:45,256 [INFO] uvicorn.access: 127.0.0.1:51274 - "OPTIONS /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 200
+2026-07-13 18:22:45,256 [INFO] uvicorn.access: 127.0.0.1:51267 - "OPTIONS /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:45,268 [INFO] uvicorn.access: 127.0.0.1:51277 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:45,281 [INFO] uvicorn.access: 127.0.0.1:51277 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:45,282 [INFO] uvicorn.access: 127.0.0.1:51265 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:45,288 [INFO] uvicorn.access: 127.0.0.1:51265 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:45,292 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:45,297 [INFO] uvicorn.access: 127.0.0.1:51276 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:45,297 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:45,315 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:45,317 [INFO] uvicorn.access: 127.0.0.1:51265 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:45,317 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:47,287 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:47,287 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:47,592 [INFO] uvicorn.error: 127.0.0.1:51288 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:47,592 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:47,593 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:47,604 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:47,605 [INFO] uvicorn.error: 127.0.0.1:51290 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:47,605 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:47,606 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:47,606 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:47,627 [INFO] uvicorn.access: 127.0.0.1:51274 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:47,632 [INFO] uvicorn.access: 127.0.0.1:51274 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:47,635 [INFO] uvicorn.access: 127.0.0.1:51277 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-13 18:22:47,637 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:47,640 [INFO] uvicorn.access: 127.0.0.1:51267 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:47,640 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:47,647 [INFO] uvicorn.access: 127.0.0.1:51277 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-13 18:22:47,659 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:47,661 [INFO] uvicorn.access: 127.0.0.1:51274 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:47,661 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:47,664 [INFO] uvicorn.access: 127.0.0.1:51278 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:47,668 [INFO] uvicorn.access: 127.0.0.1:51278 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:47,700 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:47,701 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:48,164 [INFO] uvicorn.error: 127.0.0.1:51294 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:48,164 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:48,165 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:48,179 [INFO] uvicorn.error: 127.0.0.1:51296 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:22:48,179 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:48,180 [INFO] uvicorn.error: connection open
+2026-07-13 18:22:48,208 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:22:48,209 [INFO] uvicorn.error: connection closed
+2026-07-13 18:22:48,217 [INFO] uvicorn.access: 127.0.0.1:51298 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:48,222 [INFO] uvicorn.access: 127.0.0.1:51300 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:48,222 [INFO] uvicorn.access: 127.0.0.1:51278 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-13 18:22:48,223 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:48,227 [INFO] uvicorn.access: 127.0.0.1:51277 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:48,227 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:48,233 [INFO] uvicorn.access: 127.0.0.1:51298 - "GET /ai/tickets/01ee108a-c1f1-4744-86fc-fed50bddf622/summary HTTP/1.1" 200
+2026-07-13 18:22:48,237 [INFO] uvicorn.access: 127.0.0.1:51278 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-13 18:22:48,239 [INFO] uvicorn.access: 127.0.0.1:51300 - "GET /agents HTTP/1.1" 200
+2026-07-13 18:22:48,247 [ERROR] root: Unhandled exception during request to /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622: 'User' object has no attribute 'roles'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:22:48,250 [INFO] uvicorn.access: 127.0.0.1:51302 - "GET /tickets/01ee108a-c1f1-4744-86fc-fed50bddf622 HTTP/1.1" 500
+2026-07-13 18:22:48,250 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 148, in get_ticket
+    role = current_user.roles.name
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'roles'. Did you mean: 'role'?
+2026-07-13 18:23:00,221 [INFO] uvicorn.access: 127.0.0.1:51307 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:23:15,230 [INFO] uvicorn.access: 127.0.0.1:51310 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:23:30,200 [INFO] uvicorn.access: 127.0.0.1:51316 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:23:45,210 [INFO] uvicorn.access: 127.0.0.1:51323 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:24:00,219 [INFO] uvicorn.access: 127.0.0.1:51326 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:24:15,222 [INFO] uvicorn.access: 127.0.0.1:51333 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:24:30,222 [INFO] uvicorn.access: 127.0.0.1:51337 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:24:45,222 [INFO] uvicorn.access: 127.0.0.1:51339 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:25:00,312 [INFO] uvicorn.access: 127.0.0.1:51349 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:25:15,209 [INFO] uvicorn.access: 127.0.0.1:51356 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:25:30,219 [INFO] uvicorn.access: 127.0.0.1:51359 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:25:45,215 [INFO] uvicorn.access: 127.0.0.1:51365 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:26:00,220 [INFO] uvicorn.access: 127.0.0.1:51372 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:26:15,212 [INFO] uvicorn.access: 127.0.0.1:51375 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:26:30,227 [INFO] uvicorn.access: 127.0.0.1:51377 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:26:45,264 [INFO] uvicorn.access: 127.0.0.1:51379 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:27:00,216 [INFO] uvicorn.access: 127.0.0.1:51385 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:27:15,225 [INFO] uvicorn.access: 127.0.0.1:51391 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:27:30,211 [INFO] uvicorn.access: 127.0.0.1:51406 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:27:45,217 [INFO] uvicorn.access: 127.0.0.1:51410 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:28:00,211 [INFO] uvicorn.access: 127.0.0.1:51413 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:28:15,221 [INFO] uvicorn.access: 127.0.0.1:51419 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:28:30,232 [INFO] uvicorn.access: 127.0.0.1:51424 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:28:45,215 [INFO] uvicorn.access: 127.0.0.1:51427 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:29:00,220 [INFO] uvicorn.access: 127.0.0.1:51435 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:29:15,222 [INFO] uvicorn.access: 127.0.0.1:51447 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:29:30,220 [INFO] uvicorn.access: 127.0.0.1:51448 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:29:45,235 [INFO] uvicorn.access: 127.0.0.1:51457 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:30:00,238 [INFO] uvicorn.access: 127.0.0.1:51465 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:30:15,240 [INFO] uvicorn.access: 127.0.0.1:51469 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:30:30,237 [INFO] uvicorn.access: 127.0.0.1:51478 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:30:45,243 [INFO] uvicorn.access: 127.0.0.1:51480 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:31:00,245 [INFO] uvicorn.access: 127.0.0.1:51482 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:31:15,240 [INFO] uvicorn.access: 127.0.0.1:51485 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:31:30,243 [INFO] uvicorn.access: 127.0.0.1:51487 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:31:45,250 [INFO] uvicorn.access: 127.0.0.1:51489 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:32:00,232 [INFO] uvicorn.access: 127.0.0.1:51492 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:32:15,236 [INFO] uvicorn.access: 127.0.0.1:51500 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:32:30,245 [INFO] uvicorn.access: 127.0.0.1:51511 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:32:45,231 [INFO] uvicorn.access: 127.0.0.1:51513 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:33:00,236 [INFO] uvicorn.access: 127.0.0.1:51527 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:33:15,256 [INFO] uvicorn.access: 127.0.0.1:51534 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:33:30,240 [INFO] uvicorn.access: 127.0.0.1:51540 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:33:45,244 [INFO] uvicorn.access: 127.0.0.1:51544 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:34:00,270 [INFO] uvicorn.access: 127.0.0.1:51546 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:34:15,227 [INFO] uvicorn.access: 127.0.0.1:51554 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:34:30,239 [INFO] uvicorn.access: 127.0.0.1:51575 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:34:45,232 [INFO] uvicorn.access: 127.0.0.1:51582 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:35:00,227 [INFO] uvicorn.access: 127.0.0.1:51584 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:35:15,231 [INFO] uvicorn.access: 127.0.0.1:51589 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:35:30,240 [INFO] uvicorn.access: 127.0.0.1:51598 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:35:45,232 [INFO] uvicorn.access: 127.0.0.1:51603 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:35:53,051 [INFO] watchfiles.main: 1 change detected
+2026-07-13 18:35:53,077 [WARNING] uvicorn.error: WatchFiles detected changes in 'app/routers/tickets/crud.py'. Reloading...
+2026-07-13 18:35:53,135 [INFO] uvicorn.error: Shutting down
+2026-07-13 18:35:53,160 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:35:53,165 [INFO] uvicorn.error: connection closed
+2026-07-13 18:35:53,249 [INFO] uvicorn.error: Waiting for application shutdown.
+2026-07-13 18:35:53,263 [INFO] uvicorn.error: Application shutdown complete.
+2026-07-13 18:35:53,271 [INFO] uvicorn.error: Finished server process [68070]
+2026-07-13 18:35:53,660 [INFO] watchfiles.main: 1 change detected
+2026-07-13 18:35:54,595 [INFO] uvicorn.error: Started server process [71033]
+2026-07-13 18:35:54,595 [INFO] uvicorn.error: Waiting for application startup.
+2026-07-13 18:35:54,621 [INFO] watchfiles.main: 3 changes detected
+2026-07-13 18:35:54,902 [INFO] uvicorn.error: Application startup complete.
+2026-07-13 18:35:57,236 [INFO] uvicorn.error: 127.0.0.1:51609 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:35:57,236 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:35:57,236 [INFO] uvicorn.error: connection open
+2026-07-13 18:36:00,249 [INFO] uvicorn.access: 127.0.0.1:51610 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:36:15,235 [INFO] uvicorn.access: 127.0.0.1:51615 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:36:30,226 [INFO] uvicorn.access: 127.0.0.1:51619 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:36:45,249 [INFO] uvicorn.access: 127.0.0.1:51621 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:37:00,244 [INFO] uvicorn.access: 127.0.0.1:51625 - "GET /metrics HTTP/1.1" 200
+2026-07-13 18:37:10,194 [INFO] watchfiles.main: 1 change detected
+2026-07-13 18:37:10,199 [WARNING] uvicorn.error: WatchFiles detected changes in 'app/routers/tickets/crud.py'. Reloading...
+2026-07-13 18:37:10,274 [INFO] uvicorn.error: Shutting down
+2026-07-13 18:37:10,284 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:37:10,289 [INFO] uvicorn.error: connection closed
+2026-07-13 18:37:10,379 [INFO] uvicorn.error: Waiting for application shutdown.
+2026-07-13 18:37:10,382 [INFO] uvicorn.error: Application shutdown complete.
+2026-07-13 18:37:10,382 [INFO] uvicorn.error: Finished server process [71033]
+2026-07-13 18:37:10,766 [INFO] watchfiles.main: 1 change detected
+2026-07-13 18:37:11,656 [INFO] uvicorn.error: Started server process [71160]
+2026-07-13 18:37:11,657 [INFO] uvicorn.error: Waiting for application startup.
+2026-07-13 18:37:11,675 [INFO] watchfiles.main: 3 changes detected
+2026-07-13 18:37:11,845 [INFO] uvicorn.error: Application startup complete.
+2026-07-13 18:37:14,209 [INFO] uvicorn.error: 127.0.0.1:51638 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODM5NjE5NzgsImlhdCI6MTc4MzkzMzE3OH0.QjVgpN2mjB-cW9EIz1GdzgazXTUixwYPnWa0Zw1uuOg" [accepted]
+2026-07-13 18:37:14,209 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-13 18:37:14,209 [INFO] uvicorn.error: connection open
+2026-07-13 18:37:15,239 [INFO] uvicorn.access: 127.0.0.1:51639 - "GET /metrics HTTP/1.1" 200

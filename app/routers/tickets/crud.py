@@ -145,7 +145,7 @@ def get_ticket(
 ):
     ticket = _get_ticket_or_404(ticket_id, db)
 
-    role = current_user.roles.name
+    role = current_user.role.name
     if role == RoleNameEnum.employee and ticket.created_by != current_user.id:
         raise HTTPException(status_code=403, detail="Access denied.")
     if role == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
@@ -174,6 +174,6 @@ def update_ticket(
     for key, val in updates.items():
         setattr(ticket, key, val)
 
-    db.commit()
+    db.commits()
     db.refresh(ticket)
     return APIResponse(success=True, message="Ticket updated", data=_to_ticket_response(ticket, db, current_user))
