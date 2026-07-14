@@ -99,7 +99,7 @@ def list_tickets(
     if priority:
         try:
             p = TicketPriorityEnum(priority)
-            q = q.filer(Ticket.priority == p)
+            q = q.filter(Ticket.priority == p)
         except ValueError:
             raise HTTPException(status_code=400, detail=f"Invalid priority: {priority}")
 

@@ -9223,3 +9223,1814 @@ Traceback (most recent call last):
         ^^^^^^^
 AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
 2026-07-14 11:53:19,659 [INFO] uvicorn.access: 127.0.0.1:55618 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:53:31,550 [INFO] watchfiles.main: 15 changes detected
+2026-07-14 11:53:34,631 [INFO] uvicorn.access: 127.0.0.1:55623 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:53:38,478 [INFO] watchfiles.main: 41 changes detected
+2026-07-14 11:53:44,363 [INFO] watchfiles.main: 4 changes detected
+2026-07-14 11:53:49,608 [INFO] uvicorn.access: 127.0.0.1:55629 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:53:51,298 [INFO] uvicorn.access: 127.0.0.1:55614 - "OPTIONS /tickets?priority=low HTTP/1.1" 200
+2026-07-14 11:53:51,383 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:53:51,391 [INFO] uvicorn.access: 127.0.0.1:55615 - "GET /tickets?priority=low HTTP/1.1" 500
+2026-07-14 11:53:51,391 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:53:53,681 [INFO] uvicorn.access: 127.0.0.1:55614 - "OPTIONS /tickets?priority=critical HTTP/1.1" 200
+2026-07-14 11:53:53,691 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:53:53,698 [INFO] uvicorn.access: 127.0.0.1:55614 - "GET /tickets?priority=critical HTTP/1.1" 500
+2026-07-14 11:53:53,698 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:54:04,583 [INFO] uvicorn.access: 127.0.0.1:55637 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:54:19,586 [INFO] uvicorn.access: 127.0.0.1:55640 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:54:34,584 [INFO] uvicorn.access: 127.0.0.1:55649 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:54:49,594 [INFO] uvicorn.access: 127.0.0.1:55650 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:55:04,569 [INFO] uvicorn.access: 127.0.0.1:55656 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:55:19,572 [INFO] uvicorn.access: 127.0.0.1:55658 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:55:34,593 [INFO] uvicorn.access: 127.0.0.1:55668 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:55:49,579 [INFO] uvicorn.access: 127.0.0.1:55676 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:56:04,563 [INFO] uvicorn.access: 127.0.0.1:55683 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:56:19,571 [INFO] uvicorn.access: 127.0.0.1:55686 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:56:34,591 [INFO] uvicorn.access: 127.0.0.1:55689 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:56:49,593 [INFO] uvicorn.access: 127.0.0.1:55694 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:57:04,571 [INFO] uvicorn.access: 127.0.0.1:55700 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:57:19,579 [INFO] uvicorn.access: 127.0.0.1:55717 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:57:34,591 [INFO] uvicorn.access: 127.0.0.1:55721 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:57:49,584 [INFO] uvicorn.access: 127.0.0.1:55722 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:58:04,590 [INFO] uvicorn.access: 127.0.0.1:55736 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:58:19,586 [INFO] uvicorn.access: 127.0.0.1:55741 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:58:34,569 [INFO] uvicorn.access: 127.0.0.1:55745 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:58:49,584 [INFO] uvicorn.access: 127.0.0.1:55748 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:59:04,588 [INFO] uvicorn.access: 127.0.0.1:55750 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:59:19,584 [INFO] uvicorn.access: 127.0.0.1:55752 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:59:34,591 [INFO] uvicorn.access: 127.0.0.1:55755 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:59:49,590 [INFO] uvicorn.access: 127.0.0.1:55756 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:00:04,581 [INFO] uvicorn.access: 127.0.0.1:55758 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:00:19,574 [INFO] uvicorn.access: 127.0.0.1:55761 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:00:34,602 [INFO] uvicorn.access: 127.0.0.1:55767 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:00:49,581 [INFO] uvicorn.access: 127.0.0.1:55770 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:01:04,575 [INFO] uvicorn.access: 127.0.0.1:55774 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:01:19,585 [INFO] uvicorn.access: 127.0.0.1:55777 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:01:34,578 [INFO] uvicorn.access: 127.0.0.1:55783 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:01:49,574 [INFO] uvicorn.access: 127.0.0.1:55784 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:02:04,568 [INFO] uvicorn.access: 127.0.0.1:55788 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:02:19,589 [INFO] uvicorn.access: 127.0.0.1:55800 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:02:34,571 [INFO] uvicorn.access: 127.0.0.1:55810 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:02:49,583 [INFO] uvicorn.access: 127.0.0.1:55812 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:03:04,565 [INFO] uvicorn.access: 127.0.0.1:55826 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:03:19,561 [INFO] uvicorn.access: 127.0.0.1:55842 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:03:34,561 [INFO] uvicorn.access: 127.0.0.1:55845 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:03:49,574 [INFO] uvicorn.access: 127.0.0.1:55866 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:04:04,550 [INFO] uvicorn.access: 127.0.0.1:55876 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:04:19,558 [INFO] uvicorn.access: 127.0.0.1:55884 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:04:34,562 [INFO] uvicorn.access: 127.0.0.1:55889 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:04:49,562 [INFO] uvicorn.access: 127.0.0.1:55891 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:05:04,560 [INFO] uvicorn.access: 127.0.0.1:55893 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:05:19,553 [INFO] uvicorn.access: 127.0.0.1:55896 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:05:34,557 [INFO] uvicorn.access: 127.0.0.1:55903 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:05:49,562 [INFO] uvicorn.access: 127.0.0.1:55904 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:06:04,550 [INFO] uvicorn.access: 127.0.0.1:55906 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:06:19,564 [INFO] uvicorn.access: 127.0.0.1:55908 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:06:34,554 [INFO] uvicorn.access: 127.0.0.1:55911 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:06:49,554 [INFO] uvicorn.access: 127.0.0.1:55914 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:07:04,563 [INFO] uvicorn.access: 127.0.0.1:55918 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:07:19,557 [INFO] uvicorn.access: 127.0.0.1:55929 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:07:34,545 [INFO] uvicorn.access: 127.0.0.1:55936 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:07:49,562 [INFO] uvicorn.access: 127.0.0.1:55937 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:08:04,547 [INFO] uvicorn.access: 127.0.0.1:55949 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:08:19,554 [INFO] uvicorn.access: 127.0.0.1:55952 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:08:34,560 [INFO] uvicorn.access: 127.0.0.1:55957 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:08:49,552 [INFO] uvicorn.access: 127.0.0.1:55958 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:09:04,554 [INFO] uvicorn.access: 127.0.0.1:55962 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:09:19,550 [INFO] uvicorn.access: 127.0.0.1:55964 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:09:34,544 [INFO] uvicorn.access: 127.0.0.1:55967 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:09:49,555 [INFO] uvicorn.access: 127.0.0.1:55968 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:10:04,553 [INFO] uvicorn.access: 127.0.0.1:55970 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:10:19,548 [INFO] uvicorn.access: 127.0.0.1:55972 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:10:34,548 [INFO] uvicorn.access: 127.0.0.1:55975 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:10:49,536 [INFO] uvicorn.access: 127.0.0.1:55978 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:11:04,552 [INFO] uvicorn.access: 127.0.0.1:55980 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:11:19,546 [INFO] uvicorn.access: 127.0.0.1:55983 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:11:34,545 [INFO] uvicorn.access: 127.0.0.1:55986 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:11:49,555 [INFO] uvicorn.access: 127.0.0.1:55987 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:12:04,540 [INFO] uvicorn.access: 127.0.0.1:55989 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:12:19,553 [INFO] uvicorn.access: 127.0.0.1:56000 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:12:34,551 [INFO] uvicorn.access: 127.0.0.1:56003 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:12:49,560 [INFO] uvicorn.access: 127.0.0.1:56006 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:13:04,552 [INFO] uvicorn.access: 127.0.0.1:56008 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:13:19,552 [INFO] uvicorn.access: 127.0.0.1:56011 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:13:34,549 [INFO] uvicorn.access: 127.0.0.1:56016 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:13:49,550 [INFO] uvicorn.access: 127.0.0.1:56018 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:14:04,546 [INFO] uvicorn.access: 127.0.0.1:56021 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:14:19,599 [INFO] uvicorn.access: 127.0.0.1:56024 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:14:34,535 [INFO] uvicorn.access: 127.0.0.1:56031 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:14:49,549 [INFO] uvicorn.access: 127.0.0.1:56037 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:15:04,537 [INFO] uvicorn.access: 127.0.0.1:56041 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:15:19,552 [INFO] uvicorn.access: 127.0.0.1:56051 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:15:34,543 [INFO] uvicorn.access: 127.0.0.1:56055 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:15:49,542 [INFO] uvicorn.access: 127.0.0.1:56056 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:16:04,542 [INFO] uvicorn.access: 127.0.0.1:56058 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:16:19,547 [INFO] uvicorn.access: 127.0.0.1:56060 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:16:34,533 [INFO] uvicorn.access: 127.0.0.1:56063 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:16:49,546 [INFO] uvicorn.access: 127.0.0.1:56067 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:17:04,552 [INFO] uvicorn.access: 127.0.0.1:56074 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:17:19,539 [INFO] uvicorn.access: 127.0.0.1:56086 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:17:34,533 [INFO] uvicorn.access: 127.0.0.1:56090 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:17:49,546 [INFO] uvicorn.access: 127.0.0.1:56092 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:18:04,552 [INFO] uvicorn.access: 127.0.0.1:56094 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:18:19,544 [INFO] uvicorn.access: 127.0.0.1:56099 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:18:34,540 [INFO] uvicorn.access: 127.0.0.1:56102 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:18:49,565 [INFO] uvicorn.access: 127.0.0.1:56103 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:19:04,532 [INFO] uvicorn.access: 127.0.0.1:56105 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:19:19,530 [INFO] uvicorn.access: 127.0.0.1:56107 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:19:34,522 [INFO] uvicorn.access: 127.0.0.1:56110 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:19:49,537 [INFO] uvicorn.access: 127.0.0.1:56111 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:20:04,516 [INFO] uvicorn.access: 127.0.0.1:56113 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:20:19,519 [INFO] uvicorn.access: 127.0.0.1:56116 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:20:34,515 [INFO] uvicorn.access: 127.0.0.1:56119 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:20:49,525 [INFO] uvicorn.access: 127.0.0.1:56120 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:21:04,520 [INFO] uvicorn.access: 127.0.0.1:56124 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:21:19,534 [INFO] uvicorn.access: 127.0.0.1:56127 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:21:34,521 [INFO] uvicorn.access: 127.0.0.1:56130 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:21:49,527 [INFO] uvicorn.access: 127.0.0.1:56131 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:22:04,526 [INFO] uvicorn.access: 127.0.0.1:56133 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:22:19,528 [INFO] uvicorn.access: 127.0.0.1:56145 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:22:34,517 [INFO] uvicorn.access: 127.0.0.1:56148 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:22:49,521 [INFO] uvicorn.access: 127.0.0.1:56151 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:23:04,521 [INFO] uvicorn.access: 127.0.0.1:56154 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:23:19,535 [INFO] uvicorn.access: 127.0.0.1:56158 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:23:34,539 [INFO] uvicorn.access: 127.0.0.1:56161 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:23:49,522 [INFO] uvicorn.access: 127.0.0.1:56164 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:24:04,509 [INFO] uvicorn.access: 127.0.0.1:56166 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:24:19,537 [INFO] uvicorn.access: 127.0.0.1:56168 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:24:34,515 [INFO] uvicorn.access: 127.0.0.1:56172 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:24:49,527 [INFO] uvicorn.access: 127.0.0.1:56173 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:25:04,512 [INFO] uvicorn.access: 127.0.0.1:56175 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:25:19,521 [INFO] uvicorn.access: 127.0.0.1:56179 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:25:34,515 [INFO] uvicorn.access: 127.0.0.1:56183 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:25:49,525 [INFO] uvicorn.access: 127.0.0.1:56184 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:26:04,509 [INFO] uvicorn.access: 127.0.0.1:56186 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:26:19,522 [INFO] uvicorn.access: 127.0.0.1:56189 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:26:34,508 [INFO] uvicorn.access: 127.0.0.1:56192 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:26:49,511 [INFO] uvicorn.access: 127.0.0.1:56193 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:27:04,508 [INFO] uvicorn.access: 127.0.0.1:56198 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:27:19,516 [INFO] uvicorn.access: 127.0.0.1:56208 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:27:34,512 [INFO] uvicorn.access: 127.0.0.1:56212 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:27:49,529 [INFO] uvicorn.access: 127.0.0.1:56214 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:28:04,518 [INFO] uvicorn.access: 127.0.0.1:56216 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:28:19,533 [INFO] uvicorn.access: 127.0.0.1:56219 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:28:34,510 [INFO] uvicorn.access: 127.0.0.1:56222 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:28:49,510 [INFO] uvicorn.access: 127.0.0.1:56225 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:29:04,519 [INFO] uvicorn.access: 127.0.0.1:56227 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:29:19,522 [INFO] uvicorn.access: 127.0.0.1:56230 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:29:34,511 [INFO] uvicorn.access: 127.0.0.1:56233 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:29:49,531 [INFO] uvicorn.access: 127.0.0.1:56235 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:30:04,508 [INFO] uvicorn.access: 127.0.0.1:56241 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:30:19,511 [INFO] uvicorn.access: 127.0.0.1:56244 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:30:34,505 [INFO] uvicorn.access: 127.0.0.1:56249 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:30:49,518 [INFO] uvicorn.access: 127.0.0.1:56250 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:31:04,504 [INFO] uvicorn.access: 127.0.0.1:56252 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:31:19,504 [INFO] uvicorn.access: 127.0.0.1:56254 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:31:34,502 [INFO] uvicorn.access: 127.0.0.1:56257 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:31:49,514 [INFO] uvicorn.access: 127.0.0.1:56259 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:32:04,507 [INFO] uvicorn.access: 127.0.0.1:56262 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:32:19,512 [INFO] uvicorn.access: 127.0.0.1:56272 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:32:34,513 [INFO] uvicorn.access: 127.0.0.1:56276 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:32:49,512 [INFO] uvicorn.access: 127.0.0.1:56277 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:33:04,503 [INFO] uvicorn.access: 127.0.0.1:56284 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:33:19,512 [INFO] uvicorn.access: 127.0.0.1:56287 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:33:34,507 [INFO] uvicorn.access: 127.0.0.1:56293 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:33:43,037 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 12:33:43,776 [INFO] uvicorn.error: connection closed
+2026-07-14 12:33:46,947 [INFO] uvicorn.error: 127.0.0.1:56320 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 12:33:46,952 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 12:33:46,953 [INFO] uvicorn.error: connection closed
+2026-07-14 12:33:46,953 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 12:33:46,954 [INFO] uvicorn.access: 127.0.0.1:56325 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 12:33:46,955 [INFO] uvicorn.access: 127.0.0.1:56327 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 12:33:46,955 [INFO] uvicorn.access: 127.0.0.1:56328 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 12:33:46,956 [INFO] uvicorn.access: 127.0.0.1:56329 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 12:33:46,965 [INFO] uvicorn.error: 127.0.0.1:56330 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 12:33:46,965 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 12:33:46,972 [INFO] uvicorn.error: connection open
+2026-07-14 12:33:47,519 [INFO] uvicorn.access: 127.0.0.1:56325 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 12:33:47,853 [INFO] uvicorn.access: 127.0.0.1:56333 - "GET /tickets HTTP/1.1" 200
+2026-07-14 12:33:47,865 [INFO] uvicorn.access: 127.0.0.1:56325 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 12:33:48,032 [INFO] uvicorn.access: 127.0.0.1:56329 - "GET /tickets HTTP/1.1" 200
+2026-07-14 12:33:49,646 [INFO] uvicorn.access: 127.0.0.1:56340 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:34:15,846 [INFO] uvicorn.access: 127.0.0.1:56348 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:34:54,191 [INFO] uvicorn.access: 127.0.0.1:56354 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:35:09,218 [INFO] uvicorn.access: 127.0.0.1:56357 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:36:00,052 [INFO] uvicorn.access: 127.0.0.1:56364 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:40:53,229 [INFO] uvicorn.access: 127.0.0.1:56374 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:45:54,897 [INFO] uvicorn.access: 127.0.0.1:56411 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:52:06,864 [INFO] uvicorn.access: 127.0.0.1:56438 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:52:21,810 [INFO] uvicorn.access: 127.0.0.1:56458 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:52:36,817 [INFO] uvicorn.access: 127.0.0.1:56469 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:52:51,824 [INFO] uvicorn.access: 127.0.0.1:56483 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:53:06,820 [INFO] uvicorn.access: 127.0.0.1:56487 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:53:21,807 [INFO] uvicorn.access: 127.0.0.1:56490 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:53:36,828 [INFO] uvicorn.access: 127.0.0.1:56496 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:53:51,814 [INFO] uvicorn.access: 127.0.0.1:56503 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:54:06,843 [INFO] uvicorn.access: 127.0.0.1:56512 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:54:21,813 [INFO] uvicorn.access: 127.0.0.1:56518 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:54:36,800 [INFO] uvicorn.access: 127.0.0.1:56521 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:54:51,812 [INFO] uvicorn.access: 127.0.0.1:56527 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:55:06,812 [INFO] uvicorn.access: 127.0.0.1:56533 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:55:21,820 [INFO] uvicorn.access: 127.0.0.1:56534 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:55:36,803 [INFO] uvicorn.access: 127.0.0.1:56538 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:55:51,838 [INFO] uvicorn.access: 127.0.0.1:56543 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:56:06,801 [INFO] uvicorn.access: 127.0.0.1:56555 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:56:21,807 [INFO] uvicorn.access: 127.0.0.1:56556 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:56:36,812 [INFO] uvicorn.access: 127.0.0.1:56557 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:56:51,806 [INFO] uvicorn.access: 127.0.0.1:56559 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:57:06,812 [INFO] uvicorn.access: 127.0.0.1:56568 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:57:21,819 [INFO] uvicorn.access: 127.0.0.1:56575 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:57:36,809 [INFO] uvicorn.access: 127.0.0.1:56576 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:57:51,807 [INFO] uvicorn.access: 127.0.0.1:56578 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:58:06,818 [INFO] uvicorn.access: 127.0.0.1:56582 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:58:21,807 [INFO] uvicorn.access: 127.0.0.1:56584 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:58:36,813 [INFO] uvicorn.access: 127.0.0.1:56585 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:58:51,797 [INFO] uvicorn.access: 127.0.0.1:56587 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:59:06,819 [INFO] uvicorn.access: 127.0.0.1:56591 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:59:21,808 [INFO] uvicorn.access: 127.0.0.1:56592 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:59:36,808 [INFO] uvicorn.access: 127.0.0.1:56593 - "GET /metrics HTTP/1.1" 200
+2026-07-14 12:59:51,816 [INFO] uvicorn.access: 127.0.0.1:56596 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:00:06,806 [INFO] uvicorn.access: 127.0.0.1:56605 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:00:21,810 [INFO] uvicorn.access: 127.0.0.1:56606 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:00:36,813 [INFO] uvicorn.access: 127.0.0.1:56607 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:00:51,817 [INFO] uvicorn.access: 127.0.0.1:56609 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:01:06,805 [INFO] uvicorn.access: 127.0.0.1:56612 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:01:21,815 [INFO] uvicorn.access: 127.0.0.1:56614 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:01:36,799 [INFO] uvicorn.access: 127.0.0.1:56617 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:01:51,804 [INFO] uvicorn.access: 127.0.0.1:56619 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:02:06,802 [INFO] uvicorn.access: 127.0.0.1:56631 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:02:21,816 [INFO] uvicorn.access: 127.0.0.1:56650 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:02:36,802 [INFO] uvicorn.access: 127.0.0.1:56659 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:02:51,815 [INFO] uvicorn.access: 127.0.0.1:56665 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:03:06,810 [INFO] uvicorn.access: 127.0.0.1:56668 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:03:21,816 [INFO] uvicorn.access: 127.0.0.1:56672 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:03:36,818 [INFO] uvicorn.access: 127.0.0.1:56673 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:03:50,829 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:03:50,834 [INFO] uvicorn.error: connection closed
+2026-07-14 13:03:51,817 [INFO] uvicorn.access: 127.0.0.1:56683 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:04:06,838 [INFO] uvicorn.access: 127.0.0.1:56713 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:04:21,860 [INFO] uvicorn.access: 127.0.0.1:56739 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:04:36,812 [INFO] uvicorn.access: 127.0.0.1:56769 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:04:51,801 [INFO] uvicorn.access: 127.0.0.1:56797 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:05:06,856 [INFO] uvicorn.access: 127.0.0.1:56802 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:05:21,852 [INFO] uvicorn.access: 127.0.0.1:56814 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:05:29,983 [INFO] uvicorn.error: 127.0.0.1:56875 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 13:05:29,990 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:05:29,992 [INFO] uvicorn.error: connection closed
+2026-07-14 13:05:29,992 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:05:29,995 [INFO] uvicorn.access: 127.0.0.1:56880 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:05:29,996 [INFO] uvicorn.access: 127.0.0.1:56882 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 13:05:29,998 [INFO] uvicorn.access: 127.0.0.1:56883 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:05:29,998 [INFO] uvicorn.access: 127.0.0.1:56884 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 13:05:30,013 [INFO] uvicorn.error: 127.0.0.1:56885 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 13:05:30,013 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:05:30,025 [INFO] uvicorn.error: connection open
+2026-07-14 13:05:30,232 [INFO] uvicorn.access: 127.0.0.1:56880 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:05:30,258 [INFO] uvicorn.access: 127.0.0.1:56880 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:05:30,279 [INFO] uvicorn.access: 127.0.0.1:56887 - "GET /tickets HTTP/1.1" 200
+2026-07-14 13:05:30,300 [INFO] uvicorn.access: 127.0.0.1:56880 - "GET /tickets HTTP/1.1" 200
+2026-07-14 13:05:32,095 [INFO] uvicorn.access: 127.0.0.1:56896 - "GET /favicon.ico HTTP/1.1" 404
+2026-07-14 13:05:36,838 [INFO] uvicorn.access: 127.0.0.1:56908 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:05:51,844 [INFO] uvicorn.access: 127.0.0.1:56947 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:06:06,799 [INFO] uvicorn.access: 127.0.0.1:56972 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:06:21,805 [INFO] uvicorn.access: 127.0.0.1:57020 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:06:36,806 [INFO] uvicorn.access: 127.0.0.1:57023 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:06:51,801 [INFO] uvicorn.access: 127.0.0.1:57028 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:07:06,837 [INFO] uvicorn.access: 127.0.0.1:57082 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:07:21,811 [INFO] uvicorn.access: 127.0.0.1:57088 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:07:36,825 [INFO] uvicorn.access: 127.0.0.1:57131 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:08:06,837 [INFO] uvicorn.access: 127.0.0.1:57196 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:08:21,867 [INFO] uvicorn.access: 127.0.0.1:57212 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:08:36,804 [INFO] uvicorn.access: 127.0.0.1:57220 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:08:51,803 [INFO] uvicorn.access: 127.0.0.1:57222 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:09:06,796 [INFO] uvicorn.access: 127.0.0.1:57225 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:09:21,802 [INFO] uvicorn.access: 127.0.0.1:57229 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:09:36,803 [INFO] uvicorn.access: 127.0.0.1:57230 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:09:51,802 [INFO] uvicorn.access: 127.0.0.1:57233 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:10:06,802 [INFO] uvicorn.access: 127.0.0.1:57237 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:10:21,797 [INFO] uvicorn.access: 127.0.0.1:57239 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:10:36,793 [INFO] uvicorn.access: 127.0.0.1:57240 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:10:51,804 [INFO] uvicorn.access: 127.0.0.1:57242 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:11:06,800 [INFO] uvicorn.access: 127.0.0.1:57246 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:11:21,798 [INFO] uvicorn.access: 127.0.0.1:57250 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:11:36,792 [INFO] uvicorn.access: 127.0.0.1:57251 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:11:51,800 [INFO] uvicorn.access: 127.0.0.1:57253 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:12:06,786 [INFO] uvicorn.access: 127.0.0.1:57262 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:12:21,809 [INFO] uvicorn.access: 127.0.0.1:57300 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:12:36,800 [INFO] uvicorn.access: 127.0.0.1:57345 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:12:51,805 [INFO] uvicorn.access: 127.0.0.1:57349 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:13:06,798 [INFO] uvicorn.access: 127.0.0.1:57357 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:13:21,781 [INFO] uvicorn.access: 127.0.0.1:57359 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:13:36,797 [INFO] uvicorn.access: 127.0.0.1:57366 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:13:51,793 [INFO] uvicorn.access: 127.0.0.1:57372 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:14:06,819 [INFO] uvicorn.access: 127.0.0.1:57382 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:14:21,805 [INFO] uvicorn.access: 127.0.0.1:57393 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:14:36,826 [INFO] uvicorn.access: 127.0.0.1:57478 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:14:51,796 [INFO] uvicorn.access: 127.0.0.1:57481 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:15:06,798 [INFO] uvicorn.access: 127.0.0.1:57489 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:15:21,811 [INFO] uvicorn.access: 127.0.0.1:57495 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:15:36,840 [INFO] uvicorn.access: 127.0.0.1:57500 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:15:51,822 [INFO] uvicorn.access: 127.0.0.1:57502 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:16:06,792 [INFO] uvicorn.access: 127.0.0.1:57507 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:16:21,838 [INFO] uvicorn.access: 127.0.0.1:57603 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:16:36,826 [INFO] uvicorn.access: 127.0.0.1:57665 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:16:51,798 [INFO] uvicorn.access: 127.0.0.1:57672 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:17:06,787 [INFO] uvicorn.access: 127.0.0.1:57681 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:17:21,801 [INFO] uvicorn.access: 127.0.0.1:57695 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:17:36,782 [INFO] uvicorn.access: 127.0.0.1:57696 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:17:51,796 [INFO] uvicorn.access: 127.0.0.1:57698 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:18:06,798 [INFO] uvicorn.access: 127.0.0.1:57701 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:18:21,794 [INFO] uvicorn.access: 127.0.0.1:57704 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:18:36,795 [INFO] uvicorn.access: 127.0.0.1:57705 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:18:51,803 [INFO] uvicorn.access: 127.0.0.1:57707 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:19:06,799 [INFO] uvicorn.access: 127.0.0.1:57710 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:19:21,792 [INFO] uvicorn.access: 127.0.0.1:57712 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:19:36,805 [INFO] uvicorn.access: 127.0.0.1:57713 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:19:51,779 [INFO] uvicorn.access: 127.0.0.1:57716 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:20:06,791 [INFO] uvicorn.access: 127.0.0.1:57719 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:20:21,791 [INFO] uvicorn.access: 127.0.0.1:57721 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:20:36,794 [INFO] uvicorn.access: 127.0.0.1:57726 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:20:51,787 [INFO] uvicorn.access: 127.0.0.1:57733 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:21:06,791 [INFO] uvicorn.access: 127.0.0.1:57736 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:21:21,786 [INFO] uvicorn.access: 127.0.0.1:57741 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:21:36,790 [INFO] uvicorn.access: 127.0.0.1:57742 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:21:51,794 [INFO] uvicorn.access: 127.0.0.1:57744 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:22:06,792 [INFO] uvicorn.access: 127.0.0.1:57753 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:22:21,792 [INFO] uvicorn.access: 127.0.0.1:57759 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:22:36,800 [INFO] uvicorn.access: 127.0.0.1:57776 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:22:51,909 [INFO] uvicorn.access: 127.0.0.1:57795 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:23:06,811 [INFO] uvicorn.access: 127.0.0.1:57801 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:23:21,795 [INFO] uvicorn.access: 127.0.0.1:57804 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:23:36,791 [INFO] uvicorn.access: 127.0.0.1:57807 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:23:51,797 [INFO] uvicorn.access: 127.0.0.1:57809 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:24:06,791 [INFO] uvicorn.access: 127.0.0.1:57817 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:24:21,793 [INFO] uvicorn.access: 127.0.0.1:57822 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:24:36,789 [INFO] uvicorn.access: 127.0.0.1:57824 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:24:51,789 [INFO] uvicorn.access: 127.0.0.1:57827 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:25:06,796 [INFO] uvicorn.access: 127.0.0.1:57830 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:25:21,797 [INFO] uvicorn.access: 127.0.0.1:57832 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:25:36,784 [INFO] uvicorn.access: 127.0.0.1:57834 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:25:51,774 [INFO] uvicorn.access: 127.0.0.1:57836 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:26:06,797 [INFO] uvicorn.access: 127.0.0.1:57840 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:26:21,794 [INFO] uvicorn.access: 127.0.0.1:57844 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:26:36,790 [INFO] uvicorn.access: 127.0.0.1:57849 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:26:51,789 [INFO] uvicorn.access: 127.0.0.1:57852 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:27:06,794 [INFO] uvicorn.access: 127.0.0.1:57860 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:27:21,802 [INFO] uvicorn.access: 127.0.0.1:57868 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:27:36,780 [INFO] uvicorn.access: 127.0.0.1:57869 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:27:51,794 [INFO] uvicorn.access: 127.0.0.1:57871 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:28:06,806 [INFO] uvicorn.access: 127.0.0.1:57925 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:28:21,858 [INFO] uvicorn.access: 127.0.0.1:57991 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:28:23,171 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:28:23,184 [INFO] uvicorn.error: connection closed
+2026-07-14 13:28:26,230 [INFO] uvicorn.error: 127.0.0.1:58028 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 13:28:26,247 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:28:26,254 [INFO] uvicorn.error: connection open
+2026-07-14 13:28:26,261 [INFO] uvicorn.access: 127.0.0.1:58032 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:28:26,262 [INFO] uvicorn.error: connection closed
+2026-07-14 13:28:26,262 [INFO] uvicorn.access: 127.0.0.1:58034 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 13:28:26,263 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:28:26,263 [INFO] uvicorn.access: 127.0.0.1:58036 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:28:26,263 [INFO] uvicorn.access: 127.0.0.1:58037 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 13:28:26,266 [INFO] uvicorn.error: 127.0.0.1:58038 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 13:28:26,266 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 13:28:26,266 [INFO] uvicorn.error: connection open
+2026-07-14 13:28:26,514 [INFO] uvicorn.access: 127.0.0.1:58032 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:28:26,603 [INFO] uvicorn.access: 127.0.0.1:58032 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 13:28:26,695 [INFO] uvicorn.access: 127.0.0.1:58034 - "GET /tickets HTTP/1.1" 200
+2026-07-14 13:28:26,785 [INFO] uvicorn.access: 127.0.0.1:58032 - "GET /tickets HTTP/1.1" 200
+2026-07-14 13:28:57,887 [INFO] uvicorn.access: 127.0.0.1:58054 - "GET /metrics HTTP/1.1" 200
+2026-07-14 13:45:51,142 [INFO] uvicorn.access: 127.0.0.1:58061 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:01:06,350 [INFO] uvicorn.access: 127.0.0.1:58101 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:01:21,391 [INFO] uvicorn.access: 127.0.0.1:58132 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:01:36,366 [INFO] uvicorn.access: 127.0.0.1:58164 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:01:51,341 [INFO] uvicorn.access: 127.0.0.1:58176 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:02:06,339 [INFO] uvicorn.access: 127.0.0.1:58187 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:02:21,337 [INFO] uvicorn.access: 127.0.0.1:58188 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:02:36,337 [INFO] uvicorn.access: 127.0.0.1:58191 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:02:51,349 [INFO] uvicorn.access: 127.0.0.1:58193 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:03:06,350 [INFO] uvicorn.access: 127.0.0.1:58202 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:03:21,331 [INFO] uvicorn.access: 127.0.0.1:58204 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:03:36,321 [INFO] uvicorn.access: 127.0.0.1:58205 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:03:51,335 [INFO] uvicorn.access: 127.0.0.1:58208 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:04:06,326 [INFO] uvicorn.access: 127.0.0.1:58214 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:04:21,332 [INFO] uvicorn.access: 127.0.0.1:58215 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:04:36,347 [INFO] uvicorn.access: 127.0.0.1:58216 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:04:51,342 [INFO] uvicorn.access: 127.0.0.1:58218 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:05:06,363 [INFO] uvicorn.access: 127.0.0.1:58222 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:05:21,330 [INFO] uvicorn.access: 127.0.0.1:58224 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:05:36,352 [INFO] uvicorn.access: 127.0.0.1:58229 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:05:51,324 [INFO] uvicorn.access: 127.0.0.1:58231 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:06:06,336 [INFO] uvicorn.access: 127.0.0.1:58245 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:06:21,329 [INFO] uvicorn.access: 127.0.0.1:58246 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:06:36,324 [INFO] uvicorn.access: 127.0.0.1:58247 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:06:51,330 [INFO] uvicorn.access: 127.0.0.1:58250 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:07:06,336 [INFO] uvicorn.access: 127.0.0.1:58255 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:07:21,337 [INFO] uvicorn.access: 127.0.0.1:58256 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:07:36,348 [INFO] uvicorn.access: 127.0.0.1:58259 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:07:51,330 [INFO] uvicorn.access: 127.0.0.1:58264 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:08:06,421 [INFO] uvicorn.access: 127.0.0.1:58268 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:08:21,319 [INFO] uvicorn.access: 127.0.0.1:58272 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:08:36,341 [INFO] uvicorn.access: 127.0.0.1:58273 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:08:51,327 [INFO] uvicorn.access: 127.0.0.1:58275 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:09:06,346 [INFO] uvicorn.access: 127.0.0.1:58279 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:09:21,335 [INFO] uvicorn.access: 127.0.0.1:58281 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:09:36,342 [INFO] uvicorn.access: 127.0.0.1:58284 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:09:51,335 [INFO] uvicorn.access: 127.0.0.1:58287 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:10:06,322 [INFO] uvicorn.access: 127.0.0.1:58292 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:10:21,333 [INFO] uvicorn.access: 127.0.0.1:58293 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:10:36,330 [INFO] uvicorn.access: 127.0.0.1:58296 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:10:51,339 [INFO] uvicorn.access: 127.0.0.1:58314 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:11:06,348 [INFO] uvicorn.access: 127.0.0.1:58328 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:11:21,322 [INFO] uvicorn.access: 127.0.0.1:58332 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:11:36,335 [INFO] uvicorn.access: 127.0.0.1:58336 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:11:51,330 [INFO] uvicorn.access: 127.0.0.1:58339 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:12:06,337 [INFO] uvicorn.access: 127.0.0.1:58343 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:12:21,335 [INFO] uvicorn.access: 127.0.0.1:58344 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:12:36,330 [INFO] uvicorn.access: 127.0.0.1:58348 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:12:51,333 [INFO] uvicorn.access: 127.0.0.1:58350 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:13:06,331 [INFO] uvicorn.access: 127.0.0.1:58354 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:13:21,330 [INFO] uvicorn.access: 127.0.0.1:58356 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:13:36,330 [INFO] uvicorn.access: 127.0.0.1:58359 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:13:51,331 [INFO] uvicorn.access: 127.0.0.1:58361 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:14:06,340 [INFO] uvicorn.access: 127.0.0.1:58366 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:14:21,328 [INFO] uvicorn.access: 127.0.0.1:58367 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:14:36,329 [INFO] uvicorn.access: 127.0.0.1:58370 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:14:51,327 [INFO] uvicorn.access: 127.0.0.1:58373 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:15:06,324 [INFO] uvicorn.access: 127.0.0.1:58377 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:15:21,337 [INFO] uvicorn.access: 127.0.0.1:58379 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:15:36,343 [INFO] uvicorn.access: 127.0.0.1:58381 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:15:51,343 [INFO] uvicorn.access: 127.0.0.1:58383 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:16:06,329 [INFO] uvicorn.access: 127.0.0.1:58398 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:16:21,330 [INFO] uvicorn.access: 127.0.0.1:58400 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:16:36,318 [INFO] uvicorn.access: 127.0.0.1:58401 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:16:51,340 [INFO] uvicorn.access: 127.0.0.1:58449 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:17:06,330 [INFO] uvicorn.access: 127.0.0.1:58453 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:17:21,333 [INFO] uvicorn.access: 127.0.0.1:58455 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:17:36,337 [INFO] uvicorn.access: 127.0.0.1:58464 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:17:51,343 [INFO] uvicorn.access: 127.0.0.1:58466 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:18:06,338 [INFO] uvicorn.access: 127.0.0.1:58470 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:18:21,336 [INFO] uvicorn.access: 127.0.0.1:58471 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:18:36,331 [INFO] uvicorn.access: 127.0.0.1:58472 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:18:51,333 [INFO] uvicorn.access: 127.0.0.1:58474 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:19:06,347 [INFO] uvicorn.access: 127.0.0.1:58478 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:19:21,334 [INFO] uvicorn.access: 127.0.0.1:58480 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:19:36,336 [INFO] uvicorn.access: 127.0.0.1:58483 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:19:51,326 [INFO] uvicorn.access: 127.0.0.1:58485 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:20:06,329 [INFO] uvicorn.access: 127.0.0.1:58489 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:20:21,337 [INFO] uvicorn.access: 127.0.0.1:58490 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:20:36,332 [INFO] uvicorn.access: 127.0.0.1:58493 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:20:51,321 [INFO] uvicorn.access: 127.0.0.1:58496 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:21:06,330 [INFO] uvicorn.access: 127.0.0.1:58509 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:21:21,335 [INFO] uvicorn.access: 127.0.0.1:58519 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:21:36,341 [INFO] uvicorn.access: 127.0.0.1:58522 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:21:51,337 [INFO] uvicorn.access: 127.0.0.1:58525 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:22:06,334 [INFO] uvicorn.access: 127.0.0.1:58539 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:22:21,352 [INFO] uvicorn.access: 127.0.0.1:58563 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:22:36,345 [INFO] uvicorn.access: 127.0.0.1:58565 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:22:51,332 [INFO] uvicorn.access: 127.0.0.1:58567 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:23:06,326 [INFO] uvicorn.access: 127.0.0.1:58571 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:23:21,327 [INFO] uvicorn.access: 127.0.0.1:58575 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:23:36,343 [INFO] uvicorn.access: 127.0.0.1:58592 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:23:51,331 [INFO] uvicorn.access: 127.0.0.1:58599 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:24:06,339 [INFO] uvicorn.access: 127.0.0.1:58606 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:24:21,328 [INFO] uvicorn.access: 127.0.0.1:58617 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:24:36,333 [INFO] uvicorn.access: 127.0.0.1:58624 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:24:51,343 [INFO] uvicorn.access: 127.0.0.1:58671 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:25:06,349 [INFO] uvicorn.access: 127.0.0.1:58675 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:25:21,343 [INFO] uvicorn.access: 127.0.0.1:58678 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:25:36,340 [INFO] uvicorn.access: 127.0.0.1:58681 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:25:51,333 [INFO] uvicorn.access: 127.0.0.1:58683 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:26:06,345 [INFO] uvicorn.access: 127.0.0.1:58697 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:26:21,335 [INFO] uvicorn.access: 127.0.0.1:58704 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:26:36,332 [INFO] uvicorn.access: 127.0.0.1:58705 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:26:51,333 [INFO] uvicorn.access: 127.0.0.1:58708 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:27:06,335 [INFO] uvicorn.access: 127.0.0.1:58712 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:27:21,333 [INFO] uvicorn.access: 127.0.0.1:58713 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:27:36,335 [INFO] uvicorn.access: 127.0.0.1:58715 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:27:51,322 [INFO] uvicorn.access: 127.0.0.1:58717 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:28:06,340 [INFO] uvicorn.access: 127.0.0.1:58721 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:28:21,337 [INFO] uvicorn.access: 127.0.0.1:58723 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:28:36,319 [INFO] uvicorn.access: 127.0.0.1:58724 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:28:51,338 [INFO] uvicorn.access: 127.0.0.1:58726 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:29:06,332 [INFO] uvicorn.access: 127.0.0.1:58730 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:29:21,343 [INFO] uvicorn.access: 127.0.0.1:58736 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:29:36,346 [INFO] uvicorn.access: 127.0.0.1:58738 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:29:51,329 [INFO] uvicorn.access: 127.0.0.1:58740 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:30:06,353 [INFO] uvicorn.access: 127.0.0.1:58744 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:30:21,329 [INFO] uvicorn.access: 127.0.0.1:58745 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:30:36,327 [INFO] uvicorn.access: 127.0.0.1:58746 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:30:51,330 [INFO] uvicorn.access: 127.0.0.1:58748 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:31:06,317 [INFO] uvicorn.access: 127.0.0.1:58765 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:31:21,338 [INFO] uvicorn.access: 127.0.0.1:58767 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:31:36,332 [INFO] uvicorn.access: 127.0.0.1:58770 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:31:51,341 [INFO] uvicorn.access: 127.0.0.1:58784 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:32:06,323 [INFO] uvicorn.access: 127.0.0.1:58791 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:32:21,335 [INFO] uvicorn.access: 127.0.0.1:58795 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:32:36,343 [INFO] uvicorn.access: 127.0.0.1:58802 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:32:51,323 [INFO] uvicorn.access: 127.0.0.1:58804 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:33:06,413 [INFO] uvicorn.access: 127.0.0.1:58808 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:33:21,401 [INFO] uvicorn.access: 127.0.0.1:58809 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:33:36,399 [INFO] uvicorn.access: 127.0.0.1:58810 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:33:51,405 [INFO] uvicorn.access: 127.0.0.1:58813 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:34:06,409 [INFO] uvicorn.access: 127.0.0.1:58818 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:34:21,401 [INFO] uvicorn.access: 127.0.0.1:58832 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:34:36,406 [INFO] uvicorn.access: 127.0.0.1:58834 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:34:51,404 [INFO] uvicorn.access: 127.0.0.1:58840 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:35:06,391 [INFO] uvicorn.access: 127.0.0.1:58853 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:35:21,390 [INFO] uvicorn.access: 127.0.0.1:58861 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:35:36,408 [INFO] uvicorn.access: 127.0.0.1:58862 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:35:51,405 [INFO] uvicorn.access: 127.0.0.1:58864 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:36:06,400 [INFO] uvicorn.access: 127.0.0.1:58878 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:36:21,407 [INFO] uvicorn.access: 127.0.0.1:58879 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:36:36,413 [INFO] uvicorn.access: 127.0.0.1:58882 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:36:51,410 [INFO] uvicorn.access: 127.0.0.1:58885 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:37:06,403 [INFO] uvicorn.access: 127.0.0.1:58889 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:37:21,402 [INFO] uvicorn.access: 127.0.0.1:58894 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:37:36,412 [INFO] uvicorn.access: 127.0.0.1:58900 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:37:51,407 [INFO] uvicorn.access: 127.0.0.1:58909 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:38:06,400 [INFO] uvicorn.access: 127.0.0.1:58913 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:38:21,390 [INFO] uvicorn.access: 127.0.0.1:58914 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:38:36,421 [INFO] uvicorn.access: 127.0.0.1:58915 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:38:51,407 [INFO] uvicorn.access: 127.0.0.1:58917 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:39:06,415 [INFO] uvicorn.access: 127.0.0.1:58921 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:39:21,409 [INFO] uvicorn.access: 127.0.0.1:58922 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:39:36,405 [INFO] uvicorn.access: 127.0.0.1:58923 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:39:51,400 [INFO] uvicorn.access: 127.0.0.1:58925 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:40:06,410 [INFO] uvicorn.access: 127.0.0.1:58929 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:40:21,408 [INFO] uvicorn.access: 127.0.0.1:58931 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:40:36,413 [INFO] uvicorn.access: 127.0.0.1:58932 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:40:51,402 [INFO] uvicorn.access: 127.0.0.1:58934 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:41:06,411 [INFO] uvicorn.access: 127.0.0.1:58947 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:41:36,411 [INFO] uvicorn.access: 127.0.0.1:58949 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:41:51,408 [INFO] uvicorn.access: 127.0.0.1:58956 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:42:06,436 [INFO] uvicorn.access: 127.0.0.1:58960 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:42:21,402 [INFO] uvicorn.access: 127.0.0.1:58963 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:42:36,432 [INFO] uvicorn.access: 127.0.0.1:58964 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:42:51,416 [INFO] uvicorn.access: 127.0.0.1:58968 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:43:06,409 [INFO] uvicorn.access: 127.0.0.1:58972 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:43:21,409 [INFO] uvicorn.access: 127.0.0.1:58974 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:43:36,414 [INFO] uvicorn.access: 127.0.0.1:58978 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:43:51,417 [INFO] uvicorn.access: 127.0.0.1:58981 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:44:06,419 [INFO] uvicorn.access: 127.0.0.1:58988 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:44:21,407 [INFO] uvicorn.access: 127.0.0.1:58992 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:44:36,400 [INFO] uvicorn.access: 127.0.0.1:58997 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:44:51,401 [INFO] uvicorn.access: 127.0.0.1:58999 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:45:06,410 [INFO] uvicorn.access: 127.0.0.1:59003 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:45:21,410 [INFO] uvicorn.access: 127.0.0.1:59004 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:45:36,410 [INFO] uvicorn.access: 127.0.0.1:59005 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:45:51,411 [INFO] uvicorn.access: 127.0.0.1:59007 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:46:06,407 [INFO] uvicorn.access: 127.0.0.1:59023 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:46:21,414 [INFO] uvicorn.access: 127.0.0.1:59026 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:46:36,415 [INFO] uvicorn.access: 127.0.0.1:59028 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:46:51,406 [INFO] uvicorn.access: 127.0.0.1:59032 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:47:06,408 [INFO] uvicorn.access: 127.0.0.1:59036 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:47:21,407 [INFO] uvicorn.access: 127.0.0.1:59037 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:47:36,412 [INFO] uvicorn.access: 127.0.0.1:59039 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:47:51,408 [INFO] uvicorn.access: 127.0.0.1:59041 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:48:06,417 [INFO] uvicorn.access: 127.0.0.1:59045 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:48:21,403 [INFO] uvicorn.access: 127.0.0.1:59048 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:48:36,408 [INFO] uvicorn.access: 127.0.0.1:59049 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:48:51,412 [INFO] uvicorn.access: 127.0.0.1:59051 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:49:06,470 [INFO] uvicorn.access: 127.0.0.1:59055 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:49:21,458 [INFO] uvicorn.access: 127.0.0.1:59056 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:49:36,463 [INFO] uvicorn.access: 127.0.0.1:59064 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:49:51,472 [INFO] uvicorn.access: 127.0.0.1:59066 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:50:06,464 [INFO] uvicorn.access: 127.0.0.1:59070 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:50:21,473 [INFO] uvicorn.access: 127.0.0.1:59075 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:50:36,478 [INFO] uvicorn.access: 127.0.0.1:59076 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:50:51,474 [INFO] uvicorn.access: 127.0.0.1:59078 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:51:06,473 [INFO] uvicorn.access: 127.0.0.1:59090 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:51:21,465 [INFO] uvicorn.access: 127.0.0.1:59091 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:51:36,472 [INFO] uvicorn.access: 127.0.0.1:59092 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:51:51,465 [INFO] uvicorn.access: 127.0.0.1:59095 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:52:06,476 [INFO] uvicorn.access: 127.0.0.1:59099 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:52:21,474 [INFO] uvicorn.access: 127.0.0.1:59100 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:52:36,472 [INFO] uvicorn.access: 127.0.0.1:59102 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:52:51,474 [INFO] uvicorn.access: 127.0.0.1:59104 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:53:06,474 [INFO] uvicorn.access: 127.0.0.1:59108 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:53:21,475 [INFO] uvicorn.access: 127.0.0.1:59112 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:53:36,464 [INFO] uvicorn.access: 127.0.0.1:59113 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:53:51,475 [INFO] uvicorn.access: 127.0.0.1:59115 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:54:06,465 [INFO] uvicorn.access: 127.0.0.1:59120 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:54:21,473 [INFO] uvicorn.access: 127.0.0.1:59124 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:54:36,468 [INFO] uvicorn.access: 127.0.0.1:59126 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:54:51,470 [INFO] uvicorn.access: 127.0.0.1:59131 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:55:06,468 [INFO] uvicorn.access: 127.0.0.1:59135 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:55:21,474 [INFO] uvicorn.access: 127.0.0.1:59137 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:55:36,464 [INFO] uvicorn.access: 127.0.0.1:59141 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:55:51,461 [INFO] uvicorn.access: 127.0.0.1:59143 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:56:06,476 [INFO] uvicorn.access: 127.0.0.1:59158 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:56:21,477 [INFO] uvicorn.access: 127.0.0.1:59159 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:56:36,467 [INFO] uvicorn.access: 127.0.0.1:59168 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:56:51,469 [INFO] uvicorn.access: 127.0.0.1:59171 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:57:06,485 [INFO] uvicorn.access: 127.0.0.1:59177 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:57:21,488 [INFO] uvicorn.access: 127.0.0.1:59178 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:57:36,478 [INFO] uvicorn.access: 127.0.0.1:59179 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:57:51,481 [INFO] uvicorn.access: 127.0.0.1:59181 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:58:06,485 [INFO] uvicorn.access: 127.0.0.1:59185 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:58:21,472 [INFO] uvicorn.access: 127.0.0.1:59188 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:58:36,476 [INFO] uvicorn.access: 127.0.0.1:59190 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:58:51,479 [INFO] uvicorn.access: 127.0.0.1:59192 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:59:06,470 [INFO] uvicorn.access: 127.0.0.1:59196 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:59:21,469 [INFO] uvicorn.access: 127.0.0.1:59198 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:59:36,521 [INFO] uvicorn.access: 127.0.0.1:59206 - "GET /metrics HTTP/1.1" 200
+2026-07-14 14:59:51,463 [INFO] uvicorn.access: 127.0.0.1:59208 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:00:06,482 [INFO] uvicorn.access: 127.0.0.1:59217 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:00:21,481 [INFO] uvicorn.access: 127.0.0.1:59218 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:00:36,474 [INFO] uvicorn.access: 127.0.0.1:59219 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:00:51,473 [INFO] uvicorn.access: 127.0.0.1:59221 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:01:06,477 [INFO] uvicorn.access: 127.0.0.1:59240 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:01:21,479 [INFO] uvicorn.access: 127.0.0.1:59242 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:01:36,468 [INFO] uvicorn.access: 127.0.0.1:59244 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:01:51,472 [INFO] uvicorn.access: 127.0.0.1:59256 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:02:06,472 [INFO] uvicorn.access: 127.0.0.1:59261 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:02:21,477 [INFO] uvicorn.access: 127.0.0.1:59263 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:02:36,487 [INFO] uvicorn.access: 127.0.0.1:59269 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:02:51,470 [INFO] uvicorn.access: 127.0.0.1:59271 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:03:06,514 [INFO] uvicorn.access: 127.0.0.1:59281 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:03:21,476 [INFO] uvicorn.access: 127.0.0.1:59283 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:03:36,499 [INFO] uvicorn.access: 127.0.0.1:59285 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:03:51,481 [INFO] uvicorn.access: 127.0.0.1:59291 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:04:06,475 [INFO] uvicorn.access: 127.0.0.1:59301 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:04:21,477 [INFO] uvicorn.access: 127.0.0.1:59304 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:04:36,484 [INFO] uvicorn.access: 127.0.0.1:59308 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:04:51,490 [INFO] uvicorn.access: 127.0.0.1:59315 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:05:06,466 [INFO] uvicorn.access: 127.0.0.1:59318 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:05:21,450 [INFO] uvicorn.access: 127.0.0.1:59326 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:05:36,454 [INFO] uvicorn.access: 127.0.0.1:59332 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:05:51,440 [INFO] uvicorn.access: 127.0.0.1:59334 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:06:06,455 [INFO] uvicorn.access: 127.0.0.1:59346 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:06:21,441 [INFO] uvicorn.access: 127.0.0.1:59348 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:06:36,447 [INFO] uvicorn.access: 127.0.0.1:59350 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:06:51,444 [INFO] uvicorn.access: 127.0.0.1:59357 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:07:06,447 [INFO] uvicorn.access: 127.0.0.1:59360 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:07:21,453 [INFO] uvicorn.access: 127.0.0.1:59362 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:07:36,455 [INFO] uvicorn.access: 127.0.0.1:59364 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:07:51,444 [INFO] uvicorn.access: 127.0.0.1:59369 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:08:06,451 [INFO] uvicorn.access: 127.0.0.1:59374 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:08:21,464 [INFO] uvicorn.access: 127.0.0.1:59376 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:08:24,539 [INFO] uvicorn.error: 127.0.0.1:59378 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 15:08:24,543 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:24,545 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:24,545 [INFO] uvicorn.error: connection closed
+2026-07-14 15:08:24,553 [INFO] uvicorn.error: connection open
+2026-07-14 15:08:24,557 [INFO] uvicorn.access: 127.0.0.1:59381 - "OPTIONS /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 15:08:24,558 [INFO] uvicorn.access: 127.0.0.1:59383 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 15:08:24,558 [INFO] uvicorn.access: 127.0.0.1:59385 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 15:08:24,558 [INFO] uvicorn.access: 127.0.0.1:59387 - "OPTIONS /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 15:08:24,558 [INFO] uvicorn.access: 127.0.0.1:59389 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 15:08:24,558 [INFO] uvicorn.access: 127.0.0.1:59390 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 15:08:24,828 [INFO] uvicorn.access: 127.0.0.1:59383 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 15:08:24,832 [INFO] uvicorn.access: 127.0.0.1:59385 - "GET /agents HTTP/1.1" 200
+2026-07-14 15:08:24,918 [INFO] uvicorn.access: 127.0.0.1:59383 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 15:08:24,948 [INFO] uvicorn.access: 127.0.0.1:59381 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 15:08:25,051 [INFO] uvicorn.access: 127.0.0.1:59385 - "GET /agents HTTP/1.1" 200
+2026-07-14 15:08:25,100 [INFO] uvicorn.access: 127.0.0.1:59383 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 15:08:34,816 [INFO] uvicorn.error: 127.0.0.1:59395 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 15:08:34,817 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:34,822 [INFO] uvicorn.error: connection open
+2026-07-14 15:08:34,824 [INFO] uvicorn.access: 127.0.0.1:59398 - "OPTIONS /categories?active_only=true HTTP/1.1" 200
+2026-07-14 15:08:34,824 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:34,824 [INFO] uvicorn.error: connection closed
+2026-07-14 15:08:34,825 [INFO] uvicorn.access: 127.0.0.1:59399 - "OPTIONS /categories?active_only=true HTTP/1.1" 200
+2026-07-14 15:08:34,876 [INFO] uvicorn.access: 127.0.0.1:59398 - "GET /categories?active_only=true HTTP/1.1" 200
+2026-07-14 15:08:34,889 [INFO] uvicorn.access: 127.0.0.1:59398 - "GET /categories?active_only=true HTTP/1.1" 200
+2026-07-14 15:08:35,575 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:35,575 [INFO] uvicorn.error: connection closed
+2026-07-14 15:08:35,577 [INFO] uvicorn.error: 127.0.0.1:59403 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 15:08:35,577 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:08:35,578 [INFO] uvicorn.error: connection open
+2026-07-14 15:08:35,581 [INFO] uvicorn.access: 127.0.0.1:59398 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 15:08:35,581 [INFO] uvicorn.access: 127.0.0.1:59399 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 15:08:35,607 [INFO] uvicorn.access: 127.0.0.1:59401 - "GET /tickets HTTP/1.1" 200
+2026-07-14 15:08:35,631 [INFO] uvicorn.access: 127.0.0.1:59399 - "GET /tickets HTTP/1.1" 200
+2026-07-14 15:08:36,461 [INFO] uvicorn.access: 127.0.0.1:59404 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:08:37,918 [INFO] uvicorn.access: 127.0.0.1:59399 - "OPTIONS /tickets?priority=medium HTTP/1.1" 200
+2026-07-14 15:08:37,941 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:08:37,977 [INFO] uvicorn.access: 127.0.0.1:59401 - "GET /tickets?priority=medium HTTP/1.1" 500
+2026-07-14 15:08:37,977 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:08:40,558 [INFO] uvicorn.access: 127.0.0.1:59399 - "OPTIONS /tickets?priority=high HTTP/1.1" 200
+2026-07-14 15:08:40,567 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:08:40,572 [INFO] uvicorn.access: 127.0.0.1:59398 - "GET /tickets?priority=high HTTP/1.1" 500
+2026-07-14 15:08:40,572 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:08:51,451 [INFO] uvicorn.access: 127.0.0.1:59407 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:09:06,456 [INFO] uvicorn.access: 127.0.0.1:59424 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:09:21,446 [INFO] uvicorn.access: 127.0.0.1:59428 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:09:36,453 [INFO] uvicorn.access: 127.0.0.1:59429 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:09:51,459 [INFO] uvicorn.access: 127.0.0.1:59431 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:10:06,455 [INFO] uvicorn.access: 127.0.0.1:59434 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:10:21,456 [INFO] uvicorn.access: 127.0.0.1:59436 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:10:36,453 [INFO] uvicorn.access: 127.0.0.1:59438 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:10:51,452 [INFO] uvicorn.access: 127.0.0.1:59441 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:11:06,451 [INFO] uvicorn.access: 127.0.0.1:59456 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:11:21,444 [INFO] uvicorn.access: 127.0.0.1:59461 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:11:36,456 [INFO] uvicorn.access: 127.0.0.1:59462 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:11:51,453 [INFO] uvicorn.access: 127.0.0.1:59467 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:12:06,453 [INFO] uvicorn.access: 127.0.0.1:59478 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:12:21,459 [INFO] uvicorn.access: 127.0.0.1:59481 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:12:22,919 [INFO] uvicorn.access: 127.0.0.1:59483 - "OPTIONS /tickets?priority=low HTTP/1.1" 200
+2026-07-14 15:12:23,000 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:12:23,007 [INFO] uvicorn.access: 127.0.0.1:59483 - "GET /tickets?priority=low HTTP/1.1" 500
+2026-07-14 15:12:23,007 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 15:12:36,466 [INFO] uvicorn.access: 127.0.0.1:59489 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:12:51,452 [INFO] uvicorn.access: 127.0.0.1:59495 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:13:06,452 [INFO] uvicorn.access: 127.0.0.1:59501 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:13:21,452 [INFO] uvicorn.access: 127.0.0.1:59504 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:13:36,456 [INFO] uvicorn.access: 127.0.0.1:59507 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:13:51,457 [INFO] uvicorn.access: 127.0.0.1:59510 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:14:06,448 [INFO] uvicorn.access: 127.0.0.1:59524 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:14:21,456 [INFO] uvicorn.access: 127.0.0.1:59526 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:14:36,450 [INFO] uvicorn.access: 127.0.0.1:59530 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:14:51,445 [INFO] uvicorn.access: 127.0.0.1:59533 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:15:06,456 [INFO] uvicorn.access: 127.0.0.1:59536 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:15:21,446 [INFO] uvicorn.access: 127.0.0.1:59538 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:15:36,454 [INFO] uvicorn.access: 127.0.0.1:59547 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:15:51,448 [INFO] uvicorn.access: 127.0.0.1:59549 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:16:06,469 [INFO] uvicorn.access: 127.0.0.1:59561 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:16:21,452 [INFO] uvicorn.access: 127.0.0.1:59563 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:16:36,451 [INFO] uvicorn.access: 127.0.0.1:59564 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:16:51,455 [INFO] uvicorn.access: 127.0.0.1:59568 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:17:06,457 [INFO] uvicorn.access: 127.0.0.1:59571 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:17:21,453 [INFO] uvicorn.access: 127.0.0.1:59573 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:17:36,445 [INFO] uvicorn.access: 127.0.0.1:59575 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:17:51,438 [INFO] uvicorn.access: 127.0.0.1:59577 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:18:06,431 [INFO] uvicorn.access: 127.0.0.1:59581 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:18:21,443 [INFO] uvicorn.access: 127.0.0.1:59584 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:18:36,439 [INFO] uvicorn.access: 127.0.0.1:59585 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:18:51,439 [INFO] uvicorn.access: 127.0.0.1:59587 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:19:06,462 [INFO] uvicorn.access: 127.0.0.1:59590 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:19:21,456 [INFO] uvicorn.access: 127.0.0.1:59592 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:19:36,453 [INFO] uvicorn.access: 127.0.0.1:59593 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:19:51,453 [INFO] uvicorn.access: 127.0.0.1:59596 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:20:06,447 [INFO] uvicorn.access: 127.0.0.1:59599 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:20:21,448 [INFO] uvicorn.access: 127.0.0.1:59601 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:20:36,465 [INFO] uvicorn.access: 127.0.0.1:59604 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:20:51,452 [INFO] uvicorn.access: 127.0.0.1:59606 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:21:06,445 [INFO] uvicorn.access: 127.0.0.1:59611 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:21:21,433 [INFO] uvicorn.access: 127.0.0.1:59621 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:21:36,442 [INFO] uvicorn.access: 127.0.0.1:59622 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:21:51,447 [INFO] uvicorn.access: 127.0.0.1:59626 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:22:06,432 [INFO] uvicorn.access: 127.0.0.1:59629 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:22:21,442 [INFO] uvicorn.access: 127.0.0.1:59631 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:22:36,440 [INFO] uvicorn.access: 127.0.0.1:59634 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:22:51,435 [INFO] uvicorn.access: 127.0.0.1:59637 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:23:06,428 [INFO] uvicorn.access: 127.0.0.1:59640 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:23:21,426 [INFO] uvicorn.access: 127.0.0.1:59643 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:23:36,442 [INFO] uvicorn.access: 127.0.0.1:59646 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:23:51,435 [INFO] uvicorn.access: 127.0.0.1:59648 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:24:06,441 [INFO] uvicorn.access: 127.0.0.1:59652 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:24:21,440 [INFO] uvicorn.access: 127.0.0.1:59655 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:24:36,447 [INFO] uvicorn.access: 127.0.0.1:59661 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:24:51,449 [INFO] uvicorn.access: 127.0.0.1:59675 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:25:06,432 [INFO] uvicorn.access: 127.0.0.1:59682 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:25:21,454 [INFO] uvicorn.access: 127.0.0.1:59684 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:25:36,449 [INFO] uvicorn.access: 127.0.0.1:59710 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:25:51,438 [INFO] uvicorn.access: 127.0.0.1:59715 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:26:06,454 [INFO] uvicorn.access: 127.0.0.1:59728 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:26:21,444 [INFO] uvicorn.access: 127.0.0.1:59733 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:26:36,436 [INFO] uvicorn.access: 127.0.0.1:59736 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:26:51,430 [INFO] uvicorn.access: 127.0.0.1:59739 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:27:06,433 [INFO] uvicorn.access: 127.0.0.1:59742 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:27:21,440 [INFO] uvicorn.access: 127.0.0.1:59744 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:27:36,450 [INFO] uvicorn.access: 127.0.0.1:59746 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:27:51,437 [INFO] uvicorn.access: 127.0.0.1:59752 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:28:06,438 [INFO] uvicorn.access: 127.0.0.1:59794 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:28:21,440 [INFO] uvicorn.access: 127.0.0.1:59811 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:28:36,446 [INFO] uvicorn.access: 127.0.0.1:59812 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:28:51,444 [INFO] uvicorn.access: 127.0.0.1:59840 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:29:06,435 [INFO] uvicorn.access: 127.0.0.1:59857 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:29:21,448 [INFO] uvicorn.access: 127.0.0.1:59861 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:29:36,451 [INFO] uvicorn.access: 127.0.0.1:59863 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:29:51,434 [INFO] uvicorn.access: 127.0.0.1:59866 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:30:06,448 [INFO] uvicorn.access: 127.0.0.1:59870 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:30:21,449 [INFO] uvicorn.access: 127.0.0.1:59872 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:30:36,431 [INFO] uvicorn.access: 127.0.0.1:59877 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:30:51,443 [INFO] uvicorn.access: 127.0.0.1:59879 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:31:06,441 [INFO] uvicorn.access: 127.0.0.1:59896 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:31:21,437 [INFO] uvicorn.access: 127.0.0.1:59898 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:31:36,443 [INFO] uvicorn.access: 127.0.0.1:59899 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:31:51,443 [INFO] uvicorn.access: 127.0.0.1:59903 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:32:06,453 [INFO] uvicorn.access: 127.0.0.1:59906 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:32:21,450 [INFO] uvicorn.access: 127.0.0.1:59917 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:32:36,450 [INFO] uvicorn.access: 127.0.0.1:59920 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:32:51,439 [INFO] uvicorn.access: 127.0.0.1:59922 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:33:06,443 [INFO] uvicorn.access: 127.0.0.1:59926 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:33:21,449 [INFO] uvicorn.access: 127.0.0.1:59933 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:33:36,447 [INFO] uvicorn.access: 127.0.0.1:59952 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:33:51,440 [INFO] uvicorn.access: 127.0.0.1:59956 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:34:06,438 [INFO] uvicorn.access: 127.0.0.1:59960 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:34:21,453 [INFO] uvicorn.access: 127.0.0.1:59971 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:34:36,458 [INFO] uvicorn.access: 127.0.0.1:59976 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:34:51,434 [INFO] uvicorn.access: 127.0.0.1:59979 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:35:06,439 [INFO] uvicorn.access: 127.0.0.1:59994 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:35:21,435 [INFO] uvicorn.access: 127.0.0.1:59997 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:35:36,438 [INFO] uvicorn.access: 127.0.0.1:59998 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:35:51,416 [INFO] uvicorn.access: 127.0.0.1:60000 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:36:06,433 [INFO] uvicorn.access: 127.0.0.1:60013 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:36:21,423 [INFO] uvicorn.access: 127.0.0.1:60015 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:36:36,423 [INFO] uvicorn.access: 127.0.0.1:60016 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:36:51,430 [INFO] uvicorn.access: 127.0.0.1:60019 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:37:06,416 [INFO] uvicorn.access: 127.0.0.1:60022 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:37:21,417 [INFO] uvicorn.access: 127.0.0.1:60024 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:37:36,411 [INFO] uvicorn.access: 127.0.0.1:60028 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:37:51,427 [INFO] uvicorn.access: 127.0.0.1:60033 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:38:06,415 [INFO] uvicorn.access: 127.0.0.1:60047 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:38:21,418 [INFO] uvicorn.access: 127.0.0.1:60049 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:38:36,409 [INFO] uvicorn.access: 127.0.0.1:60052 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:38:51,410 [INFO] uvicorn.access: 127.0.0.1:60055 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:39:06,410 [INFO] uvicorn.access: 127.0.0.1:60058 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:39:21,407 [INFO] uvicorn.access: 127.0.0.1:60060 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:39:36,412 [INFO] uvicorn.access: 127.0.0.1:60061 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:39:51,401 [INFO] uvicorn.access: 127.0.0.1:60063 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:40:06,409 [INFO] uvicorn.access: 127.0.0.1:60066 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:40:21,438 [INFO] uvicorn.access: 127.0.0.1:60069 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:40:36,417 [INFO] uvicorn.access: 127.0.0.1:60071 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:40:51,414 [INFO] uvicorn.access: 127.0.0.1:60074 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:41:06,420 [INFO] uvicorn.access: 127.0.0.1:60090 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:41:21,414 [INFO] uvicorn.access: 127.0.0.1:60093 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:41:36,414 [INFO] uvicorn.access: 127.0.0.1:60094 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:41:51,421 [INFO] uvicorn.access: 127.0.0.1:60097 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:42:06,425 [INFO] uvicorn.access: 127.0.0.1:60100 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:42:21,410 [INFO] uvicorn.access: 127.0.0.1:60102 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:42:36,407 [INFO] uvicorn.access: 127.0.0.1:60103 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:42:51,420 [INFO] uvicorn.access: 127.0.0.1:60108 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:43:06,424 [INFO] uvicorn.access: 127.0.0.1:60111 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:43:21,424 [INFO] uvicorn.access: 127.0.0.1:60115 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:43:36,424 [INFO] uvicorn.access: 127.0.0.1:60118 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:43:51,432 [INFO] uvicorn.access: 127.0.0.1:60121 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:44:06,437 [INFO] uvicorn.access: 127.0.0.1:60125 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:44:21,427 [INFO] uvicorn.access: 127.0.0.1:60128 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:44:36,417 [INFO] uvicorn.access: 127.0.0.1:60131 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:44:51,425 [INFO] uvicorn.access: 127.0.0.1:60133 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:45:06,428 [INFO] uvicorn.access: 127.0.0.1:60136 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:45:21,413 [INFO] uvicorn.access: 127.0.0.1:60139 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:45:36,419 [INFO] uvicorn.access: 127.0.0.1:60142 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:45:51,425 [INFO] uvicorn.access: 127.0.0.1:60149 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:46:06,431 [INFO] uvicorn.access: 127.0.0.1:60164 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:46:07,414 [INFO] watchfiles.main: 1 change detected
+2026-07-14 15:46:07,443 [WARNING] uvicorn.error: WatchFiles detected changes in 'app/routers/tickets/crud.py'. Reloading...
+2026-07-14 15:46:07,539 [INFO] uvicorn.error: Shutting down
+2026-07-14 15:46:07,554 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:46:07,557 [INFO] uvicorn.error: connection closed
+2026-07-14 15:46:07,646 [INFO] uvicorn.error: Waiting for application shutdown.
+2026-07-14 15:46:07,663 [INFO] uvicorn.error: Application shutdown complete.
+2026-07-14 15:46:07,671 [INFO] uvicorn.error: Finished server process [86316]
+2026-07-14 15:46:08,061 [INFO] watchfiles.main: 1 change detected
+2026-07-14 15:46:09,865 [INFO] uvicorn.error: Started server process [5924]
+2026-07-14 15:46:09,865 [INFO] uvicorn.error: Waiting for application startup.
+2026-07-14 15:46:09,904 [INFO] watchfiles.main: 3 changes detected
+2026-07-14 15:46:11,068 [INFO] uvicorn.error: Application startup complete.
+2026-07-14 15:46:11,233 [INFO] uvicorn.error: 127.0.0.1:60172 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 15:46:11,234 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 15:46:11,234 [INFO] uvicorn.error: connection open
+2026-07-14 15:46:21,483 [INFO] uvicorn.access: 127.0.0.1:60175 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:46:36,432 [INFO] uvicorn.access: 127.0.0.1:60179 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:46:51,429 [INFO] uvicorn.access: 127.0.0.1:60190 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:47:06,427 [INFO] uvicorn.access: 127.0.0.1:60193 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:47:21,447 [INFO] uvicorn.access: 127.0.0.1:60196 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:47:36,424 [INFO] uvicorn.access: 127.0.0.1:60197 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:47:51,450 [INFO] uvicorn.access: 127.0.0.1:60236 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:48:06,426 [INFO] uvicorn.access: 127.0.0.1:60242 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:48:21,424 [INFO] uvicorn.access: 127.0.0.1:60250 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:48:36,429 [INFO] uvicorn.access: 127.0.0.1:60251 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:48:51,426 [INFO] uvicorn.access: 127.0.0.1:60253 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:49:06,417 [INFO] uvicorn.access: 127.0.0.1:60259 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:49:21,434 [INFO] uvicorn.access: 127.0.0.1:60263 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:49:36,423 [INFO] uvicorn.access: 127.0.0.1:60264 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:49:51,426 [INFO] uvicorn.access: 127.0.0.1:60266 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:50:06,433 [INFO] uvicorn.access: 127.0.0.1:60270 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:50:21,432 [INFO] uvicorn.access: 127.0.0.1:60272 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:50:36,433 [INFO] uvicorn.access: 127.0.0.1:60275 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:50:51,419 [INFO] uvicorn.access: 127.0.0.1:60277 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:51:06,430 [INFO] uvicorn.access: 127.0.0.1:60291 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:51:21,419 [INFO] uvicorn.access: 127.0.0.1:60293 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:51:36,427 [INFO] uvicorn.access: 127.0.0.1:60302 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:51:51,428 [INFO] uvicorn.access: 127.0.0.1:60307 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:52:06,431 [INFO] uvicorn.access: 127.0.0.1:60311 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:52:21,434 [INFO] uvicorn.access: 127.0.0.1:60314 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:52:36,426 [INFO] uvicorn.access: 127.0.0.1:60316 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:52:51,435 [INFO] uvicorn.access: 127.0.0.1:60318 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:53:06,435 [INFO] uvicorn.access: 127.0.0.1:60322 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:53:21,443 [INFO] uvicorn.access: 127.0.0.1:60325 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:53:36,444 [INFO] uvicorn.access: 127.0.0.1:60326 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:53:51,459 [INFO] uvicorn.access: 127.0.0.1:60328 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:54:06,459 [INFO] uvicorn.access: 127.0.0.1:60332 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:54:21,453 [INFO] uvicorn.access: 127.0.0.1:60334 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:54:36,448 [INFO] uvicorn.access: 127.0.0.1:60335 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:54:51,476 [INFO] uvicorn.access: 127.0.0.1:60339 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:55:06,458 [INFO] uvicorn.access: 127.0.0.1:60342 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:55:21,462 [INFO] uvicorn.access: 127.0.0.1:60344 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:55:36,466 [INFO] uvicorn.access: 127.0.0.1:60345 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:55:51,463 [INFO] uvicorn.access: 127.0.0.1:60347 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:56:06,466 [INFO] uvicorn.access: 127.0.0.1:60361 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:56:21,461 [INFO] uvicorn.access: 127.0.0.1:60363 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:56:36,463 [INFO] uvicorn.access: 127.0.0.1:60364 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:56:51,476 [INFO] uvicorn.access: 127.0.0.1:60367 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:57:06,452 [INFO] uvicorn.access: 127.0.0.1:60370 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:57:21,455 [INFO] uvicorn.access: 127.0.0.1:60372 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:57:36,469 [INFO] uvicorn.access: 127.0.0.1:60375 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:57:51,439 [INFO] uvicorn.access: 127.0.0.1:60377 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:58:06,472 [INFO] uvicorn.access: 127.0.0.1:60380 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:58:21,456 [INFO] uvicorn.access: 127.0.0.1:60382 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:58:36,446 [INFO] uvicorn.access: 127.0.0.1:60383 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:58:51,479 [INFO] uvicorn.access: 127.0.0.1:60385 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:59:06,463 [INFO] uvicorn.access: 127.0.0.1:60390 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:59:21,452 [INFO] uvicorn.access: 127.0.0.1:60394 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:59:36,452 [INFO] uvicorn.access: 127.0.0.1:60395 - "GET /metrics HTTP/1.1" 200
+2026-07-14 15:59:51,460 [INFO] uvicorn.access: 127.0.0.1:60399 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:00:06,469 [INFO] uvicorn.access: 127.0.0.1:60402 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:00:21,457 [INFO] uvicorn.access: 127.0.0.1:60404 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:00:36,455 [INFO] uvicorn.access: 127.0.0.1:60408 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:00:51,456 [INFO] uvicorn.access: 127.0.0.1:60410 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:01:06,465 [INFO] uvicorn.access: 127.0.0.1:60425 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:01:21,459 [INFO] uvicorn.access: 127.0.0.1:60428 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:01:36,457 [INFO] uvicorn.access: 127.0.0.1:60429 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:01:51,452 [INFO] uvicorn.access: 127.0.0.1:60434 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:02:06,460 [INFO] uvicorn.access: 127.0.0.1:60437 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:02:21,463 [INFO] uvicorn.access: 127.0.0.1:60441 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:02:36,452 [INFO] uvicorn.access: 127.0.0.1:60442 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:02:51,448 [INFO] uvicorn.access: 127.0.0.1:60444 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:03:06,465 [INFO] uvicorn.access: 127.0.0.1:60451 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:03:21,462 [INFO] uvicorn.access: 127.0.0.1:60453 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:03:36,455 [INFO] uvicorn.access: 127.0.0.1:60458 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:03:51,465 [INFO] uvicorn.access: 127.0.0.1:60462 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:04:06,469 [INFO] uvicorn.access: 127.0.0.1:60467 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:04:21,461 [INFO] uvicorn.access: 127.0.0.1:60469 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:04:36,452 [INFO] uvicorn.access: 127.0.0.1:60472 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:04:51,458 [INFO] uvicorn.access: 127.0.0.1:60474 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:05:06,461 [INFO] uvicorn.access: 127.0.0.1:60477 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:05:21,454 [INFO] uvicorn.access: 127.0.0.1:60482 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:05:36,461 [INFO] uvicorn.access: 127.0.0.1:60483 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:05:51,455 [INFO] uvicorn.access: 127.0.0.1:60485 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:06:06,472 [INFO] uvicorn.access: 127.0.0.1:60498 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:06:21,459 [INFO] uvicorn.access: 127.0.0.1:60500 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:06:36,464 [INFO] uvicorn.access: 127.0.0.1:60501 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:06:51,464 [INFO] uvicorn.access: 127.0.0.1:60504 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:07:06,445 [INFO] uvicorn.access: 127.0.0.1:60507 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:07:21,459 [INFO] uvicorn.access: 127.0.0.1:60509 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:07:36,458 [INFO] uvicorn.access: 127.0.0.1:60510 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:07:51,454 [INFO] uvicorn.access: 127.0.0.1:60512 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:08:06,462 [INFO] uvicorn.access: 127.0.0.1:60515 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:08:21,493 [INFO] uvicorn.access: 127.0.0.1:60522 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:08:36,451 [INFO] uvicorn.access: 127.0.0.1:60523 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:08:51,469 [INFO] uvicorn.access: 127.0.0.1:60525 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:09:06,469 [INFO] uvicorn.access: 127.0.0.1:60528 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:09:21,445 [INFO] uvicorn.access: 127.0.0.1:60530 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:09:36,421 [INFO] uvicorn.access: 127.0.0.1:60533 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:09:51,432 [INFO] uvicorn.access: 127.0.0.1:60535 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:10:06,439 [INFO] uvicorn.access: 127.0.0.1:60539 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:10:21,444 [INFO] uvicorn.access: 127.0.0.1:60542 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:10:36,454 [INFO] uvicorn.access: 127.0.0.1:60555 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:10:51,433 [INFO] uvicorn.access: 127.0.0.1:60557 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:11:06,435 [INFO] uvicorn.access: 127.0.0.1:60569 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:11:21,434 [INFO] uvicorn.access: 127.0.0.1:60572 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:11:36,438 [INFO] uvicorn.access: 127.0.0.1:60573 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:11:51,429 [INFO] uvicorn.access: 127.0.0.1:60576 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:12:06,440 [INFO] uvicorn.access: 127.0.0.1:60579 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:12:21,440 [INFO] uvicorn.access: 127.0.0.1:60581 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:12:36,439 [INFO] uvicorn.access: 127.0.0.1:60582 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:12:51,438 [INFO] uvicorn.access: 127.0.0.1:60584 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:13:06,433 [INFO] uvicorn.access: 127.0.0.1:60587 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:13:21,437 [INFO] uvicorn.access: 127.0.0.1:60589 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:13:36,437 [INFO] uvicorn.access: 127.0.0.1:60592 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:13:51,441 [INFO] uvicorn.access: 127.0.0.1:60594 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:14:06,456 [INFO] uvicorn.access: 127.0.0.1:60601 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:14:21,445 [INFO] uvicorn.access: 127.0.0.1:60603 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:14:36,448 [INFO] uvicorn.access: 127.0.0.1:60604 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:14:51,442 [INFO] uvicorn.access: 127.0.0.1:60606 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:15:06,443 [INFO] uvicorn.access: 127.0.0.1:60612 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:15:21,471 [INFO] uvicorn.access: 127.0.0.1:60614 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:15:36,434 [INFO] uvicorn.access: 127.0.0.1:60617 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:15:51,450 [INFO] uvicorn.access: 127.0.0.1:60619 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:16:06,441 [INFO] uvicorn.access: 127.0.0.1:60632 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:16:21,441 [INFO] uvicorn.access: 127.0.0.1:60634 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:16:36,437 [INFO] uvicorn.access: 127.0.0.1:60635 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:16:51,444 [INFO] uvicorn.access: 127.0.0.1:60640 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:17:06,443 [INFO] uvicorn.access: 127.0.0.1:60643 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:17:21,441 [INFO] uvicorn.access: 127.0.0.1:60646 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:17:36,448 [INFO] uvicorn.access: 127.0.0.1:60647 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:17:51,437 [INFO] uvicorn.access: 127.0.0.1:60649 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:18:06,437 [INFO] uvicorn.access: 127.0.0.1:60652 - "GET /metrics HTTP/1.1" 200
+2026-07-14 16:18:21,450 [INFO] uvicorn.access: 127.0.0.1:60654 - "GET /metrics HTTP/1.1" 200
