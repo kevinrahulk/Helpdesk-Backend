@@ -99,7 +99,7 @@ def list_tickets(
     if priority:
         try:
             p = TicketPriorityEnum(priority)
-            q = q.filter(Ticket.priority == p)
+            q = q.filer(Ticket.priority == p)
         except ValueError:
             raise HTTPException(status_code=400, detail=f"Invalid priority: {priority}")
 
@@ -170,7 +170,7 @@ def update_ticket(
     if current_user.role.name == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="You can only update your assigned tickets.")
 
-    updates = payload.model_dump(exclude_none=True,include_secrets=True)
+    updates = payload.model_dump(exclude_none=True)
     for key, val in updates.items():
         setattr(ticket, key, val)
 

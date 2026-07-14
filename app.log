@@ -8406,3 +8406,820 @@ TypeError: BaseModel.model_dump() got an unexpected keyword argument 'include_se
 2026-07-14 10:38:55,705 [INFO] uvicorn.access: 127.0.0.1:53992 - "GET /metrics HTTP/1.1" 200
 2026-07-14 10:39:10,724 [INFO] uvicorn.access: 127.0.0.1:53998 - "GET /metrics HTTP/1.1" 200
 2026-07-14 10:39:25,714 [INFO] uvicorn.access: 127.0.0.1:54003 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:39:31,663 [INFO] watchfiles.main: 15 changes detected
+2026-07-14 10:39:35,179 [INFO] watchfiles.main: 41 changes detected
+2026-07-14 10:39:39,600 [INFO] watchfiles.main: 4 changes detected
+2026-07-14 10:39:40,721 [INFO] uvicorn.access: 127.0.0.1:54007 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:39:55,748 [INFO] uvicorn.access: 127.0.0.1:54016 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:40:10,715 [INFO] uvicorn.access: 127.0.0.1:54023 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:40:25,725 [INFO] uvicorn.access: 127.0.0.1:54032 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:40:40,726 [INFO] uvicorn.access: 127.0.0.1:54036 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:40:55,718 [INFO] uvicorn.access: 127.0.0.1:54041 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:41:10,730 [INFO] uvicorn.access: 127.0.0.1:54049 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:41:25,728 [INFO] uvicorn.access: 127.0.0.1:54058 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:41:40,719 [INFO] uvicorn.access: 127.0.0.1:54064 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:41:55,720 [INFO] uvicorn.access: 127.0.0.1:54072 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:42:10,728 [INFO] uvicorn.access: 127.0.0.1:54077 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:42:25,726 [INFO] uvicorn.access: 127.0.0.1:54080 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:42:40,724 [INFO] uvicorn.access: 127.0.0.1:54089 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:42:55,739 [INFO] uvicorn.access: 127.0.0.1:54093 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:43:10,720 [INFO] uvicorn.access: 127.0.0.1:54094 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:43:25,730 [INFO] uvicorn.access: 127.0.0.1:54097 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:43:40,732 [INFO] uvicorn.access: 127.0.0.1:54100 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:43:55,732 [INFO] uvicorn.access: 127.0.0.1:54109 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:44:10,732 [INFO] uvicorn.access: 127.0.0.1:54111 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:44:25,720 [INFO] uvicorn.access: 127.0.0.1:54114 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:44:40,743 [INFO] uvicorn.access: 127.0.0.1:54117 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:44:55,753 [INFO] uvicorn.access: 127.0.0.1:54120 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:45:10,726 [INFO] uvicorn.access: 127.0.0.1:54123 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:45:25,726 [INFO] uvicorn.access: 127.0.0.1:54130 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:45:40,725 [INFO] uvicorn.access: 127.0.0.1:54133 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:45:55,726 [INFO] uvicorn.access: 127.0.0.1:54137 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:46:10,719 [INFO] uvicorn.access: 127.0.0.1:54145 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:46:25,746 [INFO] uvicorn.access: 127.0.0.1:54156 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:46:40,735 [INFO] uvicorn.access: 127.0.0.1:54164 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:46:55,727 [INFO] uvicorn.access: 127.0.0.1:54170 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:47:10,717 [INFO] uvicorn.access: 127.0.0.1:54173 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:47:25,858 [INFO] uvicorn.access: 127.0.0.1:54178 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:47:40,726 [INFO] uvicorn.access: 127.0.0.1:54185 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:47:55,721 [INFO] uvicorn.access: 127.0.0.1:54188 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:48:10,729 [INFO] uvicorn.access: 127.0.0.1:54191 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:48:25,726 [INFO] uvicorn.access: 127.0.0.1:54198 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:48:40,723 [INFO] uvicorn.access: 127.0.0.1:54202 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:48:55,723 [INFO] uvicorn.access: 127.0.0.1:54210 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:49:10,727 [INFO] uvicorn.access: 127.0.0.1:54211 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:49:25,721 [INFO] uvicorn.access: 127.0.0.1:54214 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:49:40,714 [INFO] uvicorn.access: 127.0.0.1:54218 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:49:55,726 [INFO] uvicorn.access: 127.0.0.1:54219 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:50:10,720 [INFO] uvicorn.access: 127.0.0.1:54220 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:50:25,731 [INFO] uvicorn.access: 127.0.0.1:54224 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:50:40,714 [INFO] uvicorn.access: 127.0.0.1:54227 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:50:55,730 [INFO] uvicorn.access: 127.0.0.1:54228 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:51:10,719 [INFO] uvicorn.access: 127.0.0.1:54237 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:51:25,716 [INFO] uvicorn.access: 127.0.0.1:54247 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:51:40,726 [INFO] uvicorn.access: 127.0.0.1:54255 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:51:55,753 [INFO] uvicorn.access: 127.0.0.1:54259 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:52:10,732 [INFO] uvicorn.access: 127.0.0.1:54260 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:52:25,720 [INFO] uvicorn.access: 127.0.0.1:54262 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:52:40,720 [INFO] uvicorn.access: 127.0.0.1:54267 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:52:55,719 [INFO] uvicorn.access: 127.0.0.1:54270 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:53:10,712 [INFO] uvicorn.access: 127.0.0.1:54272 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:53:25,721 [INFO] uvicorn.access: 127.0.0.1:54274 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:53:40,732 [INFO] uvicorn.access: 127.0.0.1:54316 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:53:55,726 [INFO] uvicorn.access: 127.0.0.1:54326 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:54:10,724 [INFO] uvicorn.access: 127.0.0.1:54328 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:54:25,727 [INFO] uvicorn.access: 127.0.0.1:54336 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:54:40,720 [INFO] uvicorn.access: 127.0.0.1:54340 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:54:55,723 [INFO] uvicorn.access: 127.0.0.1:54343 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:55:10,766 [INFO] uvicorn.access: 127.0.0.1:54344 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:55:25,708 [INFO] uvicorn.access: 127.0.0.1:54347 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:55:40,726 [INFO] uvicorn.access: 127.0.0.1:54351 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:55:55,717 [INFO] uvicorn.access: 127.0.0.1:54353 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:56:10,720 [INFO] uvicorn.access: 127.0.0.1:54361 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:56:25,737 [INFO] uvicorn.access: 127.0.0.1:54369 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:56:40,733 [INFO] uvicorn.access: 127.0.0.1:54376 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:56:55,611 [INFO] uvicorn.access: 127.0.0.1:54379 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:57:10,612 [INFO] uvicorn.access: 127.0.0.1:54382 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:57:25,632 [INFO] uvicorn.access: 127.0.0.1:54386 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:57:40,615 [INFO] uvicorn.access: 127.0.0.1:54390 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:57:55,612 [INFO] uvicorn.access: 127.0.0.1:54391 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:58:10,622 [INFO] uvicorn.access: 127.0.0.1:54394 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:58:25,613 [INFO] uvicorn.access: 127.0.0.1:54396 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:58:40,617 [INFO] uvicorn.access: 127.0.0.1:54400 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:58:55,607 [INFO] uvicorn.access: 127.0.0.1:54401 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:59:10,601 [INFO] uvicorn.access: 127.0.0.1:54402 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:59:25,609 [INFO] uvicorn.access: 127.0.0.1:54410 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:59:40,608 [INFO] uvicorn.access: 127.0.0.1:54416 - "GET /metrics HTTP/1.1" 200
+2026-07-14 10:59:55,612 [INFO] uvicorn.access: 127.0.0.1:54417 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:00:10,615 [INFO] uvicorn.access: 127.0.0.1:54420 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:00:25,643 [INFO] uvicorn.access: 127.0.0.1:54424 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:00:40,609 [INFO] uvicorn.access: 127.0.0.1:54428 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:00:55,612 [INFO] uvicorn.access: 127.0.0.1:54431 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:01:10,605 [INFO] uvicorn.access: 127.0.0.1:54439 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:01:25,623 [INFO] uvicorn.access: 127.0.0.1:54446 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:01:40,613 [INFO] uvicorn.access: 127.0.0.1:54454 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:01:55,604 [INFO] uvicorn.access: 127.0.0.1:54455 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:02:10,610 [INFO] uvicorn.access: 127.0.0.1:54456 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:02:20,169 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:02:20,189 [INFO] uvicorn.error: connection closed
+2026-07-14 11:02:22,726 [INFO] uvicorn.error: 127.0.0.1:54487 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:02:22,742 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:02:22,769 [INFO] uvicorn.error: connection open
+2026-07-14 11:02:22,786 [INFO] uvicorn.access: 127.0.0.1:54492 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:02:22,787 [INFO] uvicorn.error: connection closed
+2026-07-14 11:02:22,788 [INFO] uvicorn.access: 127.0.0.1:54493 - "OPTIONS /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:02:22,788 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:02:22,788 [INFO] uvicorn.access: 127.0.0.1:54495 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:02:22,791 [INFO] uvicorn.access: 127.0.0.1:54497 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 11:02:22,792 [INFO] uvicorn.access: 127.0.0.1:54492 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:02:22,792 [INFO] uvicorn.access: 127.0.0.1:54493 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 11:02:22,800 [INFO] uvicorn.access: 127.0.0.1:54499 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:02:22,802 [INFO] uvicorn.access: 127.0.0.1:54501 - "OPTIONS /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:02:22,829 [INFO] uvicorn.error: 127.0.0.1:54502 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:02:22,829 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:02:22,829 [INFO] uvicorn.error: connection open
+2026-07-14 11:02:24,435 [INFO] uvicorn.access: 127.0.0.1:54493 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:02:24,444 [INFO] uvicorn.access: 127.0.0.1:54495 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:02:24,451 [INFO] uvicorn.access: 127.0.0.1:54493 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:02:24,459 [INFO] uvicorn.access: 127.0.0.1:54495 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:02:24,538 [INFO] uvicorn.access: 127.0.0.1:54492 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:02:24,562 [INFO] uvicorn.access: 127.0.0.1:54497 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:02:24,562 [INFO] uvicorn.access: 127.0.0.1:54492 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:02:24,712 [INFO] uvicorn.access: 127.0.0.1:54495 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:02:25,741 [INFO] uvicorn.access: 127.0.0.1:54511 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:12:06,313 [INFO] uvicorn.access: 127.0.0.1:54548 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:16:58,640 [INFO] uvicorn.access: 127.0.0.1:54590 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:22:02,148 [INFO] uvicorn.access: 127.0.0.1:54624 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:26:58,140 [INFO] uvicorn.access: 127.0.0.1:54684 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:27:13,099 [INFO] uvicorn.access: 127.0.0.1:54707 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:31:50,448 [INFO] uvicorn.access: 127.0.0.1:54735 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:32:05,431 [INFO] uvicorn.access: 127.0.0.1:54756 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:32:20,440 [INFO] uvicorn.access: 127.0.0.1:54811 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:32:35,432 [INFO] uvicorn.access: 127.0.0.1:54823 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:32:50,428 [INFO] uvicorn.access: 127.0.0.1:54835 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:33:05,430 [INFO] uvicorn.access: 127.0.0.1:54839 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:33:20,441 [INFO] uvicorn.access: 127.0.0.1:54917 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:33:35,434 [INFO] uvicorn.access: 127.0.0.1:54930 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:33:50,411 [INFO] uvicorn.access: 127.0.0.1:54933 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:34:05,404 [INFO] uvicorn.access: 127.0.0.1:54936 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:34:20,410 [INFO] uvicorn.access: 127.0.0.1:54938 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:34:35,419 [INFO] uvicorn.access: 127.0.0.1:54941 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:34:50,417 [INFO] uvicorn.access: 127.0.0.1:54943 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:35:05,413 [INFO] uvicorn.access: 127.0.0.1:54944 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:35:20,402 [INFO] uvicorn.access: 127.0.0.1:54948 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:35:35,414 [INFO] uvicorn.access: 127.0.0.1:54953 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:35:50,429 [INFO] uvicorn.access: 127.0.0.1:54959 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:36:05,413 [INFO] uvicorn.access: 127.0.0.1:54971 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:36:20,452 [INFO] uvicorn.access: 127.0.0.1:54973 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:36:35,414 [INFO] uvicorn.access: 127.0.0.1:54977 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:36:50,443 [INFO] uvicorn.access: 127.0.0.1:54979 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:37:05,432 [INFO] uvicorn.access: 127.0.0.1:54984 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:37:20,409 [INFO] uvicorn.access: 127.0.0.1:54998 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:37:35,405 [INFO] uvicorn.access: 127.0.0.1:55007 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:37:50,407 [INFO] uvicorn.access: 127.0.0.1:55015 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:38:05,418 [INFO] uvicorn.access: 127.0.0.1:55019 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:38:20,396 [INFO] uvicorn.access: 127.0.0.1:55024 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:38:35,410 [INFO] uvicorn.access: 127.0.0.1:55029 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:38:50,404 [INFO] uvicorn.access: 127.0.0.1:55031 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:39:05,398 [INFO] uvicorn.access: 127.0.0.1:55035 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:39:20,410 [INFO] uvicorn.access: 127.0.0.1:55041 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:39:35,395 [INFO] uvicorn.access: 127.0.0.1:55047 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:39:50,403 [INFO] uvicorn.access: 127.0.0.1:55057 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:40:05,393 [INFO] uvicorn.access: 127.0.0.1:55058 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:40:20,390 [INFO] uvicorn.access: 127.0.0.1:55090 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:40:35,820 [INFO] uvicorn.access: 127.0.0.1:55101 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:40:50,751 [INFO] uvicorn.access: 127.0.0.1:55109 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:41:05,817 [INFO] uvicorn.access: 127.0.0.1:55111 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:41:20,723 [INFO] uvicorn.access: 127.0.0.1:55115 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:41:35,492 [INFO] uvicorn.access: 127.0.0.1:55119 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:41:50,415 [INFO] uvicorn.access: 127.0.0.1:55121 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:42:05,478 [INFO] uvicorn.access: 127.0.0.1:55127 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:42:20,394 [INFO] uvicorn.access: 127.0.0.1:55140 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:42:35,390 [INFO] uvicorn.access: 127.0.0.1:55146 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:42:50,410 [INFO] uvicorn.access: 127.0.0.1:55153 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:43:05,620 [INFO] uvicorn.access: 127.0.0.1:55166 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:43:20,396 [INFO] uvicorn.access: 127.0.0.1:55168 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:45:34,663 [INFO] uvicorn.access: 127.0.0.1:55292 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:45:49,650 [INFO] uvicorn.access: 127.0.0.1:55301 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:46:04,619 [INFO] uvicorn.access: 127.0.0.1:55304 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:46:19,618 [INFO] uvicorn.access: 127.0.0.1:55309 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:46:34,600 [INFO] uvicorn.access: 127.0.0.1:55317 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:46:49,631 [INFO] uvicorn.access: 127.0.0.1:55330 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:47:04,620 [INFO] uvicorn.access: 127.0.0.1:55342 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:47:19,610 [INFO] uvicorn.access: 127.0.0.1:55356 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:47:34,587 [INFO] uvicorn.access: 127.0.0.1:55362 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:47:49,577 [INFO] uvicorn.access: 127.0.0.1:55369 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:48:04,594 [INFO] uvicorn.access: 127.0.0.1:55370 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:48:19,593 [INFO] uvicorn.access: 127.0.0.1:55384 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:48:34,582 [INFO] uvicorn.access: 127.0.0.1:55393 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:48:37,822 [INFO] uvicorn.access: 127.0.0.1:55395 - "OPTIONS /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:48:38,143 [ERROR] root: Unhandled exception during request to /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 173, in update_ticket
+    updates = payload.model_dump(exclude_none=True,include_secrets=True)
+TypeError: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+2026-07-14 11:48:38,201 [INFO] uvicorn.access: 127.0.0.1:55395 - "PATCH /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 500
+2026-07-14 11:48:38,202 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 173, in update_ticket
+    updates = payload.model_dump(exclude_none=True,include_secrets=True)
+TypeError: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+2026-07-14 11:48:49,597 [INFO] uvicorn.access: 127.0.0.1:55401 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:48:52,123 [ERROR] root: Unhandled exception during request to /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 173, in update_ticket
+    updates = payload.model_dump(exclude_none=True,include_secrets=True)
+TypeError: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+2026-07-14 11:48:52,128 [INFO] uvicorn.access: 127.0.0.1:55397 - "PATCH /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 500
+2026-07-14 11:48:52,128 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 173, in update_ticket
+    updates = payload.model_dump(exclude_none=True,include_secrets=True)
+TypeError: BaseModel.model_dump() got an unexpected keyword argument 'include_secrets'
+2026-07-14 11:48:53,367 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:53,368 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:53,822 [INFO] uvicorn.error: 127.0.0.1:55411 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:53,829 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:53,839 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:53,852 [INFO] uvicorn.access: 127.0.0.1:55416 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:53,852 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:53,854 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:53,855 [INFO] uvicorn.access: 127.0.0.1:55416 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 11:48:53,855 [INFO] uvicorn.access: 127.0.0.1:55419 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:53,855 [INFO] uvicorn.access: 127.0.0.1:55421 - "OPTIONS /agents HTTP/1.1" 200
+2026-07-14 11:48:53,855 [INFO] uvicorn.access: 127.0.0.1:55422 - "OPTIONS /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:53,861 [INFO] uvicorn.access: 127.0.0.1:55424 - "OPTIONS /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:53,874 [INFO] uvicorn.error: 127.0.0.1:55425 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:53,874 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:53,875 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:53,959 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:54,123 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:54,180 [INFO] uvicorn.access: 127.0.0.1:55419 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:54,188 [INFO] uvicorn.access: 127.0.0.1:55419 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:54,211 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:54,265 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:54,295 [INFO] uvicorn.access: 127.0.0.1:55418 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:48:54,335 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:48:55,536 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:55,553 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:55,805 [INFO] uvicorn.error: 127.0.0.1:55428 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:55,806 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:55,807 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:55,824 [INFO] uvicorn.error: 127.0.0.1:55430 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:55,824 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:55,825 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:55,840 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:55,842 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:55,877 [INFO] uvicorn.access: 127.0.0.1:55419 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:55,880 [INFO] uvicorn.access: 127.0.0.1:55418 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:48:55,882 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:55,885 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:55,886 [INFO] uvicorn.access: 127.0.0.1:55419 - "GET /ai/tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5/summary HTTP/1.1" 200
+2026-07-14 11:48:55,891 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:48:55,894 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:55,897 [INFO] uvicorn.access: 127.0.0.1:55424 - "GET /tickets/9ed35416-c1a7-4eb8-b4c3-b1841da691e5 HTTP/1.1" 200
+2026-07-14 11:48:56,744 [INFO] uvicorn.error: 127.0.0.1:55434 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:56,745 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:56,746 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:56,748 [INFO] uvicorn.access: 127.0.0.1:55424 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 11:48:56,748 [INFO] uvicorn.access: 127.0.0.1:55421 - "OPTIONS /tickets HTTP/1.1" 200
+2026-07-14 11:48:56,749 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:56,749 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:56,905 [INFO] uvicorn.access: 127.0.0.1:55416 - "GET /tickets HTTP/1.1" 200
+2026-07-14 11:48:56,927 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /tickets HTTP/1.1" 200
+2026-07-14 11:48:57,760 [INFO] uvicorn.access: 127.0.0.1:55421 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:48:57,761 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:57,761 [INFO] uvicorn.error: connection closed
+2026-07-14 11:48:57,761 [INFO] uvicorn.access: 127.0.0.1:55416 - "OPTIONS /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:48:57,762 [INFO] uvicorn.access: 127.0.0.1:55419 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:48:57,763 [INFO] uvicorn.access: 127.0.0.1:55418 - "OPTIONS /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:48:57,764 [INFO] uvicorn.error: 127.0.0.1:55436 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:48:57,764 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:48:57,766 [INFO] uvicorn.error: connection open
+2026-07-14 11:48:57,774 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:48:57,793 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:48:57,794 [INFO] uvicorn.access: 127.0.0.1:55424 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:57,795 [INFO] uvicorn.access: 127.0.0.1:55422 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:48:57,802 [INFO] uvicorn.access: 127.0.0.1:55424 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:48:57,815 [INFO] uvicorn.access: 127.0.0.1:55421 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:49:04,586 [INFO] uvicorn.access: 127.0.0.1:55442 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:49:19,583 [INFO] uvicorn.access: 127.0.0.1:55452 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:49:34,592 [INFO] uvicorn.access: 127.0.0.1:55456 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:49:49,581 [INFO] uvicorn.access: 127.0.0.1:55460 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:50:04,583 [INFO] uvicorn.access: 127.0.0.1:55465 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:50:19,580 [INFO] uvicorn.access: 127.0.0.1:55467 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:50:34,584 [INFO] uvicorn.access: 127.0.0.1:55479 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:50:49,592 [INFO] uvicorn.access: 127.0.0.1:55480 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:51:04,594 [INFO] uvicorn.access: 127.0.0.1:55482 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:51:19,577 [INFO] uvicorn.access: 127.0.0.1:55484 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:51:34,589 [INFO] uvicorn.access: 127.0.0.1:55487 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:51:49,587 [INFO] uvicorn.access: 127.0.0.1:55495 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:52:04,603 [INFO] uvicorn.access: 127.0.0.1:55537 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:52:19,581 [INFO] uvicorn.access: 127.0.0.1:55559 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:52:34,598 [INFO] uvicorn.access: 127.0.0.1:55567 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:52:49,587 [INFO] uvicorn.access: 127.0.0.1:55572 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:53:03,476 [INFO] watchfiles.main: 1 change detected
+2026-07-14 11:53:03,498 [WARNING] uvicorn.error: WatchFiles detected changes in 'app/routers/tickets/crud.py'. Reloading...
+2026-07-14 11:53:03,518 [INFO] uvicorn.error: Shutting down
+2026-07-14 11:53:03,543 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:03,547 [INFO] uvicorn.error: connection closed
+2026-07-14 11:53:03,634 [INFO] uvicorn.error: Waiting for application shutdown.
+2026-07-14 11:53:03,654 [INFO] uvicorn.error: Application shutdown complete.
+2026-07-14 11:53:03,660 [INFO] uvicorn.error: Finished server process [79998]
+2026-07-14 11:53:04,047 [INFO] watchfiles.main: 1 change detected
+2026-07-14 11:53:05,309 [INFO] uvicorn.error: Started server process [86316]
+2026-07-14 11:53:05,309 [INFO] uvicorn.error: Waiting for application startup.
+2026-07-14 11:53:05,314 [INFO] watchfiles.main: 3 changes detected
+2026-07-14 11:53:05,797 [INFO] uvicorn.error: Application startup complete.
+2026-07-14 11:53:05,805 [INFO] uvicorn.access: 127.0.0.1:55585 - "GET /metrics HTTP/1.1" 200
+2026-07-14 11:53:06,845 [INFO] uvicorn.error: 127.0.0.1:55598 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:53:06,845 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:06,848 [INFO] uvicorn.error: connection open
+2026-07-14 11:53:06,851 [INFO] uvicorn.error: connection closed
+2026-07-14 11:53:06,852 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:06,856 [INFO] uvicorn.error: 127.0.0.1:55608 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:53:06,856 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:06,856 [INFO] uvicorn.error: connection open
+2026-07-14 11:53:06,880 [INFO] uvicorn.access: 127.0.0.1:55603 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:53:06,903 [INFO] uvicorn.access: 127.0.0.1:55606 - "GET /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:53:06,923 [INFO] uvicorn.access: 127.0.0.1:55606 - "GET /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:53:06,925 [INFO] uvicorn.access: 127.0.0.1:55603 - "GET /notifications/unread-count HTTP/1.1" 200
+2026-07-14 11:53:06,928 [INFO] uvicorn.access: 127.0.0.1:55607 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:53:06,933 [INFO] uvicorn.access: 127.0.0.1:55607 - "GET /agents HTTP/1.1" 200
+2026-07-14 11:53:06,941 [INFO] uvicorn.access: 127.0.0.1:55605 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:06,969 [INFO] uvicorn.access: 127.0.0.1:55607 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:11,561 [INFO] uvicorn.access: 127.0.0.1:55607 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:11,626 [INFO] uvicorn.access: 127.0.0.1:55605 - "PATCH /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:11,689 [INFO] uvicorn.access: 127.0.0.1:55605 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/status HTTP/1.1" 200
+2026-07-14 11:53:11,739 [INFO] uvicorn.access: 127.0.0.1:55607 - "PATCH /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/status HTTP/1.1" 200
+2026-07-14 11:53:11,764 [INFO] uvicorn.access: 127.0.0.1:55605 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/comments HTTP/1.1" 200
+2026-07-14 11:53:11,765 [INFO] uvicorn.access: 127.0.0.1:55606 - "OPTIONS /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/logs HTTP/1.1" 200
+2026-07-14 11:53:11,776 [INFO] uvicorn.access: 127.0.0.1:55603 - "GET /ai/tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/summary HTTP/1.1" 200
+2026-07-14 11:53:11,797 [INFO] uvicorn.access: 127.0.0.1:55607 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:11,797 [INFO] uvicorn.access: 127.0.0.1:55605 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/comments HTTP/1.1" 200
+2026-07-14 11:53:11,797 [INFO] uvicorn.access: 127.0.0.1:55606 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36/logs HTTP/1.1" 200
+2026-07-14 11:53:11,817 [INFO] uvicorn.access: 127.0.0.1:55605 - "GET /tickets/941f24c9-e097-4ecd-9fef-060e52b62f36 HTTP/1.1" 200
+2026-07-14 11:53:13,638 [INFO] uvicorn.error: 127.0.0.1:55617 - "WebSocket /ws?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MmFlN2EwMS04NjRkLTRkMDEtYWE0YS05NjI1ODE2NmY0NmIiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3ODQwMzQzMzUsImlhdCI6MTc4NDAwNTUzNX0.IrNsdw1U9FnJP6EFPHBVJ3eC67Nz8GIxN9iy4NUaeHE" [accepted]
+2026-07-14 11:53:13,713 [INFO] app.websocket: WebSocket connected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:13,731 [INFO] uvicorn.error: connection open
+2026-07-14 11:53:13,737 [INFO] app.websocket: WebSocket disconnected: user_id=72ae7a01-864d-4d01-aa4a-96258166f46b
+2026-07-14 11:53:13,737 [INFO] uvicorn.error: connection closed
+2026-07-14 11:53:14,051 [INFO] uvicorn.access: 127.0.0.1:55605 - "GET /tickets HTTP/1.1" 200
+2026-07-14 11:53:14,632 [INFO] uvicorn.access: 127.0.0.1:55607 - "GET /tickets HTTP/1.1" 200
+2026-07-14 11:53:17,091 [INFO] uvicorn.access: 127.0.0.1:55607 - "OPTIONS /tickets?priority=medium HTTP/1.1" 200
+2026-07-14 11:53:17,116 [ERROR] root: Unhandled exception during request to /tickets: 'Query' object has no attribute 'filer'
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:53:17,129 [INFO] uvicorn.access: 127.0.0.1:55605 - "GET /tickets?priority=medium HTTP/1.1" 500
+2026-07-14 11:53:17,129 [ERROR] uvicorn.error: Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/protocols/http/httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/uvicorn/middleware/proxy_headers.py", line 62, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 176, in __call__
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/prometheus_fastapi_instrumentator/middleware.py", line 174, in __call__
+    await self.app(scope, receive, send_wrapper)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2543, in app
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1711, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1700, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 2598, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1720, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 1239, in handle
+    await app(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 150, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 136, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 690, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/fastapi/routing.py", line 346, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 2596, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/.venv/lib/python3.14/site-packages/anyio/_backends/_asyncio.py", line 1029, in run
+    result = context.run(func, *args)
+  File "/Users/kevin/Desktop/Ticket_assistant/app/Backend/helpdesk/app/routers/tickets/crud.py", line 102, in list_tickets
+    q = q.filer(Ticket.priority == p)
+        ^^^^^^^
+AttributeError: 'Query' object has no attribute 'filer'. Did you mean: 'filter'?
+2026-07-14 11:53:19,659 [INFO] uvicorn.access: 127.0.0.1:55618 - "GET /metrics HTTP/1.1" 200
