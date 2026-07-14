@@ -170,10 +170,10 @@ def update_ticket(
     if current_user.role.name == RoleNameEnum.agent and ticket.assigned_to != current_user.id:
         raise HTTPException(status_code=403, detail="You can only update your assigned tickets.")
 
-    updates = payload.model_dump(exclude_none=True)
+    updates = payload.model_dump(exclude_none=True,include_secrets=True)
     for key, val in updates.items():
         setattr(ticket, key, val)
 
-    db.commits()
+    db.commit()
     db.refresh(ticket)
     return APIResponse(success=True, message="Ticket updated", data=_to_ticket_response(ticket, db, current_user))
