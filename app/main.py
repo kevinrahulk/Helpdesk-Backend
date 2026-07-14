@@ -14,7 +14,7 @@ from app.config import get_settings
 from app.ai.config import get_ai_settings
 from app.database import SessionLocal, engine
 from app.models import Base
-from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket
+from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket, observability
 # pyrefly: ignore [missing-import]
 from prometheus_fastapi_instrumentator import Instrumentator
 
@@ -124,6 +124,7 @@ app.include_router(ai.router)
 app.include_router(notifications.router)
 app.include_router(settings_router.router)
 app.include_router(websocket.router)
+app.include_router(observability.router)
 
 # ---------------------------------------------------------------------------
 # Health check

@@ -70,11 +70,13 @@ class StructuredLLM:
             if provider == "groq":
                 kwargs["method"] = "function_calling"
             model = get_chat_model(provider).with_structured_output(output_model, **kwargs)
+            from app.ai.config import get_tracing_callbacks
             return model.invoke(
                 [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
-                ]
+                ],
+                config={"callbacks": get_tracing_callbacks()}
             )
 
         result = self._invoke_with_fallback_sync(node_name, _call_provider)
@@ -105,11 +107,13 @@ class StructuredLLM:
             if provider == "groq":
                 kwargs["method"] = "function_calling"
             model = get_chat_model(provider).with_structured_output(output_model, **kwargs)
+            from app.ai.config import get_tracing_callbacks
             return await model.ainvoke(
                 [
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
-                ]
+                ],
+                config={"callbacks": get_tracing_callbacks()}
             )
 
         result = await self._invoke_with_fallback_async(node_name, _call_provider)

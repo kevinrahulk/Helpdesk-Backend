@@ -59,7 +59,8 @@ async def generate_ticket_creation_suggestion(
         "trace_id": trace_id,
     }
 
-    final_state: TicketCreationState = await graph.ainvoke(initial_state)
+    from app.ai.config import get_tracing_callbacks
+    final_state: TicketCreationState = await graph.ainvoke(initial_state, config={"callbacks": get_tracing_callbacks()})
 
     duration_ms = round((time.monotonic() - started_at) * 1000, 1)
 
@@ -113,7 +114,8 @@ async def trigger_initial_ai_generation_if_missing(ticket_id: uuid.UUID) -> None
                 "errors": [],
                 "trace_id": str(uuid.uuid4()),
             }
-            await graph.ainvoke(initial_state)
+            from app.ai.config import get_tracing_callbacks
+            await graph.ainvoke(initial_state, config={"callbacks": get_tracing_callbacks()})
             logger.info("ai.creation.initial_generation_backfilled ticket_id=%s", ticket_id)
         # Websocket Broadcast
             await manager.broadcast({
@@ -240,7 +242,8 @@ async def trigger_ai_resolution_update(ticket_id: uuid.UUID) -> None:
             "errors": [],
             "trace_id": str(uuid.uuid4()),
         }
-        await graph.ainvoke(initial_state)
+        from app.ai.config import get_tracing_callbacks
+        await graph.ainvoke(initial_state, config={"callbacks": get_tracing_callbacks()})
         logger.info("ai.resolution.summary_updated ticket_id=%s", ticket_id)
         await manager.broadcast({
             "type": "AI_SUMMARY_UPDATED",

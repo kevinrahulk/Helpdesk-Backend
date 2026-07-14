@@ -24,6 +24,12 @@ class AISettings(BaseSettings):
     # Fallback Provider
     AI_FALLBACK_PROVIDER: LLMProviderName | None = "groq"
 
+    # LangSmith / LangChain Tracing
+    LANGCHAIN_TRACING_V2: str = "false"
+    LANGCHAIN_API_KEY: str = ""
+    LANGCHAIN_PROJECT: str = "helpdesk-assistant"
+    LANGCHAIN_ENDPOINT: str = "https://api.smith.langchain.com"
+
     # Per-provider model names
     OPENAI_MODEL: str = "gpt-oss-20b"
     OPENAI_API_KEY: str = Field(default="")
@@ -113,3 +119,28 @@ class AISettings(BaseSettings):
 @lru_cache()
 def get_ai_settings() -> AISettings:
     return AISettings()
+
+
+def get_tracing_callbacks() -> list:
+    """Helper to return an explicit LangChainTracer callback handler
+    using the currently configured LangSmith settings.
+    """
+    settings = get_ai_settings()
+    tracing_enabled = settings.LANGCHAIN_TRACING_V2.lower() == "true"
+    api_key = settings.LANGCHAIN_API_KEY
+    project = settings.LANGCHAIN_PROJECT
+    endpoint = settings.LANGCHAIN_ENDPOINT
+
+    if tracing_enabled and api_key:
+        try:
+            from langsmith import Client
+            from langchain_core.tracers import LangChainTracer
+
+            client = Client(api_url=endpoint, api_key=api_key)
+            tracer = LangChainTracer(project_name=project, client=client)
+            return [tracer]
+        except Exception as e:
+            import logging
+            logging.getLogger("app.ai.tracing").warning("Failed to initialize LangChainTracer callback: %s", e)
+
+    return []
