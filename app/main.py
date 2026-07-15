@@ -17,21 +17,16 @@ from app.models import Base
 from app.routers import auth, users, categories, tickets, dashboard, reports, ai, notifications, settings as settings_router, websocket, observability
 # pyrefly: ignore [missing-import]
 from prometheus_fastapi_instrumentator import Instrumentator
+from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
 
 # Add this right after instantiating app = FastAPI(...) on line 40:
 
 
 
 
-# Configure application-wide logging to console and app.log
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler("app.log", encoding="utf-8"),
-    ],
-)
+# Configure application-wide logging via OpenTelemetry setup
+from app.logging_otel import setup_logging
+setup_logging()
 
 # Propagate uvicorn loggers to root logger so access logs are recorded in app.log
 logging.getLogger("uvicorn").handlers = []
@@ -62,6 +57,7 @@ app = FastAPI(
     redoc_url="/redoc",
 )
 Instrumentator().instrument(app).expose(app)
+FastAPIInstrumentor.instrument_app(app, excluded_urls="health,metrics")
 # ---------------------------------------------------------------------------
 # CORS — allow all origins in dev; restrict in production
 # ---------------------------------------------------------------------------
